@@ -8,9 +8,14 @@ export default function SiteLayout({ children }) {
   const pathname = usePathname();
 
   return (
-    <div className="site-layout">
-      <aside className="sidebar">
-        <h2 className="brand">Satyaki Banik</h2>
+    <div className="site-shell">
+      <div className="top-strip" />
+      <div className="site-layout">
+      <header className="site-header">
+        <div>
+          <p className="brand-kicker">Search this site</p>
+          <h2 className="brand">Satyaki Banik</h2>
+        </div>
         <ul className="nav-list">
           {routes.map((route) => {
             const isActive = pathname === route.href;
@@ -26,8 +31,18 @@ export default function SiteLayout({ children }) {
             );
           })}
         </ul>
-      </aside>
-      <main className="content">{children}</main>
+      </header>
+      <main className="content">
+        {children}
+        <footer className="site-footer">
+          <p>Page updated</p>
+          <p>Google Sites</p>
+          <a href="https://www.satyakibanik.com/" target="_blank" rel="noreferrer">
+            Report abuse
+          </a>
+        </footer>
+      </main>
+      </div>
     </div>
   );
 }
