@@ -17,9 +17,9 @@ export const pageData = {
       {
         heading: "Hello.",
         paragraphs: [
-          "I am Satyaki Banik, a Graduate Student at the Department of ECE, North Carolina State University, Raleigh, NC, USA (Go Pack!). I also work as a Graduate Research Assistant at the FREEDM Systems Center of North Carolina State University.",
-          "I obtained my B.Sc. in Electrical and Electronic (EEE) Engineering from Bangladesh University of Engineering and Technology (BUET), Dhaka, Bangladesh in 2021. I joined NC State after serving as an Adjunct Lecturer at the Department of EEE, BUET for one year.",
-          "I have been doing my research on planning, operation and control of electrical power systems, especially with high penetration of DERs.",
+          "I am Satyaki Banik, a Graduate Student at the Department of ECE, North Carolina State University, Raleigh, NC, USA (Go Pack!). I also work as a Graduate Research Assistant at the FREEDM Systems Center of North Carolina State University. I obtained my B.Sc. in Electrical and Electronic (EEE) Engineering from Bangladesh University of Engineering and Technology (BUET), Dhaka, Bangladesh in 2021. I joined NC State after serving as an Adjunct Lecturer at the Department of EEE, BUET (alma mater) for one year.",
+          "I have been doing my research on planning, operation and control of electrical power systems, especially with high penetration of DERs.  My goal is to establish a research career in power and energy systems diaspore with multidisciplinary collaborations to approach problems related to clean energy and sustainability (focusing on SDGs 7, 11 & 13).",
+          "Apart of academics, I often actively volunteer and engage in several extra-curricular activities. Feel free to visit my website to know more.",
         ],
       },
       {
@@ -167,9 +167,7 @@ export const pageData = {
     sections: [
       {
         heading: "University Organizations",
-        list: [
-          "Cultural Secretary, Bangladesh Student Association (NC State)",
-        ],
+        list: ["Cultural Secretary, Bangladesh Student Association (NC State)"],
       },
       {
         heading: "Social Work",
