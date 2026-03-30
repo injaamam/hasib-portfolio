@@ -1,5 +1,5 @@
-import { pageData } from "@/lib/siteData";
+import { contact } from "@/lib/siteData";
 
 export default function ContactPage() {
-  return <div>Contact Page</div>;
+  return <div>{contact.title} Page</div>;
 }

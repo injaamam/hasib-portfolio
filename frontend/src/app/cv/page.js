@@ -1,5 +1,5 @@
-import { pageData } from "@/lib/siteData";
+import { cv } from "@/lib/siteData";
 
 export default function CvPage() {
-  return <div>CV Page</div>;
+  return <div>{cv.title} Page</div>;
 }

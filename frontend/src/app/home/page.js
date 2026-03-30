@@ -1,128 +1,66 @@
-import { pageData } from "@/lib/siteData";
+import { contact, home } from "@/lib/siteData";
 
-const heroImage =
-  "https://images.unsplash.com/photo-1589271755419-b813a577ad42?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d2lkZXxlbnwwfHwwfHx8MA%3D%3D";
-const portraitImage = "/satyaki-portrait.png";
+const emphasisVariants = {
+  accent: "font-semibold italic text-[#e56a61]",
+  italic: "italic text-[#4f4f4f]",
+};
 
-const updates = [
-  {
-    year: "2025",
-    items: [
-      {
-        date: "July 7",
-        body: (
-          <>
-            Joined as an Associate Planning Engineer at{" "}
-            <span className="text-[#2a65ad]">New York Independent System Operator (NYISO).</span>
-          </>
-        ),
-      },
-      {
-        date: "May 3",
-        body: (
-          <>
-            Obtained Master&apos;s in Electrical Engineering from{" "}
-            <span className="text-[#2a65ad]">NC State.</span>
-          </>
-        ),
-      },
-      {
-        date: "February 12",
-        body: (
-          <>
-            Presented research at the{" "}
-            <span className="text-[#2a65ad]">2025 FREEDM Annual Symposium</span> and won Best
-            Poster Award in Power Systems.
-          </>
-        ),
-      },
-    ],
-  },
-  {
-    year: "2024",
-    items: [
-      {
-        date: "November 14",
-        body: (
-          <>
-            Presented at the <span className="text-[#2a65ad]">2024 CIGRE USNC Symposium</span>{" "}
-            representing Dominion Energy and NC State.{" "}
-            <span className="text-[#2a65ad]">Paper link</span>
-          </>
-        ),
-      },
-      {
-        date: "August 16",
-        body: <>Completed summer internship at Dominion Energy Virginia (solar PV farm EMT modeling).</>,
-      },
-      {
-        date: "May 20",
-        body: <>Started summer internship at Dominion Energy.</>,
-      },
-    ],
-  },
-];
+function renderEmphasisText(text, emphasis = []) {
+  return emphasis.reduce(
+    (nodes, item, itemIndex) => {
+      return nodes.flatMap((node, nodeIndex) => {
+        if (typeof node !== "string") {
+          return [node];
+        }
 
-function renderHelloParagraph(paragraph, index) {
-  if (index === 0) {
-    const marker = "(Go Pack!).";
-    const [before, after] = paragraph.split(marker);
+        const parts = node.split(item.text);
+        if (parts.length === 1) {
+          return [node];
+        }
 
-    return (
-      <>
-        {before}
-        <span className="font-semibold italic text-[#e56a61]">{marker}</span>
-        {after}
-      </>
-    );
-  }
+        return parts.flatMap((part, partIndex) => {
+          if (partIndex === parts.length - 1) {
+            return [part];
+          }
 
-  if (index === 1) {
-    const emphasis =
-      "planning, operation and control of electrical power systems, especially with high penetration of DERs.";
-    const [before, after] = paragraph.split(emphasis);
+          return [
+            part,
+            <span
+              key={`${item.text}-${itemIndex}-${nodeIndex}-${partIndex}`}
+              className={emphasisVariants[item.variant] ?? ""}
+            >
+              {item.text}
+            </span>,
+          ];
+        });
+      });
+    },
+    [text],
+  );
+}
 
-    return (
-      <>
-        {before}
-        <span className="italic text-[#4f4f4f]">{emphasis}</span>
-        {after}
-      </>
-    );
-  }
+function renderUpdateSegments(segments) {
+  return segments.map((segment, index) => {
+    if (segment.accent) {
+      return (
+        <span key={`${segment.text}-${index}`} className="text-[#2a65ad]">
+          {segment.text}
+        </span>
+      );
+    }
 
-  return paragraph;
+    return <span key={`${segment.text}-${index}`}>{segment.text}</span>;
+  });
 }
 
 export default function HomePage() {
-  const { home, contact } = pageData;
   const helloSection = home.sections[0];
   const cvSection = home.sections[1];
   const interestsSection = home.sections[2];
+  const updatesSection = home.updates;
+  const footerSection = home.footer;
   const contactSection = contact.sections[0];
-  const linkedIn = contactSection.links?.find((link) => link.label === "LinkedIn")?.href;
-  const socialBadges = [
-    {
-      label: "Facebook",
-      short: "f",
-      color: "#4b63bf",
-      href: "https://www.facebook.com/satyaki.banik.007/",
-    },
-    { label: "LinkedIn", short: "in", color: "#1178c7", href: linkedIn },
-    { label: "Twitter", short: "t", color: "#3aa0e8", href: "https://twitter.com/satyaki_banik" },
-    {
-      label: "ResearchGate",
-      short: "RG",
-      color: "#22c6b6",
-      href: "https://www.researchgate.net/profile/Satyaki-Banik",
-    },
-    {
-      label: "Google Scholar",
-      short: "g",
-      color: "#4f8ee8",
-      href: "https://scholar.google.com/citations?user=l6FKYRYAAAAJ&hl=en",
-    },
-  ];
+  const socialBadges = contactSection.socialLinks ?? [];
   const interestRows = [
     interestsSection.list.slice(0, 3).join(" • "),
     interestsSection.list.slice(3).join(" • "),
@@ -133,7 +71,7 @@ export default function HomePage() {
       <section
         className="relative min-h-[420px] overflow-hidden sm:min-h-[500px] lg:min-h-[560px]"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)), url("${heroImage}")`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)), url("${home.media.heroImage}")`,
           backgroundPosition: "center center",
           backgroundSize: "cover",
         }}
@@ -168,8 +106,8 @@ export default function HomePage() {
           <div className="grid items-start gap-10 md:grid-cols-[240px_1fr] lg:grid-cols-[290px_1fr] lg:gap-12">
             <div className="mx-auto w-full max-w-[290px]">
               <img
-                src={portraitImage}
-                alt="Portrait of Satyaki Banik"
+                src={home.media.portraitImage}
+                alt="Portrait of Hasib Cheragee"
                 className="block h-auto w-full object-cover shadow-[0_2px_12px_rgba(0,0,0,0.18)]"
               />
             </div>
@@ -188,7 +126,9 @@ export default function HomePage() {
 
               <div className="mt-6 space-y-5 text-[1.04rem] leading-[1.7] text-[#4d4d4d] sm:text-[1.12rem]">
                 {helloSection.paragraphs.map((paragraph, index) => (
-                  <p key={paragraph}>{renderHelloParagraph(paragraph, index)}</p>
+                  <p key={`${paragraph.text}-${index}`}>
+                    {renderEmphasisText(paragraph.text, paragraph.emphasis)}
+                  </p>
                 ))}
               </div>
 
@@ -244,19 +184,24 @@ export default function HomePage() {
                 '"Arial Narrow", "Roboto Condensed", "Helvetica Neue", Arial, sans-serif',
             }}
           >
-            Updates
+            {updatesSection.heading}
           </h2>
 
           <div className="mt-10 border-l-[3px] border-[#2f67a6] pl-6 sm:pl-10">
             <div className="home-updates-scroll max-h-[360px] overflow-y-auto pr-4">
-              {updates.map((year) => (
+              {updatesSection.years.map((year) => (
                 <div key={year.year} className="pb-9 last:pb-0">
-                  <h3 className="text-[1.7rem] font-bold text-[#2a65ad]">{year.year}</h3>
+                  <h3 className="text-[1.7rem] font-bold text-[#2a65ad]">
+                    {year.year}
+                  </h3>
 
                   <div className="mt-5 space-y-5 text-[1rem] leading-[1.7] text-[#303030] sm:text-[1.05rem]">
                     {year.items.map((item) => (
                       <p key={`${year.year}-${item.date}`}>
-                        <span className="font-bold text-[#161616]">{item.date}:</span> {item.body}
+                        <span className="font-bold text-[#161616]">
+                          {item.date}:
+                        </span>{" "}
+                        {renderUpdateSegments(item.segments)}
                       </p>
                     ))}
                   </div>
@@ -292,8 +237,14 @@ export default function HomePage() {
                   <a
                     key={badge.label}
                     href={badge.href}
-                    target={badge.href.startsWith("mailto:") ? undefined : "_blank"}
-                    rel={badge.href.startsWith("mailto:") ? undefined : "noreferrer"}
+                    target={
+                      badge.href.startsWith("mailto:") ? undefined : "_blank"
+                    }
+                    rel={
+                      badge.href.startsWith("mailto:")
+                        ? undefined
+                        : "noreferrer"
+                    }
                     aria-label={badge.label}
                     className={badgeClassName}
                     style={{ backgroundColor: badge.color }}
@@ -327,9 +278,11 @@ export default function HomePage() {
       >
         <div className="mx-auto flex max-w-[1180px] items-center justify-end">
           <div className="flex items-center gap-3 text-white">
-            <span className="text-sm font-semibold uppercase tracking-[0.08em]">Site hits</span>
+            <span className="text-sm font-semibold uppercase tracking-[0.08em]">
+              {footerSection.siteHitsLabel}
+            </span>
             <div className="flex overflow-hidden border border-white/70 bg-white/10">
-              {["7", "6", "6", "7"].map((digit, index) => (
+              {footerSection.siteHitDigits.map((digit, index) => (
                 <span
                   key={`${digit}-${index}`}
                   className="border-l border-white/70 px-2 py-1 text-sm font-bold text-white first:border-l-0"

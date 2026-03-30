@@ -1,5 +1,5 @@
-import { pageData } from "@/lib/siteData";
+import { publicationsProjects } from "@/lib/siteData";
 
 export default function PublicationsProjectsPage() {
-  return <div>Publications & Projects Page</div>;
+  return <div>{publicationsProjects.title} Page</div>;
 }

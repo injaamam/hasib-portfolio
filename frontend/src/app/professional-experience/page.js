@@ -1,5 +1,5 @@
-import { pageData } from "@/lib/siteData";
+import { professionalExperience } from "@/lib/siteData";
 
 export default function ProfessionalExperiencePage() {
-  return <div>Professional Experience Page</div>;
+  return <div>{professionalExperience.title} Page</div>;
 }

@@ -1,5 +1,5 @@
-import { pageData } from "@/lib/siteData";
+import { education } from "@/lib/siteData";
 
 export default function EducationPage() {
-  return <div>Education Page</div>;
+  return <div>{education.title} Page</div>;
 }
