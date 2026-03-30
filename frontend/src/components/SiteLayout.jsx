@@ -1,6 +1,15 @@
 "use client";
 
+import { usePathname } from "next/navigation";
+
 export default function SiteLayout({ children }) {
+  const pathname = usePathname();
+  const isHomePage = pathname === "/home";
+
+  if (isHomePage) {
+    return <div className="min-h-screen bg-[#f5f5f2] text-gray-900">{children}</div>;
+  }
+
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
       <header className="bg-white border-b py-4 px-6">
