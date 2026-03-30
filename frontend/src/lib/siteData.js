@@ -11,7 +11,7 @@ export const routes = [
 
 export const home = {
   hero: {
-    title: "Hi, I'm Satyaki (SHAT-YUH-KEE)",
+    title: "Hi, I'm Hasib Cheragee",
     subtitle: "A passionate Power Systems Engineer",
     heroImage:
       "https://images.unsplash.com/photo-1589271755419-b813a577ad42?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d2lkZXxlbnwwfHwwfHx8MA%3D%3D",
@@ -142,7 +142,9 @@ export const professionalExperience = {
     {
       heading: "Graduate Teaching Assistant",
       meta: "August 2022 - Present | Department of ECE, NC State University",
-      paragraphs: ["Assisted in ECE 200: Introduction to Signals, Circuits and Systems."],
+      paragraphs: [
+        "Assisted in ECE 200: Introduction to Signals, Circuits and Systems.",
+      ],
     },
     {
       heading: "Adjunct Lecturer",
@@ -249,10 +251,16 @@ export const contact = {
       },
     ],
     socialLinks: [
-      { label: "Facebook", href: "https://www.facebook.com/satyaki.banik.007/" },
+      {
+        label: "Facebook",
+        href: "https://www.facebook.com/satyaki.banik.007/",
+      },
       { label: "LinkedIn", href: "https://www.linkedin.com/in/satyakibanik/" },
       { label: "Twitter", href: "https://twitter.com/satyaki_banik" },
-      { label: "ResearchGate", href: "https://www.researchgate.net/profile/Satyaki-Banik" },
+      {
+        label: "ResearchGate",
+        href: "https://www.researchgate.net/profile/Satyaki-Banik",
+      },
       {
         label: "Google Scholar",
         href: "https://scholar.google.com/citations?user=l6FKYRYAAAAJ&hl=en",

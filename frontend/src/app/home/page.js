@@ -23,9 +23,9 @@ export default function HomePage() {
         }}
       >
         <div className="mx-auto flex min-h-[420px] max-w-[1180px] items-center justify-end px-6 py-16 sm:min-h-[500px] lg:min-h-[560px]">
-          <div className="w-full max-w-[690px]">
+          <div className="w-full max-w-[690px] xl:max-w-[920px]">
             <h1
-              className="text-center text-[2.35rem] leading-none font-bold uppercase tracking-[0.01em] text-white sm:text-[3.1rem] lg:text-[4.2rem] lg:text-right"
+              className="text-center text-[2.35rem] leading-none font-bold uppercase tracking-[0.01em] text-white sm:text-[3.1rem] lg:text-right lg:whitespace-nowrap lg:text-[3.7rem] xl:text-[4.2rem]"
               style={{
                 fontFamily:
                   '"Arial Narrow", "Roboto Condensed", "Helvetica Neue", Arial, sans-serif',
@@ -33,9 +33,9 @@ export default function HomePage() {
             >
               {home.hero.title}
             </h1>
-            <div className="mx-auto mt-5 h-[8px] w-full max-w-[610px] bg-[#56708a] lg:mr-0" />
+            <div className="mx-auto mt-5 h-[8px] w-full max-w-[610px] bg-[#a3bed8] lg:mr-0" />
             <p
-              className="mt-10 text-center text-[1.35rem] font-semibold uppercase tracking-[0.02em] text-white sm:text-[1.7rem] lg:text-right lg:text-[2rem]"
+              className="mt-5 text-center text-[1.35rem] font-semibold uppercase tracking-[0.02em] text-white sm:text-[1.7rem] lg:text-right lg:text-[2rem]"
               style={{
                 fontFamily:
                   '"Arial Narrow", "Roboto Condensed", "Helvetica Neue", Arial, sans-serif',
