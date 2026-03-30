@@ -1,69 +1,89 @@
 import { contact, home } from "@/lib/siteData";
+import { FaFacebookF, FaLinkedinIn } from "react-icons/fa6";
+import { FaTwitter } from "react-icons/fa";
+import { SiGooglescholar, SiResearchgate } from "react-icons/si";
 
-const emphasisVariants = {
-  accent: "font-semibold italic text-[#e56a61]",
-  italic: "italic text-[#4f4f4f]",
+const socialBadgeStyles = {
+  Facebook: { color: "#4b63bf", icon: FaFacebookF },
+  LinkedIn: { color: "#1178c7", icon: FaLinkedinIn },
+  Twitter: { color: "#3aa0e8", icon: FaTwitter },
+  ResearchGate: { color: "#22c6b6", icon: SiResearchgate },
+  "Google Scholar": { color: "#4f8ee8", icon: SiGooglescholar },
 };
 
-function renderEmphasisText(text, emphasis = []) {
-  return emphasis.reduce(
-    (nodes, item, itemIndex) => {
-      return nodes.flatMap((node, nodeIndex) => {
-        if (typeof node !== "string") {
-          return [node];
+function renderStyledText(text, highlights = []) {
+  return highlights.reduce((nodes, item, itemIndex) => {
+    return nodes.flatMap((node, nodeIndex) => {
+      if (typeof node !== "string") {
+        return [node];
+      }
+
+      const parts = node.split(item.text);
+      if (parts.length === 1) {
+        return [node];
+      }
+
+      return parts.flatMap((part, partIndex) => {
+        if (partIndex === parts.length - 1) {
+          return [part];
         }
 
-        const parts = node.split(item.text);
-        if (parts.length === 1) {
-          return [node];
-        }
-
-        return parts.flatMap((part, partIndex) => {
-          if (partIndex === parts.length - 1) {
-            return [part];
-          }
-
-          return [
-            part,
-            <span
-              key={`${item.text}-${itemIndex}-${nodeIndex}-${partIndex}`}
-              className={emphasisVariants[item.variant] ?? ""}
-            >
-              {item.text}
-            </span>,
-          ];
-        });
+        return [
+          part,
+          <span
+            key={`${item.text}-${itemIndex}-${nodeIndex}-${partIndex}`}
+            className={item.className}
+          >
+            {item.text}
+          </span>,
+        ];
       });
-    },
-    [text],
-  );
+    });
+  }, [text]);
 }
 
-function renderUpdateSegments(segments) {
-  return segments.map((segment, index) => {
-    if (segment.accent) {
-      return (
-        <span key={`${segment.text}-${index}`} className="text-[#2a65ad]">
-          {segment.text}
-        </span>
-      );
-    }
+function renderHelloParagraph(paragraph, index) {
+  if (index === 0) {
+    return renderStyledText(paragraph, [
+      { text: "(Go Pack!).", className: "font-semibold italic text-[#e56a61]" },
+    ]);
+  }
 
-    return <span key={`${segment.text}-${index}`}>{segment.text}</span>;
-  });
+  if (index === 1) {
+    return renderStyledText(paragraph, [
+      {
+        text: "planning, operation and control of electrical power systems, especially with high penetration of DERs.",
+        className: "italic text-[#4f4f4f]",
+      },
+    ]);
+  }
+
+  return paragraph;
+}
+
+function renderUpdateText(year, item) {
+  const highlightMap = {
+    "2025-July 7": ["New York Independent System Operator (NYISO)."],
+    "2025-May 3": ["NC State."],
+    "2025-February 12": ["2025 FREEDM Annual Symposium"],
+    "2024-November 14": ["2024 CIGRE USNC Symposium", "Paper link"],
+  };
+
+  const highlights = (highlightMap[`${year}-${item.date}`] ?? []).map((text) => ({
+    text,
+    className: "text-[#2a65ad]",
+  }));
+
+  return renderStyledText(item.text, highlights);
 }
 
 export default function HomePage() {
-  const helloSection = home.sections[0];
-  const cvSection = home.sections[1];
-  const interestsSection = home.sections[2];
-  const updatesSection = home.updates;
-  const footerSection = home.footer;
-  const contactSection = contact.sections[0];
-  const socialBadges = contactSection.socialLinks ?? [];
+  const { hero, hello, cv, researchInterests, updates, footer } = home;
+  const getInTouch = contact.getInTouch;
+  const socialBadges = getInTouch.socialLinks ?? [];
   const interestRows = [
-    interestsSection.list.slice(0, 3).join(" • "),
-    interestsSection.list.slice(3).join(" • "),
+    researchInterests.list.slice(0, 3).join(" • "),
+    researchInterests.list.slice(3).join(" • "),
   ];
 
   return (
@@ -71,7 +91,7 @@ export default function HomePage() {
       <section
         className="relative min-h-[420px] overflow-hidden sm:min-h-[500px] lg:min-h-[560px]"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)), url("${home.media.heroImage}")`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)), url("${hero.heroImage}")`,
           backgroundPosition: "center center",
           backgroundSize: "cover",
         }}
@@ -85,7 +105,7 @@ export default function HomePage() {
                   '"Arial Narrow", "Roboto Condensed", "Helvetica Neue", Arial, sans-serif',
               }}
             >
-              {home.title}
+              {hero.title}
             </h1>
             <div className="mx-auto mt-5 h-[8px] w-full max-w-[610px] bg-[#56708a] lg:mr-0" />
             <p
@@ -95,7 +115,7 @@ export default function HomePage() {
                   '"Arial Narrow", "Roboto Condensed", "Helvetica Neue", Arial, sans-serif',
               }}
             >
-              {home.subtitle}
+              {hero.subtitle}
             </p>
           </div>
         </div>
@@ -106,8 +126,8 @@ export default function HomePage() {
           <div className="grid items-start gap-10 md:grid-cols-[240px_1fr] lg:grid-cols-[290px_1fr] lg:gap-12">
             <div className="mx-auto w-full max-w-[290px]">
               <img
-                src={home.media.portraitImage}
-                alt="Portrait of Hasib Cheragee"
+                src={hero.portraitImage}
+                alt="Portrait of Satyaki Banik"
                 className="block h-auto w-full object-cover shadow-[0_2px_12px_rgba(0,0,0,0.18)]"
               />
             </div>
@@ -121,23 +141,21 @@ export default function HomePage() {
                     '"Arial Narrow", "Roboto Condensed", "Helvetica Neue", Arial, sans-serif',
                 }}
               >
-                {helloSection.heading}
+                {hello.heading}
               </h2>
 
               <div className="mt-6 space-y-5 text-[1.04rem] leading-[1.7] text-[#4d4d4d] sm:text-[1.12rem]">
-                {helloSection.paragraphs.map((paragraph, index) => (
-                  <p key={`${paragraph.text}-${index}`}>
-                    {renderEmphasisText(paragraph.text, paragraph.emphasis)}
-                  </p>
+                {hello.paragraphs.map((paragraph, index) => (
+                  <p key={`${paragraph}-${index}`}>{renderHelloParagraph(paragraph, index)}</p>
                 ))}
               </div>
 
               <div className="mt-10 grid items-center gap-4 text-center md:grid-cols-[1fr_auto_auto] md:text-left">
                 <h3 className="text-[1.05rem] font-semibold text-[#2a2a2a] sm:text-[1.15rem]">
-                  {cvSection.heading}
+                  {cv.heading}
                 </h3>
 
-                {cvSection.links.map((link) => (
+                {cv.links.map((link) => (
                   <a
                     key={link.href}
                     href={link.href}
@@ -164,7 +182,7 @@ export default function HomePage() {
                 '"Arial Narrow", "Roboto Condensed", "Helvetica Neue", Arial, sans-serif',
             }}
           >
-            {interestsSection.heading}
+            {researchInterests.heading}
           </h2>
 
           <div className="mt-7 space-y-3 text-[1rem] leading-[1.8] text-[#4a4a4a] sm:text-[1.15rem]">
@@ -184,12 +202,12 @@ export default function HomePage() {
                 '"Arial Narrow", "Roboto Condensed", "Helvetica Neue", Arial, sans-serif',
             }}
           >
-            {updatesSection.heading}
+            {updates.heading}
           </h2>
 
           <div className="mt-10 border-l-[3px] border-[#2f67a6] pl-6 sm:pl-10">
             <div className="home-updates-scroll max-h-[360px] overflow-y-auto pr-4">
-              {updatesSection.years.map((year) => (
+              {updates.years.map((year) => (
                 <div key={year.year} className="pb-9 last:pb-0">
                   <h3 className="text-[1.7rem] font-bold text-[#2a65ad]">
                     {year.year}
@@ -201,7 +219,7 @@ export default function HomePage() {
                         <span className="font-bold text-[#161616]">
                           {item.date}:
                         </span>{" "}
-                        {renderUpdateSegments(item.segments)}
+                        {renderUpdateText(year.year, item)}
                       </p>
                     ))}
                   </div>
@@ -224,32 +242,28 @@ export default function HomePage() {
                 '"Arial Narrow", "Roboto Condensed", "Helvetica Neue", Arial, sans-serif',
             }}
           >
-            {contactSection.heading}
+            {getInTouch.heading}
           </h2>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4 sm:gap-5">
             {socialBadges.map((badge) => {
+              const badgeStyle = socialBadgeStyles[badge.label];
+              const Icon = badgeStyle?.icon;
               const badgeClassName =
                 "flex h-12 w-12 items-center justify-center rounded-full text-[1.1rem] font-bold text-white shadow-[0_2px_8px_rgba(0,0,0,0.12)] transition hover:-translate-y-0.5";
 
-              if (badge.href) {
+              if (badge.href && badgeStyle && Icon) {
                 return (
                   <a
                     key={badge.label}
                     href={badge.href}
-                    target={
-                      badge.href.startsWith("mailto:") ? undefined : "_blank"
-                    }
-                    rel={
-                      badge.href.startsWith("mailto:")
-                        ? undefined
-                        : "noreferrer"
-                    }
+                    target="_blank"
+                    rel="noreferrer"
                     aria-label={badge.label}
                     className={badgeClassName}
-                    style={{ backgroundColor: badge.color }}
+                    style={{ backgroundColor: badgeStyle.color }}
                   >
-                    {badge.short}
+                    <Icon size={20} />
                   </a>
                 );
               }
@@ -259,9 +273,9 @@ export default function HomePage() {
                   key={badge.label}
                   aria-label={badge.label}
                   className={badgeClassName}
-                  style={{ backgroundColor: badge.color }}
+                  style={{ backgroundColor: "#4f8ee8" }}
                 >
-                  {badge.short}
+                  ?
                 </div>
               );
             })}
@@ -279,10 +293,10 @@ export default function HomePage() {
         <div className="mx-auto flex max-w-[1180px] items-center justify-end">
           <div className="flex items-center gap-3 text-white">
             <span className="text-sm font-semibold uppercase tracking-[0.08em]">
-              {footerSection.siteHitsLabel}
+              {footer.siteHitsLabel}
             </span>
             <div className="flex overflow-hidden border border-white/70 bg-white/10">
-              {footerSection.siteHitDigits.map((digit, index) => (
+              {footer.siteHitDigits.map((digit, index) => (
                 <span
                   key={`${digit}-${index}`}
                   className="border-l border-white/70 px-2 py-1 text-sm font-bold text-white first:border-l-0"

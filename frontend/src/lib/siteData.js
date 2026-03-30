@@ -10,60 +10,45 @@ export const routes = [
 ];
 
 export const home = {
-  title: "Hi, I'm Satyaki (SHAT-YUH-KEE)",
-  subtitle: "A passionate Power Systems Engineer",
-  media: {
+  hero: {
+    title: "Hi, I'm Satyaki (SHAT-YUH-KEE)",
+    subtitle: "A passionate Power Systems Engineer",
     heroImage:
       "https://images.unsplash.com/photo-1589271755419-b813a577ad42?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d2lkZXxlbnwwfHwwfHx8MA%3D%3D",
     portraitImage: "/satyaki-portrait.png",
   },
-  sections: [
-    {
-      heading: "Hello.",
-      paragraphs: [
-        {
-          text: "I am Satyaki Banik, a Graduate Student at the Department of ECE, North Carolina State University, Raleigh, NC, USA (Go Pack!). I also work as a Graduate Research Assistant at the FREEDM Systems Center of North Carolina State University. I obtained my B.Sc. in Electrical and Electronic (EEE) Engineering from Bangladesh University of Engineering and Technology (BUET), Dhaka, Bangladesh in 2021. I joined NC State after serving as an Adjunct Lecturer at the Department of EEE, BUET (alma mater) for one year.",
-          emphasis: [{ text: "(Go Pack!).", variant: "accent" }],
-        },
-        {
-          text: "I have been doing my research on planning, operation and control of electrical power systems, especially with high penetration of DERs.  My goal is to establish a research career in power and energy systems diaspore with multidisciplinary collaborations to approach problems related to clean energy and sustainability (focusing on SDGs 7, 11 & 13).",
-          emphasis: [
-            {
-              text: "planning, operation and control of electrical power systems, especially with high penetration of DERs.",
-              variant: "italic",
-            },
-          ],
-        },
-        {
-          text: "Apart of academics, I often actively volunteer and engage in several extra-curricular activities. Feel free to visit my website to know more.",
-        },
-      ],
-    },
-    {
-      heading: "Curriculum Vitae (CV)",
-      links: [
-        {
-          label: "View online",
-          href: "https://drive.google.com/file/d/18xMvQiFpo6sXHp6dAJmoAOmR93Ce6GPN/view",
-        },
-        {
-          label: "Download PDF",
-          href: "https://drive.google.com/uc?export=download&id=18xMvQiFpo6sXHp6dAJmoAOmR93Ce6GPN",
-        },
-      ],
-    },
-    {
-      heading: "Research Interests",
-      list: [
-        "Power system operation and control",
-        "Dynamic analysis of a power system",
-        "Smart grid",
-        "Renewable energy",
-        "High penetration of DERs in micro/macro grid",
-        "Micro-grid control and coordination",
-      ],
-    },
-  ],
+  hello: {
+    heading: "Hello.",
+    paragraphs: [
+      "I am Satyaki Banik, a Graduate Student at the Department of ECE, North Carolina State University, Raleigh, NC, USA (Go Pack!). I also work as a Graduate Research Assistant at the FREEDM Systems Center of North Carolina State University. I obtained my B.Sc. in Electrical and Electronic (EEE) Engineering from Bangladesh University of Engineering and Technology (BUET), Dhaka, Bangladesh in 2021. I joined NC State after serving as an Adjunct Lecturer at the Department of EEE, BUET (alma mater) for one year.",
+      "I have been doing my research on planning, operation and control of electrical power systems, especially with high penetration of DERs.  My goal is to establish a research career in power and energy systems diaspore with multidisciplinary collaborations to approach problems related to clean energy and sustainability (focusing on SDGs 7, 11 & 13).",
+      "Apart of academics, I often actively volunteer and engage in several extra-curricular activities. Feel free to visit my website to know more.",
+    ],
+  },
+  cv: {
+    heading: "Curriculum Vitae (CV)",
+    links: [
+      {
+        label: "View online",
+        href: "https://drive.google.com/file/d/18xMvQiFpo6sXHp6dAJmoAOmR93Ce6GPN/view",
+      },
+      {
+        label: "Download PDF",
+        href: "https://drive.google.com/uc?export=download&id=18xMvQiFpo6sXHp6dAJmoAOmR93Ce6GPN",
+      },
+    ],
+  },
+  researchInterests: {
+    heading: "Research Interests",
+    list: [
+      "Power system operation and control",
+      "Dynamic analysis of a power system",
+      "Smart grid",
+      "Renewable energy",
+      "High penetration of DERs in micro/macro grid",
+      "Micro-grid control and coordination",
+    ],
+  },
   updates: {
     heading: "Updates",
     years: [
@@ -72,28 +57,15 @@ export const home = {
         items: [
           {
             date: "July 7",
-            segments: [
-              { text: "Joined as an Associate Planning Engineer at " },
-              {
-                text: "New York Independent System Operator (NYISO).",
-                accent: true,
-              },
-            ],
+            text: "Joined as an Associate Planning Engineer at New York Independent System Operator (NYISO).",
           },
           {
             date: "May 3",
-            segments: [
-              { text: "Obtained Master's in Electrical Engineering from " },
-              { text: "NC State.", accent: true },
-            ],
+            text: "Obtained Master's in Electrical Engineering from NC State.",
           },
           {
             date: "February 12",
-            segments: [
-              { text: "Presented research at the " },
-              { text: "2025 FREEDM Annual Symposium", accent: true },
-              { text: " and won Best Poster Award in Power Systems." },
-            ],
+            text: "Presented research at the 2025 FREEDM Annual Symposium and won Best Poster Award in Power Systems.",
           },
         ],
       },
@@ -102,24 +74,15 @@ export const home = {
         items: [
           {
             date: "November 14",
-            segments: [
-              { text: "Presented at the " },
-              { text: "2024 CIGRE USNC Symposium", accent: true },
-              { text: " representing Dominion Energy and NC State. " },
-              { text: "Paper link", accent: true },
-            ],
+            text: "Presented at the 2024 CIGRE USNC Symposium representing Dominion Energy and NC State. Paper link",
           },
           {
             date: "August 16",
-            segments: [
-              {
-                text: "Completed summer internship at Dominion Energy Virginia (solar PV farm EMT modeling).",
-              },
-            ],
+            text: "Completed summer internship at Dominion Energy Virginia (solar PV farm EMT modeling).",
           },
           {
             date: "May 20",
-            segments: [{ text: "Started summer internship at Dominion Energy." }],
+            text: "Started summer internship at Dominion Energy.",
           },
         ],
       },
@@ -272,52 +235,28 @@ export const eca = {
 
 export const contact = {
   title: "Contact",
-  sections: [
-    {
-      heading: "Get in touch",
-      list: [
-        "satyaki.banik.bd@gmail.com",
-        "sbanik@ncsu.edu",
-        "WhatsApp: +8801967403134",
-      ],
-      links: [
-        {
-          label: "LinkedIn",
-          href: "https://www.linkedin.com/in/satyakibanik/",
-        },
-      ],
-      socialLinks: [
-        {
-          label: "Facebook",
-          short: "f",
-          color: "#4b63bf",
-          href: "https://www.facebook.com/satyaki.banik.007/",
-        },
-        {
-          label: "LinkedIn",
-          short: "in",
-          color: "#1178c7",
-          href: "https://www.linkedin.com/in/satyakibanik/",
-        },
-        {
-          label: "Twitter",
-          short: "t",
-          color: "#3aa0e8",
-          href: "https://twitter.com/satyaki_banik",
-        },
-        {
-          label: "ResearchGate",
-          short: "RG",
-          color: "#22c6b6",
-          href: "https://www.researchgate.net/profile/Satyaki-Banik",
-        },
-        {
-          label: "Google Scholar",
-          short: "g",
-          color: "#4f8ee8",
-          href: "https://scholar.google.com/citations?user=l6FKYRYAAAAJ&hl=en",
-        },
-      ],
-    },
-  ],
+  getInTouch: {
+    heading: "Get in touch",
+    list: [
+      "satyaki.banik.bd@gmail.com",
+      "sbanik@ncsu.edu",
+      "WhatsApp: +8801967403134",
+    ],
+    links: [
+      {
+        label: "LinkedIn",
+        href: "https://www.linkedin.com/in/satyakibanik/",
+      },
+    ],
+    socialLinks: [
+      { label: "Facebook", href: "https://www.facebook.com/satyaki.banik.007/" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/satyakibanik/" },
+      { label: "Twitter", href: "https://twitter.com/satyaki_banik" },
+      { label: "ResearchGate", href: "https://www.researchgate.net/profile/Satyaki-Banik" },
+      {
+        label: "Google Scholar",
+        href: "https://scholar.google.com/citations?user=l6FKYRYAAAAJ&hl=en",
+      },
+    ],
+  },
 };
