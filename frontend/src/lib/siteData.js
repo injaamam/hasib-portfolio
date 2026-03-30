@@ -12,17 +12,18 @@ export const routes = [
 export const home = {
   hero: {
     title: "Hi, I'm Hasib Cheragee",
-    subtitle: "A passionate Power Systems Engineer",
+    subtitle:
+      "Lecturer in EEE and Researcher in Electronics, Photonics, and Energy Devices",
     heroImage:
       "https://images.unsplash.com/photo-1589271755419-b813a577ad42?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d2lkZXxlbnwwfHwwfHx8MA%3D%3D",
-    portraitImage: "/satyaki-portrait.png",
+    portraitImage: "/hasib-profile-placeholder.svg",
   },
   hello: {
     heading: "Hello.",
     paragraphs: [
-      "I am Satyaki Banik, a Graduate Student at the Department of ECE, North Carolina State University, Raleigh, NC, USA (Go Pack!). I also work as a Graduate Research Assistant at the FREEDM Systems Center of North Carolina State University. I obtained my B.Sc. in Electrical and Electronic (EEE) Engineering from Bangladesh University of Engineering and Technology (BUET), Dhaka, Bangladesh in 2021. I joined NC State after serving as an Adjunct Lecturer at the Department of EEE, BUET (alma mater) for one year.",
-      "I have been doing my research on planning, operation and control of electrical power systems, especially with high penetration of DERs.  My goal is to establish a research career in power and energy systems diaspore with multidisciplinary collaborations to approach problems related to clean energy and sustainability (focusing on SDGs 7, 11 & 13).",
-      "Apart of academics, I often actively volunteer and engage in several extra-curricular activities. Feel free to visit my website to know more.",
+      "I am Sheikh Hasib Cheragee, currently serving as a Lecturer in the Department of Electrical and Electronic Engineering at American International University-Bangladesh (AIUB), Dhaka. Alongside teaching, I am pursuing my PhD as a fellow in Electrical and Electronic Engineering at Bangladesh University of Engineering and Technology (BUET).",
+      "My academic journey has been centered on electronics, photonics, semiconductor devices, and energy-focused materials. I completed my MSc in Electrical and Electronic Engineering from BUET in August 2023 and earned my BSc in Electrical and Electronic Engineering from the University of Rajshahi in June 2021, graduating first in my class.",
+      "I enjoy blending teaching, research, and mentoring. My work spans solar cells, microelectronics, semiconductor device modeling, power electronics, and machine learning applications, and I aim to contribute to impactful research and practical engineering education in Bangladesh.",
     ],
   },
   cv: {
@@ -30,59 +31,68 @@ export const home = {
     links: [
       {
         label: "View online",
-        href: "https://drive.google.com/file/d/18xMvQiFpo6sXHp6dAJmoAOmR93Ce6GPN/view",
+        href: "/hasib-cheragee-cv.pdf",
       },
       {
         label: "Download PDF",
-        href: "https://drive.google.com/uc?export=download&id=18xMvQiFpo6sXHp6dAJmoAOmR93Ce6GPN",
+        href: "/hasib-cheragee-cv.pdf",
       },
     ],
   },
   researchInterests: {
     heading: "Research Interests",
     list: [
-      "Power system operation and control",
-      "Dynamic analysis of a power system",
-      "Smart grid",
-      "Renewable energy",
-      "High penetration of DERs in micro/macro grid",
-      "Micro-grid control and coordination",
+      "Solar cell and photovoltaic device modeling",
+      "Microelectronics and nanotechnology",
+      "Semiconductor materials and devices",
+      "Wide-bandgap semiconductors",
+      "Power electronics",
+      "Optoelectronics, photonics, and machine learning",
     ],
   },
   updates: {
     heading: "Updates",
     years: [
       {
-        year: "2025",
+        year: "2024",
         items: [
           {
-            date: "July 7",
-            text: "Joined as an Associate Planning Engineer at New York Independent System Operator (NYISO).",
+            date: "October 16",
+            text: "Joined American International University-Bangladesh (AIUB) as a Lecturer in the Department of Electrical and Electronic Engineering.",
           },
           {
-            date: "May 3",
-            text: "Obtained Master's in Electrical Engineering from NC State.",
+            date: "April",
+            text: "Started PhD studies as a fellow in Electrical and Electronic Engineering at BUET.",
           },
           {
-            date: "February 12",
-            text: "Presented research at the 2025 FREEDM Annual Symposium and won Best Poster Award in Power Systems.",
+            date: "2024",
+            text: "Published and presented multiple works on solar cells, semiconductor devices, and load forecasting in journals and IEEE conferences.",
           },
         ],
       },
       {
-        year: "2024",
+        year: "2023",
         items: [
           {
-            date: "November 14",
-            text: "Presented at the 2024 CIGRE USNC Symposium representing Dominion Energy and NC State. Paper link",
+            date: "August",
+            text: "Completed MSc in Electrical and Electronic Engineering from BUET with a CGPA of 3.71 out of 4.00.",
           },
           {
-            date: "August 16",
-            text: "Completed summer internship at Dominion Energy Virginia (solar PV farm EMT modeling).",
+            date: "June 1",
+            text: "Joined State University of Bangladesh as a Lecturer in the Department of Computer Science and Engineering.",
+          },
+        ],
+      },
+      {
+        year: "2021",
+        items: [
+          {
+            date: "October 1",
+            text: "Began working as a Research Fellow in the Department of Electrical and Electronic Engineering at BUET.",
           },
           {
-            date: "May 20",
-            text: "Started summer internship at Dominion Energy.",
+            date: "June",
+            text: "Graduated first in the class from the University of Rajshahi with a CGPA of 3.95 out of 4.00.",
           },
         ],
       },
@@ -98,32 +108,32 @@ export const education = {
   title: "Education",
   sections: [
     {
-      heading: "Doctor of Philosophy (Ph.D.), Electrical Engineering",
-      meta: "August 2022 - Present | North Carolina State University, USA",
+      heading: "PhD Fellow in Electrical and Electronic Engineering",
+      meta: "April 2024 - Present | Bangladesh University of Engineering and Technology (BUET), Dhaka, Bangladesh",
     },
     {
-      heading: "B.Sc. in Electrical and Electronic Engineering (EEE)",
-      meta: "February 2016 - February 2021 | BUET",
-      paragraphs: ["CGPA: 3.89 / 4.00 | Rank: 9 / 215 | Top 5% in class"],
-    },
-    {
-      heading: "Major Courses",
-      list: [
-        "Power System Operation and Control",
-        "Power System Protection",
-        "Energy Conversion",
-        "Control Systems",
-        "Linear Algebra",
-        "Probability and Statistics",
+      heading:
+        "Master of Science (MSc) in Electrical and Electronic Engineering",
+      meta: "August 2023 | Bangladesh University of Engineering and Technology (BUET), Dhaka, Bangladesh",
+      paragraphs: [
+        "CGPA: 3.71 / 4.00 | Rank: Top 5% in class | Focus: Electronics and Photonics",
       ],
     },
     {
-      heading: "Software Skills",
+      heading:
+        "Bachelor of Science (BSc) in Electrical and Electronic Engineering",
+      meta: "June 2021 | University of Rajshahi, Rajshahi, Bangladesh",
+      paragraphs: [
+        "CGPA: 3.95 / 4.00 | Rank: 1st in a class of 33 students | Focus: Electronics",
+      ],
+    },
+    {
+      heading: "Technical Skills",
       list: [
-        "Siemens PSSE, CYME PSAF",
-        "AutoCAD + AutoCAD Electrical",
-        "Python, C++, MATLAB, Simulink",
-        "Arduino, SPICE Circuit Simulation",
+        "Python, MATLAB, C, Arduino",
+        "SCAPS-1D, Sentaurus TCAD, Materials Studio, Simulink, Multisim",
+        "Microsoft Office and LaTeX",
+        "Adobe Photoshop and Adobe Illustrator",
       ],
     },
   ],
@@ -133,27 +143,26 @@ export const professionalExperience = {
   title: "Professional Experience",
   sections: [
     {
-      heading: "Graduate Research Assistant",
-      meta: "August 2022 - Present | FREEDM Systems Center, NC State University",
+      heading: "Lecturer, Department of Electrical and Electronic Engineering",
+      meta: "16 October 2024 - Present | American International University-Bangladesh (AIUB)",
       paragraphs: [
-        "Contributing to renewable energy delivery and management research across modern power systems and advanced power electronics.",
+        "Teaching Introduction to Electrical Circuits, Electronic Device, Electrical Machine-2, Electrical Machine-1 Laboratory, Electrical Circuit-2 Laboratory, and Electronic Device Laboratory.",
       ],
     },
     {
-      heading: "Graduate Teaching Assistant",
-      meta: "August 2022 - Present | Department of ECE, NC State University",
+      heading: "Lecturer, Department of Computer Science and Engineering",
+      meta: "01 June 2023 - 15 October 2024 | State University of Bangladesh (SUB)",
       paragraphs: [
-        "Assisted in ECE 200: Introduction to Signals, Circuits and Systems.",
+        "Taught Electronic Device and Circuits, Digital Logic Design, Electrical Circuit Analysis, and the corresponding laboratory courses.",
       ],
     },
     {
-      heading: "Adjunct Lecturer",
-      meta: "March 2021 - May 2022 | BUET",
+      heading:
+        "Research Fellow, Department of Electrical and Electronic Engineering",
+      meta: "01 October 2021 - 01 April 2023 | Bangladesh University of Engineering and Technology (BUET)",
       list: [
-        "EEE 477: Power System Protection",
-        "EEE 478: Power System Protection Laboratory",
-        "EEE 306: Power System I Laboratory",
-        "EEE 484: High Voltage Laboratory",
+        "Worked on device modeling, numerical simulation, and transport-layer optimization for solar cell research.",
+        "Contributed to journal and conference publications in photovoltaics, semiconductor devices, and advanced electronic materials.",
       ],
     },
   ],
@@ -167,7 +176,7 @@ export const cv = {
       links: [
         {
           label: "Download CV in PDF format",
-          href: "https://drive.google.com/uc?export=download&id=18xMvQiFpo6sXHp6dAJmoAOmR93Ce6GPN",
+          href: "/hasib-cheragee-cv.pdf",
         },
       ],
     },
@@ -178,20 +187,23 @@ export const publicationsProjects = {
   title: "Publications / Projects",
   sections: [
     {
-      heading: "Publications",
+      heading: "Selected Publications",
       list: [
-        "Inertia Constrained Economic Dispatch in a Renewable Dominated Power System (2021)",
-        "Impact of COVID-19 Pandemic on Electricity Generation and Demand Patterns of Bangladesh Power System (2021)",
-        "Estimation of Minimum Synchronous Inertia in Renewable Dominated Power System (2019)",
+        "Device modeling and numerical study of a double absorber solar cell using a variety of electron transport materials (Heliyon, 2023)",
+        "Device modelling and numerical analysis of high-efficiency double absorbers solar cells with diverse transport layer materials (Results in Optics, 2024)",
+        "Numerical Design of Non-toxic High-Efficiency Tandem solar cell with distinct hole transport Materials (Thin Solid Films, 2024)",
+        "Towards Superior Android Ransomware Detection: An Ensemble Machine Learning Perspective (Cyber Security and Applications, 2024)",
+        "A study of IoT-based real-time solar power remote monitoring system (International Journal of Ambient Systems and Applications, 2021)",
       ],
     },
     {
-      heading: "Projects",
+      heading: "Conference Articles and Research Works",
       list: [
-        "Zonal UFLS Scheme for IEEE Standard 39-bus System (2020)",
-        "Low-Cost E-book to Braille Converter (2019)",
-        "Voltage Stability Assessment in IEEE Modified 14 Bus System (2018)",
-        "Hardware Implementation of a 4-Bit Computer (2018)",
+        "2-T Non-Toxic Tandem solar cell with Distinct HTL Materials (ICECE, 2022)",
+        "2-T Non-Toxic Multijunction solar cell with Diverse ETL materials (ICRPSET, 2022)",
+        "Short- and Medium-Term Electrical Load Forecasting in Bangladesh Using Machine Learning Approaches (iCACCESS, 2024)",
+        "Modeling and Performance Investigation of Perovskite/MoTe2 solar cell exceeding 44% Efficiency: A SCAPS-1D Simulation (Accepted, 2024)",
+        "Potential Charging Techniques for Electric Vehicles Utilizing Photovoltaic Sources in Bangladesh (Accepted, 2024)",
       ],
     },
   ],
@@ -201,13 +213,14 @@ export const honorsAwards = {
   title: "Honors / Awards",
   sections: [
     {
-      heading: "Major Awards",
+      heading: "Awards and Achievements",
       list: [
-        "Honda Young Engineer and Scientist's (Y-E-S) Award 2019",
-        "IEEE Bangladesh Section Best Student Volunteer Award 2019",
-        "Gold Award Winner: Home-grown innovations",
-        "Winner: IEEE PES Humanitarian Technology Project Design Competition 2021",
-        "Winner: Virtual NetHack Contest",
+        "Bangabandhu Gold Medal Award for securing first position in the Faculty of Engineering, University of Rajshahi",
+        "Nominated for the Prime Minister Gold Medal Award 2021 for obtaining the highest CGPA in BSc Engineering in the Faculty of Engineering, University of Rajshahi",
+        "Post-Graduation Fellowship at BUET from 01 October 2021 to 01 April 2023",
+        "Dean's Award in the academic years 2016-2017, 2017-2018, 2018-2019, and 2019-2020 for excellent academic standing",
+        "APEE Reunion 2011 Award received twice for outstanding result in BSc Engineering Part-3 and Part-4 examinations",
+        "Scholarship to join the Sakura Science Exchange Program administered by JST, Tokyo, Japan in November 2019",
       ],
     },
   ],
@@ -217,19 +230,27 @@ export const eca = {
   title: "Extra-curricular Activities",
   sections: [
     {
-      heading: "University Organizations",
-      list: ["Cultural Secretary, Bangladesh Student Association (NC State)"],
-    },
-    {
-      heading: "Social Work",
-      list: ["Volunteer, Spordha (April 2016 - Present)"],
-    },
-    {
-      heading: "Hobbies",
+      heading: "Leadership Roles",
       list: [
-        "Reading",
-        "Travelling",
-        "Playing musical instruments: Guitar, Melodica, Keyboard, Harmonica, Ukulele",
+        "Vice-President, BUET Post-graduation Research Alliance (February 2022 - March 2023)",
+        "Founding Member, IEEE Rajshahi University Student Chapter",
+        "General Secretary, Rajshahi University EEE Association (June 2019 - May 2020)",
+      ],
+    },
+    {
+      heading: "Events and Initiatives",
+      list: [
+        "Organized Research Conclave 2022 (Virtual) on research methodology for BUET Post-graduation Research Alliance members",
+        "Organized the Research and Innovation Conclave 2021 (Virtual) under the IEEE Rajshahi University Student Chapter",
+        "Organized a two-day electronics workshop for fresher students at Rajshahi University EEE Association",
+      ],
+    },
+    {
+      heading: "Additional Activities",
+      list: [
+        "Participated in PGRA Shahid Smriti Hall Games 2022 and became runner-up in badminton",
+        "Joined the Sakura Science Exchange Program in Tokyo, Japan",
+        "Actively engaged in academic collaboration, student mentoring, and technical event organization",
       ],
     },
   ],
@@ -240,30 +261,32 @@ export const contact = {
   getInTouch: {
     heading: "Get in touch",
     list: [
-      "satyaki.banik.bd@gmail.com",
-      "sbanik@ncsu.edu",
-      "WhatsApp: +8801967403134",
+      "sheikh.hasib@aiub.edu",
+      "hasib.buet.ru.eee@gmail.com",
+      "Room no: DS301-A, Dept. of EEE, American International University-Bangladesh, Dhaka-1229, Bangladesh",
     ],
     links: [
       {
-        label: "LinkedIn",
-        href: "https://www.linkedin.com/in/satyakibanik/",
+        label: "CV PDF",
+        href: "/hasib-cheragee-cv.pdf",
       },
     ],
     socialLinks: [
       {
         label: "Facebook",
-        href: "https://www.facebook.com/satyaki.banik.007/",
+        href: "https://web.facebook.com/hasib.charagi/",
       },
-      { label: "LinkedIn", href: "https://www.linkedin.com/in/satyakibanik/" },
-      { label: "Twitter", href: "https://twitter.com/satyaki_banik" },
+      {
+        label: "LinkedIn",
+        href: "https://www.linkedin.com/in/sheikh-hasib-cheragee-622539335/",
+      },
       {
         label: "ResearchGate",
-        href: "https://www.researchgate.net/profile/Satyaki-Banik",
+        href: "https://www.researchgate.net/",
       },
       {
         label: "Google Scholar",
-        href: "https://scholar.google.com/citations?user=l6FKYRYAAAAJ&hl=en",
+        href: "https://scholar.google.com/citations?user=IwCbQUkAAAAJ&hl=en",
       },
     ],
   },

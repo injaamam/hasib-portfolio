@@ -1,0 +1,14 @@
+<svg width="720" height="960" viewBox="0 0 720 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="960" fill="#EEF2F7"/>
+  <rect x="48" y="48" width="624" height="864" rx="24" fill="url(#card)"/>
+  <circle cx="360" cy="286" r="112" fill="#D8E2F0"/>
+  <path d="M360 430C255.618 430 171 514.618 171 619V676H549V619C549 514.618 464.382 430 360 430Z" fill="#D8E2F0"/>
+  <text x="360" y="822" text-anchor="middle" fill="#1D3557" font-family="Arial, Helvetica, sans-serif" font-size="120" font-weight="700">HC</text>
+  <text x="360" y="880" text-anchor="middle" fill="#486581" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="600">Sheikh Hasib Cheragee</text>
+  <defs>
+    <linearGradient id="card" x1="96" y1="80" x2="624" y2="880" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FAFC"/>
+      <stop offset="1" stop-color="#E2E8F0"/>
+    </linearGradient>
+  </defs>
+</svg>
