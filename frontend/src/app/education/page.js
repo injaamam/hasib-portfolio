@@ -1,5 +1,5 @@
-import { education } from "@/lib/siteData";
+import ComingSoonPage from "@/components/ComingSoonPage";
 
 export default function EducationPage() {
-  return <div>{education.title} Page</div>;
+  return <ComingSoonPage title="Education Page Coming Soon" />;
 }

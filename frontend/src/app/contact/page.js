@@ -1,5 +1,5 @@
-import { contact } from "@/lib/siteData";
+import ComingSoonPage from "@/components/ComingSoonPage";
 
 export default function ContactPage() {
-  return <div>{contact.title} Page</div>;
+  return <ComingSoonPage title="Contact Page Coming Soon" />;
 }

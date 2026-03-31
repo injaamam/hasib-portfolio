@@ -1,5 +1,5 @@
-import { cv } from "@/lib/siteData";
+import ComingSoonPage from "@/components/ComingSoonPage";
 
 export default function CvPage() {
-  return <div>{cv.title} Page</div>;
+  return <ComingSoonPage title="CV Page Coming Soon" />;
 }

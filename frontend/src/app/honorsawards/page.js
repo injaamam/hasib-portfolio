@@ -1,5 +1,5 @@
-import { honorsAwards } from "@/lib/siteData";
+import ComingSoonPage from "@/components/ComingSoonPage";
 
 export default function HonorsAwardsPage() {
-  return <div>{honorsAwards.title} Page</div>;
+  return <ComingSoonPage title="Honors & Awards Coming Soon" />;
 }

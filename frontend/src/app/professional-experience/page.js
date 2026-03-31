@@ -1,5 +1,5 @@
-import { professionalExperience } from "@/lib/siteData";
+import ComingSoonPage from "@/components/ComingSoonPage";
 
 export default function ProfessionalExperiencePage() {
-  return <div>{professionalExperience.title} Page</div>;
+  return <ComingSoonPage title="Experience Page Coming Soon" />;
 }

@@ -21,7 +21,7 @@ export default function SiteLayout({ children }) {
             backgroundSize: "cover",
           }}
         >
-          <div className="mx-auto flex min-h-[72px] max-w-[1500px] items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto flex min-h-[62px] max-w-[1500px] items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
             <Link
               href="/home"
               className="shrink-0 text-[1.15rem] font-semibold tracking-[0.01em] text-white transition hover:text-[#f0e6bf] sm:text-[1.3rem]"

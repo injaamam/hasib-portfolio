@@ -1,5 +1,5 @@
-import { publicationsProjects } from "@/lib/siteData";
+import ComingSoonPage from "@/components/ComingSoonPage";
 
 export default function PublicationsProjectsPage() {
-  return <div>{publicationsProjects.title} Page</div>;
+  return <ComingSoonPage title="Publications & Projects Coming Soon" />;
 }

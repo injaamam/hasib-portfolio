@@ -1,5 +1,5 @@
-import { eca } from "@/lib/siteData";
+import ComingSoonPage from "@/components/ComingSoonPage";
 
 export default function EcaPage() {
-  return <div>{eca.title} Page</div>;
+  return <ComingSoonPage title="ECA Page Coming Soon" />;
 }
