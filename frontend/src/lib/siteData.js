@@ -11,12 +11,12 @@ export const routes = [
 
 export const home = {
   hero: {
-    title: "Hi, I'm Hasib Cheragee",
+    title: "Hi, I'm Sheikh Hasib Cheragee",
     subtitle:
       "Lecturer in EEE and Researcher in Electronics, Photonics, and Energy Devices",
     heroImage:
       "https://images.unsplash.com/photo-1589271755419-b813a577ad42?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d2lkZXxlbnwwfHwwfHx8MA%3D%3D",
-    portraitImage: "/hasib-profile-placeholder.svg",
+    portraitImage: "/hasib-portrait.JPG",
   },
   hello: {
     heading: "Hello.",
