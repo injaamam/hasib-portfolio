@@ -6,11 +6,7 @@ const narrowFont = {
     '"Arial Narrow", "Roboto Condensed", "Helvetica Neue", Arial, sans-serif',
 };
 
-const degreeCardHeaderClasses = [
-  "bg-gradient-to-r from-[#0f2744] via-[#1a3a5c] to-[#2f67a6]",
-  "bg-gradient-to-r from-[#1a3a6c] via-[#2258a0] to-[#2f67a6]",
-  "bg-gradient-to-r from-[#0e3a5c] via-[#1a5296] to-[#2f67a6]",
-];
+const degreeAccentColors = ["#2f67a6", "#1a5296", "#0f2744"];
 
 export default function EducationPage() {
   const { degrees, technicalSkills, standardizedTests } = education;
@@ -18,13 +14,12 @@ export default function EducationPage() {
   return (
     <div className="bg-[#f5f5f2] text-[#262626]">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#0f2744] to-[#2058a0]">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0f2744] to-[#1f3a5c]">
         <div
-          className="pointer-events-none absolute inset-0 opacity-[0.07]"
+          className="pointer-events-none absolute inset-0 opacity-[0.04]"
           style={{
             backgroundImage:
-              "radial-gradient(circle, #ffffff 1px, transparent 1px)",
-            backgroundSize: "28px 28px",
+              "repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,1) 39px, rgba(255,255,255,1) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,1) 39px, rgba(255,255,255,1) 40px)",
           }}
         />
         <div className="mx-auto flex min-h-[240px] max-w-[1180px] items-end px-6 pb-12 pt-16">
@@ -49,41 +44,45 @@ export default function EducationPage() {
         {/* Degree cards */}
         <div className="space-y-6">
           {degrees.map((degree, idx) => {
-            const headerClass =
-              degreeCardHeaderClasses[idx] ?? degreeCardHeaderClasses[0];
+            const accentColor = degreeAccentColors[idx] ?? degreeAccentColors[0];
             return (
               <div
                 key={idx}
-                className="overflow-hidden rounded-2xl bg-white shadow-[0_4px_24px_rgba(0,0,0,0.09)] transition-shadow hover:shadow-[0_8px_32px_rgba(0,0,0,0.14)]"
+                className="overflow-hidden rounded-2xl bg-white shadow-[0_2px_16px_rgba(0,0,0,0.07)] transition-shadow hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)]"
               >
-                <div className={`${headerClass} px-7 py-6`}>
+                {/* Thin accent strip */}
+                <div className="h-1.5" style={{ backgroundColor: accentColor }} />
+                <div className="px-7 py-6">
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <h2
-                      className="text-[1.1rem] font-bold leading-snug text-white sm:text-[1.25rem]"
+                      className="text-[1.1rem] font-bold leading-snug text-[#1a1a1a] sm:text-[1.25rem]"
                       style={narrowFont}
                     >
                       {degree.heading}
                     </h2>
-                    <span className="shrink-0 rounded-full bg-white/20 px-3 py-1 text-[0.7rem] font-semibold text-white">
+                    <span
+                      className="shrink-0 rounded-full px-3 py-1 text-[0.7rem] font-semibold text-white"
+                      style={{ backgroundColor: accentColor }}
+                    >
                       {degree.badge}
                     </span>
                   </div>
-                  <p className="mt-2 text-[0.85rem] text-white/70">
+                  <p className="mt-2 text-[0.85rem] text-[#666]">
                     {degree.meta}
                   </p>
+                  {degree.paragraphs && degree.paragraphs.length > 0 && (
+                    <div className="mt-4 flex flex-wrap gap-3">
+                      {degree.paragraphs[0].split(" | ").map((stat, i) => (
+                        <span
+                          key={i}
+                          className="rounded-lg bg-[#eef4ff] px-4 py-2 text-[0.88rem] font-medium text-[#2058a0]"
+                        >
+                          {stat}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
-                {degree.paragraphs && degree.paragraphs.length > 0 && (
-                  <div className="flex flex-wrap gap-3 px-7 py-5">
-                    {degree.paragraphs[0].split(" | ").map((stat, i) => (
-                      <span
-                        key={i}
-                        className="rounded-lg bg-[#eef4ff] px-4 py-2 text-[0.88rem] font-medium text-[#2058a0]"
-                      >
-                        {stat}
-                      </span>
-                    ))}
-                  </div>
-                )}
               </div>
             );
           })}
@@ -148,18 +147,19 @@ export default function EducationPage() {
                   key={ti}
                   className="overflow-hidden rounded-xl bg-white shadow-sm"
                 >
-                  <div className="flex items-center gap-4 bg-gradient-to-r from-[#0f2744] to-[#2f67a6] px-6 py-4">
+                  <div className="h-1.5 bg-[#2f67a6]" />
+                  <div className="flex flex-wrap items-center justify-between gap-3 px-6 py-4">
                     <span
-                      className="text-[1.4rem] font-bold text-white"
+                      className="text-[1.2rem] font-bold text-[#1a1a1a]"
                       style={narrowFont}
                     >
                       {test.name}
                     </span>
-                    <span className="rounded-full bg-white/20 px-3 py-1 text-[0.78rem] font-semibold text-white">
+                    <span className="rounded-full bg-[#eef4ff] px-3 py-1 text-[0.78rem] font-semibold text-[#2058a0]">
                       Total: {test.score}
                     </span>
                   </div>
-                  <div className="flex flex-wrap gap-4 px-6 py-4">
+                  <div className="flex flex-wrap gap-4 border-t border-[#f0f0f0] px-6 py-4">
                     {test.breakdown.map((b, bi) => (
                       <div key={bi} className="text-center">
                         <p className="text-[0.72rem] font-semibold uppercase tracking-[0.08em] text-[#9ca3af]">
