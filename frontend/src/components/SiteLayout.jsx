@@ -3,7 +3,40 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { home, routes } from "@/lib/siteData";
+import { home } from "@/lib/siteData";
+
+const navStructure = [
+  { label: "Home", href: "/home" },
+  {
+    label: "About Me",
+    children: [
+      { href: "/education", label: "Education" },
+      { href: "/honorsawards", label: "Honors/Awards" },
+      { href: "/cv", label: "CV" },
+      { href: "/eca", label: "ECA" },
+    ],
+  },
+  { href: "/professional-experience", label: "Professional Experience" },
+  { href: "/my-skills", label: "My Skills" },
+  {
+    label: "Research & Publications",
+    children: [
+      { href: "/research-interest", label: "Research Interest" },
+      { href: "/publicationsprojects", label: "Publications/Projects" },
+    ],
+  },
+  {
+    label: "Research Group & Opportunities",
+    children: [
+      { href: "/research-areas", label: "Research Areas" },
+      { href: "/current-research-projects", label: "Current Research Projects" },
+      { href: "/my-supervised-works", label: "My Supervised Works" },
+      { href: "/future-student-opportunities", label: "Future Student Opportunities" },
+    ],
+  },
+  { href: "/higher-study-guidelines", label: "Higher Study Guidelines" },
+  { href: "/contact", label: "Contact" },
+];
 
 export default function SiteLayout({ children }) {
   const pathname = usePathname();
@@ -21,7 +54,7 @@ export default function SiteLayout({ children }) {
             backgroundSize: "cover",
           }}
         >
-          <div className="mx-auto flex min-h-[62px] max-w-[1500px] items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto flex min-h-[62px] max-w-none items-center justify-between gap-4 px-4 sm:px-6">
             <Link
               href="/home"
               className="shrink-0 text-[1.15rem] font-semibold tracking-[0.01em] text-white transition hover:text-[#f0e6bf] sm:text-[1.3rem]"
@@ -35,58 +68,84 @@ export default function SiteLayout({ children }) {
               className="inline-flex h-10 items-center justify-center rounded border border-white/20 px-3 text-sm font-medium text-white transition hover:bg-white/10 lg:hidden"
               aria-expanded={isMenuOpen}
               aria-label="Toggle navigation menu"
-              onClick={() => setIsMenuOpen((open) => !open)}
+              onClick={() => setIsMenuOpen((o) => !o)}
             >
               Menu
             </button>
 
             <nav className="hidden min-w-0 flex-1 items-center justify-end lg:flex">
-              <div className="flex min-w-0 items-center gap-2 overflow-x-auto whitespace-nowrap">
-                {routes.map((route) => {
-                  const isActive = pathname === route.href;
-
-                  return (
+              <div className="flex min-w-0 flex-wrap items-center justify-end gap-0.5">
+                {navStructure.map((item) =>
+                  item.children ? (
+                    <div key={item.label} className="group relative">
+                      <button
+                        type="button"
+                        className={`rounded px-2 py-1.5 text-[0.875rem] font-medium transition ${item.children.some((c) => pathname === c.href) ? "bg-white/12 text-[#f3e8b0]" : "text-white/95 hover:bg-white/10 hover:text-[#f3e8b0]"}`}
+                      >
+                        {item.label}
+                      </button>
+                      <div className="absolute top-full left-0 z-50 hidden min-w-[210px] rounded border border-white/10 bg-[#2a2620]/95 py-1 shadow-[0_8px_24px_rgba(0,0,0,0.35)] backdrop-blur-sm group-hover:block">
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            className={`block px-4 py-2 text-[0.93rem] font-medium transition ${pathname === child.href ? "bg-white/12 text-[#f3e8b0]" : "text-white/90 hover:bg-white/10 hover:text-[#f3e8b0]"}`}
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
                     <Link
-                      key={route.href}
-                      href={route.href}
-                      className={`rounded px-3 py-2 text-[1rem] font-medium transition ${
-                        isActive
-                          ? "bg-white/12 text-[#f3e8b0]"
-                          : "text-white/95 hover:bg-white/10 hover:text-[#f3e8b0]"
-                      }`}
+                      key={item.href}
+                      href={item.href}
+                      className={`rounded px-2 py-1.5 text-[0.875rem] font-medium transition ${pathname === item.href ? "bg-white/12 text-[#f3e8b0]" : "text-white/95 hover:bg-white/10 hover:text-[#f3e8b0]"}`}
                     >
-                      {route.label}
+                      {item.label}
                     </Link>
-                  );
-                })}
+                  )
+                )}
               </div>
             </nav>
           </div>
 
-          {isMenuOpen ? (
+          {isMenuOpen && (
             <nav className="border-t border-white/10 px-4 py-3 lg:hidden">
               <div className="flex flex-col gap-1">
-                {routes.map((route) => {
-                  const isActive = pathname === route.href;
-
-                  return (
+                {navStructure.map((item) =>
+                  item.children ? (
+                    <details key={item.label} open={item.children.some((c) => pathname === c.href)}>
+                      <summary className={`cursor-pointer rounded px-3 py-2 text-base font-medium transition ${item.children.some((c) => pathname === c.href) ? "bg-white/12 text-[#f3e8b0]" : "text-white/95 hover:bg-white/10 hover:text-[#f3e8b0]"}`}>
+                        {item.label}
+                      </summary>
+                      <div className="ml-4 mt-0.5 flex flex-col gap-0.5 border-l border-white/15 pl-3">
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            className={`rounded px-3 py-2 text-[0.93rem] font-medium transition ${pathname === child.href ? "bg-white/12 text-[#f3e8b0]" : "text-white/90 hover:bg-white/10 hover:text-[#f3e8b0]"}`}
+                            onClick={() => setIsMenuOpen(false)}
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </details>
+                  ) : (
                     <Link
-                      key={route.href}
-                      href={route.href}
-                      className={`rounded px-3 py-2 text-base font-medium transition ${
-                        isActive
-                          ? "bg-white/12 text-[#f3e8b0]"
-                          : "text-white/95 hover:bg-white/10 hover:text-[#f3e8b0]"
-                      }`}
+                      key={item.href}
+                      href={item.href}
+                      className={`rounded px-3 py-2 text-base font-medium transition ${pathname === item.href ? "bg-white/12 text-[#f3e8b0]" : "text-white/95 hover:bg-white/10 hover:text-[#f3e8b0]"}`}
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      {route.label}
+                      {item.label}
                     </Link>
-                  );
-                })}
+                  )
+                )}
               </div>
             </nav>
-          ) : null}
+          )}
         </div>
       </header>
 
