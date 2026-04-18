@@ -35,7 +35,6 @@ const navStructure = [
     ],
   },
   { href: "/higher-study-guidelines", label: "Higher Study Guidelines" },
-  { href: "/miscellaneous", label: "Miscellaneous" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -67,7 +66,7 @@ function DesktopDropdown({ item, pathname }) {
     >
       <button
         type="button"
-        className={`flex items-center gap-1 rounded px-3 py-2 text-[1rem] font-medium transition ${
+        className={`flex items-center gap-1 rounded px-2 py-1.5 text-[0.875rem] font-medium transition ${
           isChildActive
             ? "bg-white/12 text-[#f3e8b0]"
             : "text-white/95 hover:bg-white/10 hover:text-[#f3e8b0]"
@@ -181,7 +180,7 @@ export default function SiteLayout({ children }) {
             backgroundSize: "cover",
           }}
         >
-          <div className="mx-auto flex min-h-[62px] max-w-[1500px] items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto flex min-h-[62px] max-w-none items-center justify-between gap-4 px-4 sm:px-6">
             <Link
               href="/home"
               className="shrink-0 text-[1.15rem] font-semibold tracking-[0.01em] text-white transition hover:text-[#f0e6bf] sm:text-[1.3rem]"
@@ -201,7 +200,7 @@ export default function SiteLayout({ children }) {
             </button>
 
             <nav className="hidden min-w-0 flex-1 items-center justify-end lg:flex">
-              <div className="flex min-w-0 items-center gap-1 overflow-x-auto whitespace-nowrap">
+              <div className="flex min-w-0 flex-wrap items-center justify-end gap-0.5">
                 {navStructure.map((item) => {
                   if (item.children) {
                     return (
@@ -218,7 +217,7 @@ export default function SiteLayout({ children }) {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className={`rounded px-3 py-2 text-[1rem] font-medium transition ${
+                      className={`rounded px-2 py-1.5 text-[0.875rem] font-medium transition ${
                         isActive
                           ? "bg-white/12 text-[#f3e8b0]"
                           : "text-white/95 hover:bg-white/10 hover:text-[#f3e8b0]"
