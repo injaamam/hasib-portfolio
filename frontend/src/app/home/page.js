@@ -17,7 +17,7 @@ export default function HomePage() {
       <section
         className="relative min-h-[420px] overflow-hidden sm:min-h-[500px] lg:min-h-[560px]"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)), url("${home.hero.heroImage}")`,
+          backgroundImage: `linear-gradient(rgba(20, 50, 90, 0.55), rgba(20, 50, 90, 0.55)), url("${home.hero.heroImage}")`,
           backgroundPosition: "center center",
           backgroundSize: "cover",
         }}
