@@ -1,5 +1,5 @@
 import { contact } from "@/lib/siteData";
-import { HiEnvelope, HiMapPin, HiDocumentText } from "react-icons/hi2";
+import { HiEnvelope, HiMapPin, HiDocumentText, HiPhone } from "react-icons/hi2";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa";
 import { SiGooglescholar, SiResearchgate } from "react-icons/si";
@@ -43,8 +43,8 @@ const socialCardStyles = {
 };
 
 export default function ContactPage() {
-  const emails = contact.getInTouch.list.filter((item) => item.includes("@"));
-  const address = contact.getInTouch.list.find((item) => !item.includes("@"));
+  const { heading, connectOnlineHeading, emails, phone, address, links, socialLinks } =
+    contact.getInTouch;
 
   return (
     <div className="bg-[#f5f5f2] text-[#262626]">
@@ -84,14 +84,14 @@ export default function ContactPage() {
               className="text-[1.5rem] font-bold text-[#262626]"
               style={narrowFont}
             >
-              {contact.getInTouch.heading}
+              {heading}
             </h2>
 
             {/* Email cards */}
             {emails.map((email, i) => (
               <a
                 key={i}
-                href={`mailto:${email}`}
+                href={`mailto:${email.address}`}
                 className="flex items-center gap-4 rounded-xl bg-white px-5 py-4 shadow-[0_2px_12px_rgba(0,0,0,0.07)] transition hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)]"
               >
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#eff6ff] text-[#2f67a6]">
@@ -99,14 +99,31 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-[0.72rem] font-semibold uppercase tracking-[0.1em] text-[#9ca3af]">
-                    {i === 0 ? "Institutional Email" : "Personal Email"}
+                    {email.label}
                   </p>
                   <p className="text-[0.95rem] font-medium text-[#1a1a2e]">
-                    {email}
+                    {email.address}
                   </p>
                 </div>
               </a>
             ))}
+
+            {/* Phone */}
+            {phone && (
+              <div className="flex items-center gap-4 rounded-xl bg-white px-5 py-4 shadow-[0_2px_12px_rgba(0,0,0,0.07)]">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#eff6ff] text-[#2f67a6]">
+                  <HiPhone size={20} />
+                </div>
+                <div>
+                  <p className="text-[0.72rem] font-semibold uppercase tracking-[0.1em] text-[#9ca3af]">
+                    {phone.label}
+                  </p>
+                  <p className="text-[0.95rem] font-medium text-[#1a1a2e]">
+                    {phone.number}
+                  </p>
+                </div>
+              </div>
+            )}
 
             {/* Address card */}
             {address && (
@@ -116,17 +133,17 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-[0.72rem] font-semibold uppercase tracking-[0.1em] text-[#9ca3af]">
-                    Office Address
+                    {address.label}
                   </p>
                   <p className="text-[0.95rem] font-medium leading-[1.5] text-[#1a1a2e]">
-                    {address}
+                    {address.text}
                   </p>
                 </div>
               </div>
             )}
 
             {/* CV download */}
-            {contact.getInTouch.links?.map((link) => (
+            {links?.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
@@ -155,11 +172,11 @@ export default function ContactPage() {
               className="mb-5 text-[1.5rem] font-bold text-[#262626]"
               style={narrowFont}
             >
-              Connect Online
+              {connectOnlineHeading}
             </h2>
 
             <div className="space-y-3">
-              {contact.getInTouch.socialLinks.map((badge) => {
+              {socialLinks.map((badge) => {
                 const style = socialCardStyles[badge.label];
                 if (!style) return null;
                 const Icon = style.icon;

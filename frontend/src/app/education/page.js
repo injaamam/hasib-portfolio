@@ -1,35 +1,19 @@
 import { education } from "@/lib/siteData";
-import { HiAcademicCap, HiWrenchScrewdriver } from "react-icons/hi2";
+import { HiAcademicCap, HiWrenchScrewdriver, HiClipboardDocumentList } from "react-icons/hi2";
 
 const narrowFont = {
   fontFamily:
     '"Arial Narrow", "Roboto Condensed", "Helvetica Neue", Arial, sans-serif',
 };
 
-const degreeCardStyles = [
-  {
-    headerClass:
-      "bg-gradient-to-r from-[#0f2744] via-[#1a3a5c] to-[#2f67a6]",
-    badge: "PhD Fellow",
-    badgeClass: "bg-white/20 text-white",
-  },
-  {
-    headerClass:
-      "bg-gradient-to-r from-[#1a3a6c] via-[#2258a0] to-[#2f67a6]",
-    badge: "MSc",
-    badgeClass: "bg-white/20 text-white",
-  },
-  {
-    headerClass:
-      "bg-gradient-to-r from-[#0e3a5c] via-[#1a5296] to-[#2f67a6]",
-    badge: "BSc · 1st in Class",
-    badgeClass: "bg-white/20 text-white",
-  },
+const degreeCardHeaderClasses = [
+  "bg-gradient-to-r from-[#0f2744] via-[#1a3a5c] to-[#2f67a6]",
+  "bg-gradient-to-r from-[#1a3a6c] via-[#2258a0] to-[#2f67a6]",
+  "bg-gradient-to-r from-[#0e3a5c] via-[#1a5296] to-[#2f67a6]",
 ];
 
 export default function EducationPage() {
-  const degreeSections = education.sections.filter((s) => s.meta);
-  const skillsSection = education.sections.find((s) => s.list);
+  const { degrees, technicalSkills, standardizedTests } = education;
 
   return (
     <div className="bg-[#f5f5f2] text-[#262626]">
@@ -64,34 +48,33 @@ export default function EducationPage() {
       <div className="mx-auto max-w-[1080px] px-6 py-14">
         {/* Degree cards */}
         <div className="space-y-6">
-          {degreeSections.map((section, idx) => {
-            const style = degreeCardStyles[idx] ?? degreeCardStyles[0];
+          {degrees.map((degree, idx) => {
+            const headerClass =
+              degreeCardHeaderClasses[idx] ?? degreeCardHeaderClasses[0];
             return (
               <div
                 key={idx}
                 className="overflow-hidden rounded-2xl bg-white shadow-[0_4px_24px_rgba(0,0,0,0.09)] transition-shadow hover:shadow-[0_8px_32px_rgba(0,0,0,0.14)]"
               >
-                <div className={`${style.headerClass} px-7 py-6`}>
+                <div className={`${headerClass} px-7 py-6`}>
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <h2
                       className="text-[1.1rem] font-bold leading-snug text-white sm:text-[1.25rem]"
                       style={narrowFont}
                     >
-                      {section.heading}
+                      {degree.heading}
                     </h2>
-                    <span
-                      className={`shrink-0 rounded-full px-3 py-1 text-[0.7rem] font-semibold ${style.badgeClass}`}
-                    >
-                      {style.badge}
+                    <span className="shrink-0 rounded-full bg-white/20 px-3 py-1 text-[0.7rem] font-semibold text-white">
+                      {degree.badge}
                     </span>
                   </div>
                   <p className="mt-2 text-[0.85rem] text-white/70">
-                    {section.meta}
+                    {degree.meta}
                   </p>
                 </div>
-                {section.paragraphs && section.paragraphs.length > 0 && (
+                {degree.paragraphs && degree.paragraphs.length > 0 && (
                   <div className="flex flex-wrap gap-3 px-7 py-5">
-                    {section.paragraphs[0].split(" | ").map((stat, i) => (
+                    {degree.paragraphs[0].split(" | ").map((stat, i) => (
                       <span
                         key={i}
                         className="rounded-lg bg-[#eef4ff] px-4 py-2 text-[0.88rem] font-medium text-[#2058a0]"
@@ -106,8 +89,8 @@ export default function EducationPage() {
           })}
         </div>
 
-        {/* Skills section */}
-        {skillsSection && (
+        {/* Technical Skills */}
+        {technicalSkills && (
           <div className="mt-14">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#2f67a6] text-white">
@@ -117,17 +100,77 @@ export default function EducationPage() {
                 className="text-[1.4rem] font-bold text-[#262626]"
                 style={narrowFont}
               >
-                {skillsSection.heading}
+                {technicalSkills.heading}
               </h2>
             </div>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {skillsSection.list.map((skill, i) => (
+            <div className="grid gap-5 sm:grid-cols-2">
+              {technicalSkills.categories.map((cat, ci) => (
                 <div
-                  key={i}
-                  className="flex items-center gap-3 rounded-xl bg-white px-5 py-3.5 shadow-sm"
+                  key={ci}
+                  className="rounded-xl bg-white px-5 py-4 shadow-sm"
                 >
-                  <span className="h-2 w-2 shrink-0 rounded-full bg-[#2f67a6]" />
-                  <span className="text-[0.95rem] text-[#333]">{skill}</span>
+                  <p className="mb-3 text-[0.72rem] font-bold uppercase tracking-[0.1em] text-[#2f67a6]">
+                    {cat.label}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {cat.items.map((item, ii) => (
+                      <span
+                        key={ii}
+                        className="rounded-md bg-[#eef4ff] px-3 py-1 text-[0.82rem] font-medium text-[#1a3a6c]"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Standardized Tests */}
+        {standardizedTests && (
+          <div className="mt-14">
+            <div className="mb-6 flex items-center gap-3">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#2f67a6] text-white">
+                <HiClipboardDocumentList size={18} />
+              </div>
+              <h2
+                className="text-[1.4rem] font-bold text-[#262626]"
+                style={narrowFont}
+              >
+                {standardizedTests.heading}
+              </h2>
+            </div>
+            <div className="space-y-4">
+              {standardizedTests.tests.map((test, ti) => (
+                <div
+                  key={ti}
+                  className="overflow-hidden rounded-xl bg-white shadow-sm"
+                >
+                  <div className="flex items-center gap-4 bg-gradient-to-r from-[#0f2744] to-[#2f67a6] px-6 py-4">
+                    <span
+                      className="text-[1.4rem] font-bold text-white"
+                      style={narrowFont}
+                    >
+                      {test.name}
+                    </span>
+                    <span className="rounded-full bg-white/20 px-3 py-1 text-[0.78rem] font-semibold text-white">
+                      Total: {test.score}
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap gap-4 px-6 py-4">
+                    {test.breakdown.map((b, bi) => (
+                      <div key={bi} className="text-center">
+                        <p className="text-[0.72rem] font-semibold uppercase tracking-[0.08em] text-[#9ca3af]">
+                          {b.section}
+                        </p>
+                        <p className="text-[1.2rem] font-bold text-[#0f2744]">
+                          {b.score}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>

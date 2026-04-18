@@ -1,4 +1,4 @@
-import { cv, home, education, publicationsProjects } from "@/lib/siteData";
+import { cv, home, education } from "@/lib/siteData";
 import {
   HiDocumentText,
   HiArrowDownTray,
@@ -12,20 +12,7 @@ const narrowFont = {
     '"Arial Narrow", "Roboto Condensed", "Helvetica Neue", Arial, sans-serif',
 };
 
-const stats = [
-  { icon: HiAcademicCap, value: "PhD", label: "Current Pursuit" },
-  {
-    icon: HiBookOpen,
-    value: `${
-      publicationsProjects.sections.reduce(
-        (acc, s) => acc + (s.list?.length ?? 0),
-        0,
-      )
-    }+`,
-    label: "Publications",
-  },
-  { icon: HiBriefcase, value: "3+", label: "Years Teaching" },
-];
+const statIcons = [HiAcademicCap, HiBookOpen, HiBriefcase];
 
 export default function CvPage() {
   const downloadHref =
@@ -61,20 +48,23 @@ export default function CvPage() {
 
         {/* Stats row */}
         <div className="mt-8 grid w-full max-w-[440px] grid-cols-3 gap-4">
-          {stats.map(({ icon: Icon, value, label }) => (
-            <div key={label} className="rounded-xl bg-[#f0f6ff] px-3 py-5">
-              <Icon size={22} className="mx-auto text-[#2f67a6]" />
-              <div
-                className="mt-2 text-[1.4rem] font-bold text-[#0f2744]"
-                style={narrowFont}
-              >
-                {value}
+          {cv.stats.map(({ value, label }, i) => {
+            const Icon = statIcons[i] ?? HiDocumentText;
+            return (
+              <div key={label} className="rounded-xl bg-[#f0f6ff] px-3 py-5">
+                <Icon size={22} className="mx-auto text-[#2f67a6]" />
+                <div
+                  className="mt-2 text-[1.4rem] font-bold text-[#0f2744]"
+                  style={narrowFont}
+                >
+                  {value}
+                </div>
+                <div className="text-[0.72rem] leading-[1.4] text-[#6b7a90]">
+                  {label}
+                </div>
               </div>
-              <div className="text-[0.72rem] leading-[1.4] text-[#6b7a90]">
-                {label}
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Download CTA */}
@@ -89,14 +79,14 @@ export default function CvPage() {
         </a>
 
         <p className="mt-4 text-[0.78rem] text-[#aab4c4]">
-          PDF document · Opens in a new tab
+          {cv.subtitleNote}
         </p>
 
         {/* Decorative divider */}
         <div className="mt-16 flex w-full max-w-[440px] items-center gap-4">
           <div className="h-px flex-1 bg-[#e8eef6]" />
           <span className="text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-[#a0aec0]">
-            {education.sections[0]?.heading
+            {education.degrees[0]?.heading
               ?.split(" ")
               .slice(0, 3)
               .join(" ")}
