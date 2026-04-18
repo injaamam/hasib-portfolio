@@ -47,21 +47,22 @@ export default function ContactPage() {
   const address = contact.getInTouch.list.find((item) => !item.includes("@"));
 
   return (
-    <div className="bg-[#f5f5f2] text-[#1a1a2e]">
+    <div className="bg-[#f5f5f2] text-[#262626]">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#111827] to-[#1e3a5f]">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0f2744] to-[#1f3a5c]">
         <div
-          className="pointer-events-none absolute inset-0 opacity-[0.06]"
+          className="pointer-events-none absolute inset-0 opacity-[0.07]"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 70% 30%, #60a5fa 0%, transparent 50%)",
+              "radial-gradient(circle, #ffffff 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
           }}
         />
         <div className="mx-auto flex min-h-[240px] max-w-[1180px] items-end px-6 pb-12 pt-16">
           <div>
             <div className="mb-3 flex items-center gap-2">
-              <HiEnvelope className="text-[1.6rem] text-[#93c5fd]" />
-              <span className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-[#93c5fd]">
+              <HiEnvelope className="text-[1.6rem] text-[#a3bed8]" />
+              <span className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-[#a3bed8]">
                 Reach Out
               </span>
             </div>
@@ -80,7 +81,7 @@ export default function ContactPage() {
           {/* Left column — contact info */}
           <div className="space-y-5">
             <h2
-              className="text-[1.5rem] font-bold text-[#111827]"
+              className="text-[1.5rem] font-bold text-[#262626]"
               style={narrowFont}
             >
               {contact.getInTouch.heading}
@@ -151,7 +152,7 @@ export default function ContactPage() {
           {/* Right column — social cards */}
           <div>
             <h2
-              className="mb-5 text-[1.5rem] font-bold text-[#111827]"
+              className="mb-5 text-[1.5rem] font-bold text-[#262626]"
               style={narrowFont}
             >
               Connect Online

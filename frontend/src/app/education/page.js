@@ -12,21 +12,18 @@ const degreeCardStyles = [
       "bg-gradient-to-r from-[#0f2744] via-[#1a3a5c] to-[#2f67a6]",
     badge: "PhD Fellow",
     badgeClass: "bg-white/20 text-white",
-    dotClass: "bg-[#a3bed8]",
   },
   {
     headerClass:
-      "bg-gradient-to-r from-[#1a3a6c] via-[#2258a0] to-[#3a82c4]",
+      "bg-gradient-to-r from-[#1a3a6c] via-[#2258a0] to-[#2f67a6]",
     badge: "MSc",
     badgeClass: "bg-white/20 text-white",
-    dotClass: "bg-[#3a82c4]",
   },
   {
     headerClass:
-      "bg-gradient-to-r from-[#0e4a5a] via-[#18748c] to-[#2898a4]",
+      "bg-gradient-to-r from-[#0e3a5c] via-[#1a5296] to-[#2f67a6]",
     badge: "BSc · 1st in Class",
     badgeClass: "bg-white/20 text-white",
-    dotClass: "bg-[#2898a4]",
   },
 ];
 
@@ -35,7 +32,7 @@ export default function EducationPage() {
   const skillsSection = education.sections.find((s) => s.list);
 
   return (
-    <div className="bg-[#f0f4fa] text-[#1a1a2e]">
+    <div className="bg-[#f5f5f2] text-[#262626]">
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-[#0f2744] to-[#2058a0]">
         <div
@@ -117,7 +114,7 @@ export default function EducationPage() {
                 <HiWrenchScrewdriver size={18} />
               </div>
               <h2
-                className="text-[1.4rem] font-bold text-[#1a1a2e]"
+                className="text-[1.4rem] font-bold text-[#262626]"
                 style={narrowFont}
               >
                 {skillsSection.heading}

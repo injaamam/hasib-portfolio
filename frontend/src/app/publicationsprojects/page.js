@@ -18,25 +18,25 @@ function parsePublication(item) {
 const sectionMeta = [
   {
     icon: HiBookOpen,
-    accentClass: "from-[#0d3340] to-[#136680]",
+    accentClass: "from-[#0f2744] to-[#2f67a6]",
     badgeClass: "bg-[#dbeafe] text-[#1d4ed8]",
     typeLabel: "Journal",
-    typeBadgeClass: "bg-[#e0f2fe] text-[#0369a1]",
+    typeBadgeClass: "bg-[#eef4ff] text-[#2058a0]",
   },
   {
     icon: HiPresentationChartLine,
-    accentClass: "from-[#1a3a1a] to-[#2a6a2a]",
-    badgeClass: "bg-[#dcfce7] text-[#166534]",
+    accentClass: "from-[#1a3a6c] to-[#2f67a6]",
+    badgeClass: "bg-[#dbeafe] text-[#1d4ed8]",
     typeLabel: "Conference",
-    typeBadgeClass: "bg-[#f0fdf4] text-[#15803d]",
+    typeBadgeClass: "bg-[#eef4ff] text-[#1a5296]",
   },
 ];
 
 export default function PublicationsProjectsPage() {
   return (
-    <div className="bg-[#f4f6f9] text-[#1a1a2e]">
+    <div className="bg-[#f5f5f2] text-[#262626]">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#0d3340] to-[#136680]">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0f2744] to-[#1f4570]">
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.06]"
           style={{
@@ -47,8 +47,8 @@ export default function PublicationsProjectsPage() {
         <div className="mx-auto flex min-h-[240px] max-w-[1180px] items-end px-6 pb-12 pt-16">
           <div>
             <div className="mb-3 flex items-center gap-2">
-              <HiBookOpen className="text-[1.6rem] text-[#7dd3d8]" />
-              <span className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-[#7dd3d8]">
+              <HiBookOpen className="text-[1.6rem] text-[#a3bed8]" />
+              <span className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-[#a3bed8]">
                 Research Output
               </span>
             </div>
@@ -76,7 +76,7 @@ export default function PublicationsProjectsPage() {
                   <SectionIcon size={18} />
                 </div>
                 <h2
-                  className="text-[1.4rem] font-bold text-[#1a1a2e]"
+                  className="text-[1.4rem] font-bold text-[#262626]"
                   style={narrowFont}
                 >
                   {section.heading}

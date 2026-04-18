@@ -6,13 +6,13 @@ const narrowFont = {
     '"Arial Narrow", "Roboto Condensed", "Helvetica Neue", Arial, sans-serif',
 };
 
-const timelineColors = ["#2f67a6", "#1a7a5e", "#7a3f1a"];
+const timelineColors = ["#2f67a6", "#1a5296", "#0f2744"];
 
 export default function ProfessionalExperiencePage() {
   return (
     <div className="bg-[#f5f5f2] text-[#262626]">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#1c1c2e] to-[#2d3a50]">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0f2744] to-[#1f3a5c]">
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.04]"
           style={{
@@ -23,8 +23,8 @@ export default function ProfessionalExperiencePage() {
         <div className="mx-auto flex min-h-[240px] max-w-[1180px] items-end px-6 pb-12 pt-16">
           <div>
             <div className="mb-3 flex items-center gap-2">
-              <HiBriefcase className="text-[1.6rem] text-[#7ba7d0]" />
-              <span className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-[#7ba7d0]">
+              <HiBriefcase className="text-[1.6rem] text-[#a3bed8]" />
+              <span className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-[#a3bed8]">
                 Career History
               </span>
             </div>
@@ -84,7 +84,7 @@ export default function ProfessionalExperiencePage() {
 
                       <div className="mt-3 flex flex-wrap items-center gap-3">
                         {dateRange && (
-                          <span className="rounded-md bg-[#f0f4f8] px-3 py-1 text-[0.78rem] font-medium text-[#4a6a8a]">
+                          <span className="rounded-md bg-[#eef4ff] px-3 py-1 text-[0.78rem] font-medium text-[#2058a0]">
                             {dateRange}
                           </span>
                         )}

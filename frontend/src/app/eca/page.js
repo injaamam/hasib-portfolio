@@ -14,44 +14,44 @@ const narrowFont = {
 const columnStyles = [
   {
     icon: HiUserGroup,
-    headerClass: "bg-gradient-to-br from-[#1e1b4b] to-[#3730a3]",
-    accentColor: "#4f46e5",
-    checkClass: "text-[#4f46e5]",
-    bgClass: "bg-[#eef2ff]",
+    headerClass: "bg-gradient-to-br from-[#0f2744] to-[#2f67a6]",
+    accentColor: "#2f67a6",
+    checkClass: "text-[#2f67a6]",
+    bgClass: "bg-[#eef4ff]",
   },
   {
     icon: HiCalendarDays,
-    headerClass: "bg-gradient-to-br from-[#0e4a3a] to-[#1a7a5e]",
-    accentColor: "#059669",
-    checkClass: "text-[#059669]",
-    bgClass: "bg-[#ecfdf5]",
+    headerClass: "bg-gradient-to-br from-[#0f2744] to-[#1a5296]",
+    accentColor: "#1a5296",
+    checkClass: "text-[#1a5296]",
+    bgClass: "bg-[#eef4ff]",
   },
   {
     icon: HiSparkles,
-    headerClass: "bg-gradient-to-br from-[#4a1a5a] to-[#7e22ce]",
-    accentColor: "#7c3aed",
-    checkClass: "text-[#7c3aed]",
-    bgClass: "bg-[#f5f3ff]",
+    headerClass: "bg-gradient-to-br from-[#1a3a6c] to-[#2f67a6]",
+    accentColor: "#1a3a6c",
+    checkClass: "text-[#1a3a6c]",
+    bgClass: "bg-[#eef4ff]",
   },
 ];
 
 export default function EcaPage() {
   return (
-    <div className="bg-[#f3f4f6] text-[#1a1a2e]">
-      {/* Hero — indigo/purple */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#1e1b4b] to-[#4c1d95]">
+    <div className="bg-[#f5f5f2] text-[#262626]">
+      {/* Hero — navy/blue */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0f2744] to-[#1f4570]">
         <div
-          className="pointer-events-none absolute inset-0 opacity-[0.07]"
+          className="pointer-events-none absolute inset-0 opacity-[0.04]"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 30% 40%, #a78bfa 0%, transparent 50%), radial-gradient(circle at 70% 60%, #818cf8 0%, transparent 50%)",
+              "repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,1) 39px, rgba(255,255,255,1) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,1) 39px, rgba(255,255,255,1) 40px)",
           }}
         />
         <div className="mx-auto flex min-h-[240px] max-w-[1180px] items-end px-6 pb-12 pt-16">
           <div>
             <div className="mb-3 flex items-center gap-2">
-              <HiUserGroup className="text-[1.6rem] text-[#c4b5fd]" />
-              <span className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-[#c4b5fd]">
+              <HiUserGroup className="text-[1.6rem] text-[#a3bed8]" />
+              <span className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-[#a3bed8]">
                 Beyond the Classroom
               </span>
             </div>
