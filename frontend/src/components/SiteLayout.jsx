@@ -38,51 +38,6 @@ const navStructure = [
   { href: "/contact", label: "Contact" },
 ];
 
-function navItemCls(isActive, dimInactive = false) {
-  return isActive
-    ? "bg-white/12 text-[#f3e8b0]"
-    : `${dimInactive ? "text-white/90" : "text-white/95"} hover:bg-white/10 hover:text-[#f3e8b0]`;
-}
-
-const chevron = (
-  <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-  </svg>
-);
-
-function MobileDropdown({ item, pathname, onLinkClick }) {
-  const isChildActive = item.children.some((c) => pathname === c.href);
-  const [open, setOpen] = useState(isChildActive);
-
-  return (
-    <div>
-      <button
-        type="button"
-        className={`flex w-full items-center justify-between rounded px-3 py-2 text-base font-medium transition ${navItemCls(isChildActive)}`}
-        onClick={() => setOpen((o) => !o)}
-        aria-expanded={open}
-      >
-        {item.label}
-        <span className={`transition-transform ${open ? "rotate-180" : ""}`}>{chevron}</span>
-      </button>
-      {open && (
-        <div className="ml-4 mt-0.5 flex flex-col gap-0.5 border-l border-white/15 pl-3">
-          {item.children.map((child) => (
-            <Link
-              key={child.href}
-              href={child.href}
-              className={`rounded px-3 py-2 text-[0.93rem] font-medium transition ${navItemCls(pathname === child.href, true)}`}
-              onClick={onLinkClick}
-            >
-              {child.label}
-            </Link>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-}
-
 export default function SiteLayout({ children }) {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -120,43 +75,37 @@ export default function SiteLayout({ children }) {
 
             <nav className="hidden min-w-0 flex-1 items-center justify-end lg:flex">
               <div className="flex min-w-0 flex-wrap items-center justify-end gap-0.5">
-                {navStructure.map((item) => {
-                  if (item.children) {
-                    const isChildActive = item.children.some((c) => pathname === c.href);
-                    return (
-                      <div key={item.label} className="group relative">
-                        <button
-                          type="button"
-                          className={`flex items-center gap-1 rounded px-2 py-1.5 text-[0.875rem] font-medium transition ${navItemCls(isChildActive)}`}
-                          aria-haspopup="true"
-                        >
-                          {item.label}
-                          <span className="transition-transform group-hover:rotate-180">{chevron}</span>
-                        </button>
-                        <div className="absolute top-full left-0 z-50 mt-1 hidden min-w-[210px] rounded border border-white/10 bg-[#2a2620]/95 py-1 shadow-[0_8px_24px_rgba(0,0,0,0.35)] backdrop-blur-sm group-hover:block">
-                          {item.children.map((child) => (
-                            <Link
-                              key={child.href}
-                              href={child.href}
-                              className={`block px-4 py-2 text-[0.93rem] font-medium transition ${navItemCls(pathname === child.href, true)}`}
-                            >
-                              {child.label}
-                            </Link>
-                          ))}
-                        </div>
+                {navStructure.map((item) =>
+                  item.children ? (
+                    <div key={item.label} className="group relative">
+                      <button
+                        type="button"
+                        className={`rounded px-2 py-1.5 text-[0.875rem] font-medium transition ${item.children.some((c) => pathname === c.href) ? "bg-white/12 text-[#f3e8b0]" : "text-white/95 hover:bg-white/10 hover:text-[#f3e8b0]"}`}
+                      >
+                        {item.label}
+                      </button>
+                      <div className="absolute top-full left-0 z-50 mt-1 hidden min-w-[210px] rounded border border-white/10 bg-[#2a2620]/95 py-1 shadow-[0_8px_24px_rgba(0,0,0,0.35)] backdrop-blur-sm group-hover:block">
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            className={`block px-4 py-2 text-[0.93rem] font-medium transition ${pathname === child.href ? "bg-white/12 text-[#f3e8b0]" : "text-white/90 hover:bg-white/10 hover:text-[#f3e8b0]"}`}
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
                       </div>
-                    );
-                  }
-                  return (
+                    </div>
+                  ) : (
                     <Link
                       key={item.href}
                       href={item.href}
-                      className={`rounded px-2 py-1.5 text-[0.875rem] font-medium transition ${navItemCls(pathname === item.href)}`}
+                      className={`rounded px-2 py-1.5 text-[0.875rem] font-medium transition ${pathname === item.href ? "bg-white/12 text-[#f3e8b0]" : "text-white/95 hover:bg-white/10 hover:text-[#f3e8b0]"}`}
                     >
                       {item.label}
                     </Link>
-                  );
-                })}
+                  )
+                )}
               </div>
             </nav>
           </div>
@@ -166,17 +115,28 @@ export default function SiteLayout({ children }) {
               <div className="flex flex-col gap-1">
                 {navStructure.map((item) =>
                   item.children ? (
-                    <MobileDropdown
-                      key={item.label}
-                      item={item}
-                      pathname={pathname}
-                      onLinkClick={() => setIsMenuOpen(false)}
-                    />
+                    <details key={item.label} open={item.children.some((c) => pathname === c.href)}>
+                      <summary className={`cursor-pointer rounded px-3 py-2 text-base font-medium transition ${item.children.some((c) => pathname === c.href) ? "bg-white/12 text-[#f3e8b0]" : "text-white/95 hover:bg-white/10 hover:text-[#f3e8b0]"}`}>
+                        {item.label}
+                      </summary>
+                      <div className="ml-4 mt-0.5 flex flex-col gap-0.5 border-l border-white/15 pl-3">
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            className={`rounded px-3 py-2 text-[0.93rem] font-medium transition ${pathname === child.href ? "bg-white/12 text-[#f3e8b0]" : "text-white/90 hover:bg-white/10 hover:text-[#f3e8b0]"}`}
+                            onClick={() => setIsMenuOpen(false)}
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </details>
                   ) : (
                     <Link
                       key={item.href}
                       href={item.href}
-                      className={`rounded px-3 py-2 text-base font-medium transition ${navItemCls(pathname === item.href)}`}
+                      className={`rounded px-3 py-2 text-base font-medium transition ${pathname === item.href ? "bg-white/12 text-[#f3e8b0]" : "text-white/95 hover:bg-white/10 hover:text-[#f3e8b0]"}`}
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {item.label}
