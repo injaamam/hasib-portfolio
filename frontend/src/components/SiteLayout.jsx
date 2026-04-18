@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { home } from "@/lib/siteData";
 
 const navStructure = [
@@ -39,10 +39,16 @@ const navStructure = [
   { href: "/contact", label: "Contact" },
 ];
 
+const DROPDOWN_CLOSE_DELAY = 120;
+
 function DesktopDropdown({ item, pathname }) {
   const [open, setOpen] = useState(false);
   const closeTimer = useRef(null);
   const isChildActive = item.children?.some((c) => pathname === c.href);
+
+  useEffect(() => {
+    return () => clearTimeout(closeTimer.current);
+  }, []);
 
   const handleMouseEnter = () => {
     clearTimeout(closeTimer.current);
@@ -50,7 +56,7 @@ function DesktopDropdown({ item, pathname }) {
   };
 
   const handleMouseLeave = () => {
-    closeTimer.current = setTimeout(() => setOpen(false), 120);
+    closeTimer.current = setTimeout(() => setOpen(false), DROPDOWN_CLOSE_DELAY);
   };
 
   return (
