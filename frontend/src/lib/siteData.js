@@ -15,7 +15,7 @@ export const home = {
     subtitle:
       "Research Assistant | Nano-Fabrication Lab | ECE | University of Delaware | USA",
     heroImage:
-      "https://images.unsplash.com/photo-1589271755419-b813a577ad42?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d2lkZXxlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0",
     portraitImage: "/hasib-portrait.JPG",
   },
   hello: {
