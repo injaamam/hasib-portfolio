@@ -40,71 +40,62 @@ const navStructure = [
 
 const DROPDOWN_CLOSE_DELAY = 120;
 
+function ChevronIcon({ open }) {
+  return (
+    <svg
+      className={`h-3.5 w-3.5 transition-transform ${open ? "rotate-180" : ""}`}
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth={2.5}
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+    </svg>
+  );
+}
+
+// Returns Tailwind classes for an active or inactive nav item.
+function navItemCls(isActive, dimInactive = false) {
+  return isActive
+    ? "bg-white/12 text-[#f3e8b0]"
+    : `${dimInactive ? "text-white/90" : "text-white/95"} hover:bg-white/10 hover:text-[#f3e8b0]`;
+}
+
 function DesktopDropdown({ item, pathname }) {
   const [open, setOpen] = useState(false);
   const closeTimer = useRef(null);
   const isChildActive = item.children?.some((c) => pathname === c.href);
 
-  useEffect(() => {
-    return () => clearTimeout(closeTimer.current);
-  }, []);
-
-  const handleMouseEnter = () => {
-    clearTimeout(closeTimer.current);
-    setOpen(true);
-  };
-
-  const handleMouseLeave = () => {
-    closeTimer.current = setTimeout(() => setOpen(false), DROPDOWN_CLOSE_DELAY);
-  };
+  useEffect(() => () => clearTimeout(closeTimer.current), []);
 
   return (
     <div
       className="relative"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      onMouseEnter={() => { clearTimeout(closeTimer.current); setOpen(true); }}
+      onMouseLeave={() => { closeTimer.current = setTimeout(() => setOpen(false), DROPDOWN_CLOSE_DELAY); }}
     >
       <button
         type="button"
-        className={`flex items-center gap-1 rounded px-2 py-1.5 text-[0.875rem] font-medium transition ${
-          isChildActive
-            ? "bg-white/12 text-[#f3e8b0]"
-            : "text-white/95 hover:bg-white/10 hover:text-[#f3e8b0]"
-        }`}
+        className={`flex items-center gap-1 rounded px-2 py-1.5 text-[0.875rem] font-medium transition ${navItemCls(isChildActive)}`}
         aria-haspopup="true"
         aria-expanded={open}
       >
         {item.label}
-        <svg
-          className={`h-3.5 w-3.5 transition-transform ${open ? "rotate-180" : ""}`}
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2.5}
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-        </svg>
+        <ChevronIcon open={open} />
       </button>
 
       {open && (
         <div className="absolute top-full left-0 z-50 mt-1 min-w-[210px] rounded border border-white/10 bg-[#2a2620]/95 py-1 shadow-[0_8px_24px_rgba(0,0,0,0.35)] backdrop-blur-sm">
-          {item.children.map((child) => {
-            const isActive = pathname === child.href;
-            return (
-              <Link
-                key={child.href}
-                href={child.href}
-                className={`block px-4 py-2 text-[0.93rem] font-medium transition ${
-                  isActive
-                    ? "bg-white/12 text-[#f3e8b0]"
-                    : "text-white/90 hover:bg-white/10 hover:text-[#f3e8b0]"
-                }`}
-                onClick={() => setOpen(false)}
-              >
-                {child.label}
-              </Link>
-            );
-          })}
+          {item.children.map((child) => (
+            <Link
+              key={child.href}
+              href={child.href}
+              className={`block px-4 py-2 text-[0.93rem] font-medium transition ${navItemCls(pathname === child.href, true)}`}
+              onClick={() => setOpen(false)}
+            >
+              {child.label}
+            </Link>
+          ))}
         </div>
       )}
     </div>
@@ -119,45 +110,26 @@ function MobileDropdown({ item, pathname, onLinkClick }) {
     <div>
       <button
         type="button"
-        className={`flex w-full items-center justify-between rounded px-3 py-2 text-base font-medium transition ${
-          isChildActive
-            ? "bg-white/12 text-[#f3e8b0]"
-            : "text-white/95 hover:bg-white/10 hover:text-[#f3e8b0]"
-        }`}
+        className={`flex w-full items-center justify-between rounded px-3 py-2 text-base font-medium transition ${navItemCls(isChildActive)}`}
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
       >
         {item.label}
-        <svg
-          className={`h-3.5 w-3.5 transition-transform ${open ? "rotate-180" : ""}`}
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2.5}
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-        </svg>
+        <ChevronIcon open={open} />
       </button>
 
       {open && (
         <div className="ml-4 mt-0.5 flex flex-col gap-0.5 border-l border-white/15 pl-3">
-          {item.children.map((child) => {
-            const isActive = pathname === child.href;
-            return (
-              <Link
-                key={child.href}
-                href={child.href}
-                className={`rounded px-3 py-2 text-[0.93rem] font-medium transition ${
-                  isActive
-                    ? "bg-white/12 text-[#f3e8b0]"
-                    : "text-white/90 hover:bg-white/10 hover:text-[#f3e8b0]"
-                }`}
-                onClick={onLinkClick}
-              >
-                {child.label}
-              </Link>
-            );
-          })}
+          {item.children.map((child) => (
+            <Link
+              key={child.href}
+              href={child.href}
+              className={`rounded px-3 py-2 text-[0.93rem] font-medium transition ${navItemCls(pathname === child.href, true)}`}
+              onClick={onLinkClick}
+            >
+              {child.label}
+            </Link>
+          ))}
         </div>
       )}
     </div>
@@ -217,11 +189,7 @@ export default function SiteLayout({ children }) {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className={`rounded px-2 py-1.5 text-[0.875rem] font-medium transition ${
-                        isActive
-                          ? "bg-white/12 text-[#f3e8b0]"
-                          : "text-white/95 hover:bg-white/10 hover:text-[#f3e8b0]"
-                      }`}
+                      className={`rounded px-2 py-1.5 text-[0.875rem] font-medium transition ${navItemCls(isActive)}`}
                     >
                       {item.label}
                     </Link>
@@ -251,11 +219,7 @@ export default function SiteLayout({ children }) {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className={`rounded px-3 py-2 text-base font-medium transition ${
-                        isActive
-                          ? "bg-white/12 text-[#f3e8b0]"
-                          : "text-white/95 hover:bg-white/10 hover:text-[#f3e8b0]"
-                      }`}
+                      className={`rounded px-3 py-2 text-base font-medium transition ${navItemCls(isActive)}`}
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {item.label}
