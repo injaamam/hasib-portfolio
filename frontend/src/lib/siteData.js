@@ -14,8 +14,6 @@ export const home = {
     title: "Hi, I'm Sheikh Hasib Cheragee",
     subtitle:
       "Research Assistant | Nano-Fabrication Lab | ECE | University of Delaware | USA",
-    heroImage:
-      "https://images.unsplash.com/photo-1589271755419-b813a577ad42?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d2lkZXxlbnwwfHwwfHx8MA%3D%3D",
     portraitImage: "/hasib-portrait.JPG",
   },
   hello: {

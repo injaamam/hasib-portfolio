@@ -14,14 +14,14 @@ const socialBadgeStyles = {
 export default function HomePage() {
   return (
     <div className="bg-[#f5f5f2] text-[#262626]">
-      <section
-        className="relative min-h-[420px] overflow-hidden sm:min-h-[500px] lg:min-h-[560px]"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)), url("${home.hero.heroImage}")`,
-          backgroundPosition: "center center",
-          backgroundSize: "cover",
-        }}
-      >
+      <section className="relative min-h-[420px] overflow-hidden bg-gradient-to-br from-[#0f2744] to-[#1f3a5c] sm:min-h-[500px] lg:min-h-[560px]">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,1) 39px, rgba(255,255,255,1) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,1) 39px, rgba(255,255,255,1) 40px)",
+          }}
+        />
         <div className="mx-auto flex min-h-[420px] max-w-[1180px] items-center justify-end px-6 py-16 sm:min-h-[500px] lg:min-h-[560px]">
           <div className="w-full max-w-[690px] xl:max-w-[920px]">
             <h1
