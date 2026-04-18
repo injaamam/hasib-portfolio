@@ -84,7 +84,7 @@ export default function SiteLayout({ children }) {
                       >
                         {item.label}
                       </button>
-                      <div className="absolute top-full left-0 z-50 mt-1 hidden min-w-[210px] rounded border border-white/10 bg-[#2a2620]/95 py-1 shadow-[0_8px_24px_rgba(0,0,0,0.35)] backdrop-blur-sm group-hover:block">
+                      <div className="absolute top-full left-0 z-50 hidden min-w-[210px] rounded border border-white/10 bg-[#2a2620]/95 py-1 shadow-[0_8px_24px_rgba(0,0,0,0.35)] backdrop-blur-sm group-hover:block">
                         {item.children.map((child) => (
                           <Link
                             key={child.href}
