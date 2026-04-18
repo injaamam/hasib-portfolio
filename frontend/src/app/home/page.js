@@ -1,4 +1,5 @@
 import { contact, home } from "@/lib/siteData";
+import Image from "next/image";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa";
 import { SiGooglescholar, SiResearchgate } from "react-icons/si";
@@ -51,9 +52,12 @@ export default function HomePage() {
         <div className="mx-auto max-w-[1080px] px-6 py-12 sm:py-14 lg:py-16">
           <div className="grid items-start gap-10 md:grid-cols-[240px_1fr] lg:grid-cols-[290px_1fr] lg:gap-12">
             <div className="mx-auto w-full max-w-[290px]">
-              <img
+              <Image
                 src={home.hero.portraitImage}
                 alt="Portrait of Hasib Cheragee"
+                width={290}
+                height={360}
+                sizes="(max-width: 768px) 100vw, 290px"
                 className="block h-auto w-full object-cover shadow-[0_2px_12px_rgba(0,0,0,0.18)]"
               />
             </div>
