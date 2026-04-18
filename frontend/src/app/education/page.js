@@ -92,7 +92,7 @@ export default function EducationPage() {
                     {section.meta}
                   </p>
                 </div>
-                {section.paragraphs && (
+                {section.paragraphs && section.paragraphs.length > 0 && (
                   <div className="flex flex-wrap gap-3 px-7 py-5">
                     {section.paragraphs[0].split(" | ").map((stat, i) => (
                       <span

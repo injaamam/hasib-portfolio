@@ -96,8 +96,8 @@ export default function CvPage() {
         <div className="mt-16 flex w-full max-w-[440px] items-center gap-4">
           <div className="h-px flex-1 bg-[#e8eef6]" />
           <span className="text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-[#a0aec0]">
-            {education.sections[0].heading
-              .split(" ")
+            {education.sections[0]?.heading
+              ?.split(" ")
               .slice(0, 3)
               .join(" ")}
             &nbsp;&amp; more inside
