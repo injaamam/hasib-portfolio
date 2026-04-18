@@ -1,11 +1,19 @@
 export const routes = [
   { href: "/home", label: "Home" },
   { href: "/education", label: "Education" },
-  { href: "/professional-experience", label: "Professional Experience" },
-  { href: "/cv", label: "CV" },
-  { href: "/publicationsprojects", label: "Publications/Projects" },
   { href: "/honorsawards", label: "Honors/Awards" },
+  { href: "/cv", label: "CV" },
   { href: "/eca", label: "ECA" },
+  { href: "/professional-experience", label: "Professional Experience" },
+  { href: "/my-skills", label: "My Skills" },
+  { href: "/research-interest", label: "Research Interest" },
+  { href: "/publicationsprojects", label: "Publications/Projects" },
+  { href: "/research-areas", label: "Research Areas" },
+  { href: "/current-research-projects", label: "Current Research Projects" },
+  { href: "/my-supervised-works", label: "My Supervised Works" },
+  { href: "/future-student-opportunities", label: "Future Student Opportunities" },
+  { href: "/higher-study-guidelines", label: "Higher Study Guidelines" },
+  { href: "/miscellaneous", label: "Miscellaneous" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -352,6 +360,22 @@ export const eca = {
     },
   ],
 };
+
+export const mySkills = {};
+
+export const researchInterest = {};
+
+export const researchAreas = {};
+
+export const currentResearchProjects = {};
+
+export const mySupervisedWorks = {};
+
+export const futureStudentOpportunities = {};
+
+export const higherStudyGuidelines = {};
+
+export const miscellaneous = {};
 
 export const contact = {
   title: "Contact",
