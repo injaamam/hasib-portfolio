@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { home } from "@/lib/siteData";
 
 const navStructure = [
@@ -38,72 +38,20 @@ const navStructure = [
   { href: "/contact", label: "Contact" },
 ];
 
-const DROPDOWN_CLOSE_DELAY = 120;
-
-function ChevronIcon({ open }) {
-  return (
-    <svg
-      className={`h-3.5 w-3.5 transition-transform ${open ? "rotate-180" : ""}`}
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeWidth={2.5}
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-    </svg>
-  );
-}
-
-// Returns Tailwind classes for an active or inactive nav item.
 function navItemCls(isActive, dimInactive = false) {
   return isActive
     ? "bg-white/12 text-[#f3e8b0]"
     : `${dimInactive ? "text-white/90" : "text-white/95"} hover:bg-white/10 hover:text-[#f3e8b0]`;
 }
 
-function DesktopDropdown({ item, pathname }) {
-  const [open, setOpen] = useState(false);
-  const closeTimer = useRef(null);
-  const isChildActive = item.children?.some((c) => pathname === c.href);
-
-  useEffect(() => () => clearTimeout(closeTimer.current), []);
-
-  return (
-    <div
-      className="relative"
-      onMouseEnter={() => { clearTimeout(closeTimer.current); setOpen(true); }}
-      onMouseLeave={() => { closeTimer.current = setTimeout(() => setOpen(false), DROPDOWN_CLOSE_DELAY); }}
-    >
-      <button
-        type="button"
-        className={`flex items-center gap-1 rounded px-2 py-1.5 text-[0.875rem] font-medium transition ${navItemCls(isChildActive)}`}
-        aria-haspopup="true"
-        aria-expanded={open}
-      >
-        {item.label}
-        <ChevronIcon open={open} />
-      </button>
-
-      {open && (
-        <div className="absolute top-full left-0 z-50 mt-1 min-w-[210px] rounded border border-white/10 bg-[#2a2620]/95 py-1 shadow-[0_8px_24px_rgba(0,0,0,0.35)] backdrop-blur-sm">
-          {item.children.map((child) => (
-            <Link
-              key={child.href}
-              href={child.href}
-              className={`block px-4 py-2 text-[0.93rem] font-medium transition ${navItemCls(pathname === child.href, true)}`}
-              onClick={() => setOpen(false)}
-            >
-              {child.label}
-            </Link>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-}
+const chevron = (
+  <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+  </svg>
+);
 
 function MobileDropdown({ item, pathname, onLinkClick }) {
-  const isChildActive = item.children?.some((c) => pathname === c.href);
+  const isChildActive = item.children.some((c) => pathname === c.href);
   const [open, setOpen] = useState(isChildActive);
 
   return (
@@ -115,9 +63,8 @@ function MobileDropdown({ item, pathname, onLinkClick }) {
         aria-expanded={open}
       >
         {item.label}
-        <ChevronIcon open={open} />
+        <span className={`transition-transform ${open ? "rotate-180" : ""}`}>{chevron}</span>
       </button>
-
       {open && (
         <div className="ml-4 mt-0.5 flex flex-col gap-0.5 border-l border-white/15 pl-3">
           {item.children.map((child) => (
@@ -166,7 +113,7 @@ export default function SiteLayout({ children }) {
               className="inline-flex h-10 items-center justify-center rounded border border-white/20 px-3 text-sm font-medium text-white transition hover:bg-white/10 lg:hidden"
               aria-expanded={isMenuOpen}
               aria-label="Toggle navigation menu"
-              onClick={() => setIsMenuOpen((open) => !open)}
+              onClick={() => setIsMenuOpen((o) => !o)}
             >
               Menu
             </button>
@@ -175,21 +122,36 @@ export default function SiteLayout({ children }) {
               <div className="flex min-w-0 flex-wrap items-center justify-end gap-0.5">
                 {navStructure.map((item) => {
                   if (item.children) {
+                    const isChildActive = item.children.some((c) => pathname === c.href);
                     return (
-                      <DesktopDropdown
-                        key={item.label}
-                        item={item}
-                        pathname={pathname}
-                      />
+                      <div key={item.label} className="group relative">
+                        <button
+                          type="button"
+                          className={`flex items-center gap-1 rounded px-2 py-1.5 text-[0.875rem] font-medium transition ${navItemCls(isChildActive)}`}
+                          aria-haspopup="true"
+                        >
+                          {item.label}
+                          <span className="transition-transform group-hover:rotate-180">{chevron}</span>
+                        </button>
+                        <div className="absolute top-full left-0 z-50 mt-1 hidden min-w-[210px] rounded border border-white/10 bg-[#2a2620]/95 py-1 shadow-[0_8px_24px_rgba(0,0,0,0.35)] backdrop-blur-sm group-hover:block">
+                          {item.children.map((child) => (
+                            <Link
+                              key={child.href}
+                              href={child.href}
+                              className={`block px-4 py-2 text-[0.93rem] font-medium transition ${navItemCls(pathname === child.href, true)}`}
+                            >
+                              {child.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
                     );
                   }
-
-                  const isActive = pathname === item.href;
                   return (
                     <Link
                       key={item.href}
                       href={item.href}
-                      className={`rounded px-2 py-1.5 text-[0.875rem] font-medium transition ${navItemCls(isActive)}`}
+                      className={`rounded px-2 py-1.5 text-[0.875rem] font-medium transition ${navItemCls(pathname === item.href)}`}
                     >
                       {item.label}
                     </Link>
@@ -199,36 +161,31 @@ export default function SiteLayout({ children }) {
             </nav>
           </div>
 
-          {isMenuOpen ? (
+          {isMenuOpen && (
             <nav className="border-t border-white/10 px-4 py-3 lg:hidden">
               <div className="flex flex-col gap-1">
-                {navStructure.map((item) => {
-                  if (item.children) {
-                    return (
-                      <MobileDropdown
-                        key={item.label}
-                        item={item}
-                        pathname={pathname}
-                        onLinkClick={() => setIsMenuOpen(false)}
-                      />
-                    );
-                  }
-
-                  const isActive = pathname === item.href;
-                  return (
+                {navStructure.map((item) =>
+                  item.children ? (
+                    <MobileDropdown
+                      key={item.label}
+                      item={item}
+                      pathname={pathname}
+                      onLinkClick={() => setIsMenuOpen(false)}
+                    />
+                  ) : (
                     <Link
                       key={item.href}
                       href={item.href}
-                      className={`rounded px-3 py-2 text-base font-medium transition ${navItemCls(isActive)}`}
+                      className={`rounded px-3 py-2 text-base font-medium transition ${navItemCls(pathname === item.href)}`}
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {item.label}
                     </Link>
-                  );
-                })}
+                  )
+                )}
               </div>
             </nav>
-          ) : null}
+          )}
         </div>
       </header>
 
