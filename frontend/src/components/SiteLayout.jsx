@@ -29,9 +29,15 @@ const navStructure = [
     label: "Research Group & Opportunities",
     children: [
       { href: "/research-areas", label: "Research Areas" },
-      { href: "/current-research-projects", label: "Current Research Projects" },
+      {
+        href: "/current-research-projects",
+        label: "Current Research Projects",
+      },
       { href: "/my-supervised-works", label: "My Supervised Works" },
-      { href: "/future-student-opportunities", label: "Future Student Opportunities" },
+      {
+        href: "/future-student-opportunities",
+        label: "Future Student Opportunities",
+      },
     ],
   },
   { href: "/higher-study-guidelines", label: "Higher Study Guidelines" },
@@ -49,7 +55,7 @@ export default function SiteLayout({ children }) {
         <div
           className="border-b border-white/10 bg-[#3f3c35]/82 text-white shadow-[0_10px_30px_rgba(0,0,0,0.24)] backdrop-blur-sm"
           style={{
-            backgroundImage: `linear-gradient(rgba(47, 42, 34, 0.72), rgba(47, 42, 34, 0.72)), url("${home.hero.heroImage}")`,
+            backgroundImage: `linear-gradient(rgba(47, 42, 34, 0.72), rgba(47, 42, 34, 0.72))`,
             backgroundPosition: "center",
             backgroundSize: "cover",
           }}
@@ -104,7 +110,7 @@ export default function SiteLayout({ children }) {
                     >
                       {item.label}
                     </Link>
-                  )
+                  ),
                 )}
               </div>
             </nav>
@@ -115,8 +121,13 @@ export default function SiteLayout({ children }) {
               <div className="flex flex-col gap-1">
                 {navStructure.map((item) =>
                   item.children ? (
-                    <details key={item.label} open={item.children.some((c) => pathname === c.href)}>
-                      <summary className={`cursor-pointer rounded px-3 py-2 text-base font-medium transition ${item.children.some((c) => pathname === c.href) ? "bg-white/12 text-[#f3e8b0]" : "text-white/95 hover:bg-white/10 hover:text-[#f3e8b0]"}`}>
+                    <details
+                      key={item.label}
+                      open={item.children.some((c) => pathname === c.href)}
+                    >
+                      <summary
+                        className={`cursor-pointer rounded px-3 py-2 text-base font-medium transition ${item.children.some((c) => pathname === c.href) ? "bg-white/12 text-[#f3e8b0]" : "text-white/95 hover:bg-white/10 hover:text-[#f3e8b0]"}`}
+                      >
                         {item.label}
                       </summary>
                       <div className="ml-4 mt-0.5 flex flex-col gap-0.5 border-l border-white/15 pl-3">
@@ -141,7 +152,7 @@ export default function SiteLayout({ children }) {
                     >
                       {item.label}
                     </Link>
-                  )
+                  ),
                 )}
               </div>
             </nav>
