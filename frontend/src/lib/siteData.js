@@ -11,7 +11,10 @@ export const routes = [
   { href: "/research-areas", label: "Research Areas" },
   { href: "/current-research-projects", label: "Current Research Projects" },
   { href: "/my-supervised-works", label: "My Supervised Works" },
-  { href: "/future-student-opportunities", label: "Future Student Opportunities" },
+  {
+    href: "/future-student-opportunities",
+    label: "Future Student Opportunities",
+  },
   { href: "/higher-study-guidelines", label: "Higher Study Guidelines" },
   { href: "/miscellaneous", label: "Miscellaneous" },
   { href: "/contact", label: "Contact" },
@@ -19,7 +22,7 @@ export const routes = [
 
 export const home = {
   hero: {
-    title: "Hi, I'm Sheikh Hasib Cheragee",
+    title: "I'm Sheikh Hasib Cheragee",
     subtitle:
       "Research Assistant | Nano-Fabrication Lab | ECE | University of Delaware | USA",
     portraitImage: "/hasib-portrait.JPG",
@@ -214,7 +217,10 @@ export const education = {
 // Keep backward-compatible `sections` accessor used by cv/page.js
 education.sections = [
   ...education.degrees,
-  { heading: education.technicalSkills.heading, list: education.technicalSkills.categories.flatMap((c) => c.items) },
+  {
+    heading: education.technicalSkills.heading,
+    list: education.technicalSkills.categories.flatMap((c) => c.items),
+  },
 ];
 
 export const professionalExperience = {

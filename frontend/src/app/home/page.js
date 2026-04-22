@@ -14,7 +14,7 @@ const socialBadgeStyles = {
 export default function HomePage() {
   return (
     <div className="bg-[#f5f5f2] text-[#262626]">
-      <section className="relative min-h-[420px] overflow-hidden bg-gradient-to-br from-[#0f2744] to-[#1f3a5c] sm:min-h-[500px] lg:min-h-[560px]">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0f2744] to-[#1f3a5c]">
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.04]"
           style={{
@@ -23,8 +23,8 @@ export default function HomePage() {
           }}
         />
 
-        <div className="relative z-10 pt-[70px] pb-1 text-center">
-          <p className="px-4 text-[1.05rem] leading-[1.9] sm:text-[1.15rem] lg:text-[1.2rem]">
+        <div className="relative z-10 pt-[70px] md:pt-[90px] pb-1 text-center">
+          <p className="px-4 text-[1rem] leading-[1.9] sm:text-[1.1rem] lg:text-[1.1rem]">
             <span
               className="text-[#f3e8b0]"
               style={{ fontFamily: '"Hind Siliguri", sans-serif' }}
@@ -46,10 +46,10 @@ export default function HomePage() {
           <div className="mx-auto mt-4 h-px w-[260px] bg-white/15 sm:w-[340px]" />
         </div>
 
-        <div className="mx-auto flex min-h-[420px] max-w-[1180px] items-center justify-end px-6 py-16 sm:min-h-[500px] lg:min-h-[560px]">
+        <div className="mx-auto flex min-h-[350px] max-w-[1180px] items-center justify-end px-6 py-16 lg:min-h-[400px]">
           <div className="w-full max-w-[690px] xl:max-w-[920px]">
             <h1
-              className="text-center text-[2.35rem] leading-none font-bold uppercase tracking-[0.01em] text-white sm:text-[2.8rem] lg:text-right lg:whitespace-nowrap lg:text-[3.3rem] xl:text-[3.8rem]"
+              className="text-center text-[2rem] leading-none font-bold uppercase tracking-[0.01em] text-white sm:text-[2.1rem] lg:text-right lg:whitespace-nowrap lg:text-[3.2rem] xl:text-[3.5rem]"
               style={{
                 fontFamily:
                   '"Arial Narrow", "Roboto Condensed", "Helvetica Neue", Arial, sans-serif',
@@ -57,9 +57,9 @@ export default function HomePage() {
             >
               {home.hero.title}
             </h1>
-            <div className="mx-auto mt-5 h-[8px] w-full max-w-[820px] bg-[#a3bed8] lg:mr-0" />
+            <div className="mx-auto mt-5 h-[4px] lg:h-[7px] w-full max-w-[770px] bg-[#a3bed8] lg:mr-0" />
             <p
-              className="mt-5 text-center text-[1.35rem] font-semibold uppercase tracking-[0.02em] text-white sm:text-[1.6rem] lg:text-right lg:text-[1.9rem]"
+              className="mt-5 text-center text-[1.15rem] font-semibold uppercase tracking-[0.02em] text-white sm:text-[1.3rem] lg:text-right lg:text-[1.5rem]"
               style={{
                 fontFamily:
                   '"Arial Narrow", "Roboto Condensed", "Helvetica Neue", Arial, sans-serif',
@@ -111,7 +111,7 @@ export default function HomePage() {
                     href={link.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex min-h-12 items-center justify-center border border-[#5d5d5d] bg-white px-6 py-3 text-[1rem] font-medium text-[#2a2a2a] transition hover:bg-[#f5f5f5] sm:min-w-[220px] sm:text-[1.05rem]"
+                    className="inline-flex min-h-12 items-center justify-center border border-[#5d5d5d] bg-white px-6 py-3 text-[1rem] font-medium text-[#2a2a2a] transition hover:bg-[#f5f5f5] lg:min-w-[220px] sm:text-[1.05rem]"
                   >
                     {link.label}
                   </a>
