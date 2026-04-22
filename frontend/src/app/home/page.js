@@ -22,6 +22,30 @@ export default function HomePage() {
               "repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,1) 39px, rgba(255,255,255,1) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,1) 39px, rgba(255,255,255,1) 40px)",
           }}
         />
+
+        <div className="relative z-10 pt-[70px] pb-1 text-center">
+          <p className="px-4 text-[1.05rem] leading-[1.9] sm:text-[1.15rem] lg:text-[1.2rem]">
+            <span
+              className="text-[#f3e8b0]"
+              style={{ fontFamily: '"Hind Siliguri", sans-serif' }}
+            >
+              আসসালামু আলাইকুম ওয়া রাহমাতুল্লাহি ওয়া বারাকাতুহু
+            </span>
+            <span className="mx-2 text-white/40">—</span>
+            <span
+              className="text-[#f3e8b0]"
+              dir="rtl"
+              style={{ fontFamily: '"Amiri", serif' }}
+            >
+              اَلسَلامُ عَلَيْكُم وَرَحْمَةُ اَللهِ وَبَرَكاتُهُ
+            </span>
+          </p>
+          <p className="mt-1 px-4 text-[0.88rem] text-white/65 italic sm:text-[0.93rem]">
+            May the peace, mercy, and blessings of Allah be upon you.
+          </p>
+          <div className="mx-auto mt-4 h-px w-[260px] bg-white/15 sm:w-[340px]" />
+        </div>
+
         <div className="mx-auto flex min-h-[420px] max-w-[1180px] items-center justify-end px-6 py-16 sm:min-h-[500px] lg:min-h-[560px]">
           <div className="w-full max-w-[690px] xl:max-w-[920px]">
             <h1
