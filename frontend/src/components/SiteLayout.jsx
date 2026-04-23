@@ -17,30 +17,89 @@ const navStructure = [
     ],
   },
   { href: "/professional-experience", label: "Professional Experience" },
-  { href: "/my-skills", label: "My Skills" },
+  {
+    label: "My Skills",
+    children: [
+      {
+        href: "/my-skills/semiconductor-device-fabrication",
+        label: "Semiconductor Device Fabrication",
+      },
+      {
+        href: "/my-skills/semiconductor-device-simulation",
+        label: "Semiconductor Device Simulation",
+      },
+      {
+        href: "/my-skills/semiconductor-device-modelling",
+        label: "Semiconductor Device Modelling",
+      },
+      {
+        href: "/my-skills/programming-languages",
+        label: "Programming Languages",
+      },
+      {
+        href: "/my-skills/miscellaneous-skills",
+        label: "Miscellaneous Skills",
+      },
+    ],
+  },
   {
     label: "Research & Publications",
     children: [
       { href: "/research-interest", label: "Research Interest" },
       { href: "/publicationsprojects", label: "Publications/Projects" },
-    ],
-  },
-  {
-    label: "Research Group & Opportunities",
-    children: [
-      { href: "/research-areas", label: "Research Areas" },
       {
         href: "/current-research-projects",
         label: "Current Research Projects",
       },
-      { href: "/my-supervised-works", label: "My Supervised Works" },
+      {
+        href: "/my-supervised-works",
+        label: "My Supervised Students & Works",
+      },
       {
         href: "/future-student-opportunities",
         label: "Future Student Opportunities",
       },
     ],
   },
-  { href: "/higher-study-guidelines", label: "Higher Study Guidelines" },
+  {
+    label: "Higher Study Guidelines",
+    children: [
+      { href: "/higher-study-guidelines/usa", label: "Higher Study in USA" },
+      {
+        href: "/higher-study-guidelines/other-countries",
+        label: "Higher Study in Other Countries",
+      },
+    ],
+  },
+  {
+    label: "Miscellaneous",
+    children: [
+      {
+        href: "/miscellaneous/academic-cv-guide",
+        label: "Academic CV Guide",
+      },
+      { href: "/miscellaneous/linkedin-guide", label: "LinkedIn Guide" },
+      { href: "/miscellaneous/gre-prep-guide", label: "GRE Prep Guide" },
+      { href: "/miscellaneous/ielts-prep-guide", label: "IELTS Prep Guide" },
+      {
+        href: "/miscellaneous/email-templates",
+        label: "Email Templates",
+      },
+      {
+        href: "/miscellaneous/letter-of-recommendations",
+        label: "Letter of Recommendations",
+      },
+      {
+        href: "/miscellaneous/statement-of-purpose",
+        label: "Statement of Purpose",
+      },
+      { href: "/miscellaneous/cover-letter", label: "Cover Letter" },
+      {
+        href: "/miscellaneous/interview-questions",
+        label: "Interview Questions",
+      },
+    ],
+  },
   { href: "/contact", label: "Contact" },
 ];
 

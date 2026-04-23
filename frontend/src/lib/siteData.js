@@ -367,7 +367,28 @@ export const eca = {
   ],
 };
 
-export const mySkills = {};
+export const mySkills = {
+  semiconductorDeviceFabrication: {
+    title: "Semiconductor Device Fabrication",
+    sections: [],
+  },
+  semiconductorDeviceSimulation: {
+    title: "Semiconductor Device Simulation",
+    sections: [],
+  },
+  semiconductorDeviceModelling: {
+    title: "Semiconductor Device Modelling",
+    sections: [],
+  },
+  programmingLanguages: {
+    title: "Programming Languages",
+    sections: [],
+  },
+  miscellaneousSkills: {
+    title: "Miscellaneous Skills",
+    sections: [],
+  },
+};
 
 export const researchInterest = {};
 
@@ -379,9 +400,55 @@ export const mySupervisedWorks = {};
 
 export const futureStudentOpportunities = {};
 
-export const higherStudyGuidelines = {};
+export const higherStudyGuidelines = {
+  usa: {
+    title: "Higher Study in USA",
+    sections: [],
+  },
+  otherCountries: {
+    title: "Higher Study in Other Countries",
+    sections: [],
+  },
+};
 
-export const miscellaneous = {};
+export const miscellaneous = {
+  academicCVGuide: {
+    title: "Academic CV Guide",
+    sections: [],
+  },
+  linkedInGuide: {
+    title: "LinkedIn Guide",
+    sections: [],
+  },
+  grePrepGuide: {
+    title: "GRE Prep Guide",
+    sections: [],
+  },
+  ieltsPrepGuide: {
+    title: "IELTS Prep Guide",
+    sections: [],
+  },
+  emailTemplates: {
+    title: "Email Templates",
+    sections: [],
+  },
+  letterOfRecommendations: {
+    title: "Letter of Recommendations",
+    sections: [],
+  },
+  statementOfPurpose: {
+    title: "Statement of Purpose",
+    sections: [],
+  },
+  coverLetter: {
+    title: "Cover Letter",
+    sections: [],
+  },
+  interviewQuestions: {
+    title: "Interview Questions",
+    sections: [],
+  },
+};
 
 export const contact = {
   title: "Contact",
