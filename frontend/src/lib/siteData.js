@@ -5,7 +5,20 @@ export const routes = [
   { href: "/cv", label: "CV" },
   { href: "/eca", label: "ECA" },
   { href: "/professional-experience", label: "Professional Experience" },
-  { href: "/my-skills", label: "My Skills" },
+  {
+    href: "/semiconductor-device-fabrication",
+    label: "Semiconductor Device Fabrication",
+  },
+  {
+    href: "/semiconductor-device-simulation",
+    label: "Semiconductor Device Simulation",
+  },
+  {
+    href: "/semiconductor-device-modelling",
+    label: "Semiconductor Device Modelling",
+  },
+  { href: "/programming-languages", label: "Programming Languages" },
+  { href: "/miscellaneous-skills", label: "Miscellaneous Skills" },
   { href: "/research-interest", label: "Research Interest" },
   { href: "/publicationsprojects", label: "Publications/Projects" },
   { href: "/research-areas", label: "Research Areas" },
@@ -15,8 +28,20 @@ export const routes = [
     href: "/future-student-opportunities",
     label: "Future Student Opportunities",
   },
-  { href: "/higher-study-guidelines", label: "Higher Study Guidelines" },
-  { href: "/miscellaneous", label: "Miscellaneous" },
+  { href: "/higher-study-usa", label: "Higher Study in USA" },
+  {
+    href: "/higher-study-other-countries",
+    label: "Higher Study in Other Countries",
+  },
+  { href: "/academic-cv-guide", label: "Academic CV Guide" },
+  { href: "/linkedin-guide", label: "LinkedIn Guide" },
+  { href: "/gre-prep-guide", label: "GRE Prep Guide" },
+  { href: "/ielts-prep-guide", label: "IELTS Prep Guide" },
+  { href: "/email-templates", label: "Email Templates" },
+  { href: "/letter-of-recommendations", label: "Letter of Recommendations" },
+  { href: "/statement-of-purpose", label: "Statement of Purpose" },
+  { href: "/cover-letter", label: "Cover Letter" },
+  { href: "/interview-questions", label: "Interview Questions" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -367,7 +392,30 @@ export const eca = {
   ],
 };
 
-export const mySkills = {};
+export const semiconductorDeviceFabrication = {
+  title: "Semiconductor Device Fabrication",
+  sections: [],
+};
+
+export const semiconductorDeviceSimulation = {
+  title: "Semiconductor Device Simulation",
+  sections: [],
+};
+
+export const semiconductorDeviceModelling = {
+  title: "Semiconductor Device Modelling",
+  sections: [],
+};
+
+export const programmingLanguages = {
+  title: "Programming Languages",
+  sections: [],
+};
+
+export const miscellaneousSkills = {
+  title: "Miscellaneous Skills",
+  sections: [],
+};
 
 export const researchInterest = {};
 
@@ -379,9 +427,60 @@ export const mySupervisedWorks = {};
 
 export const futureStudentOpportunities = {};
 
-export const higherStudyGuidelines = {};
+export const higherStudyUSA = {
+  title: "Higher Study in USA",
+  sections: [],
+};
 
-export const miscellaneous = {};
+export const higherStudyOtherCountries = {
+  title: "Higher Study in Other Countries",
+  sections: [],
+};
+
+export const academicCVGuide = {
+  title: "Academic CV Guide",
+  sections: [],
+};
+
+export const linkedInGuide = {
+  title: "LinkedIn Guide",
+  sections: [],
+};
+
+export const grePrepGuide = {
+  title: "GRE Prep Guide",
+  sections: [],
+};
+
+export const ieltsPrepGuide = {
+  title: "IELTS Prep Guide",
+  sections: [],
+};
+
+export const emailTemplates = {
+  title: "Email Templates",
+  sections: [],
+};
+
+export const letterOfRecommendations = {
+  title: "Letter of Recommendations",
+  sections: [],
+};
+
+export const statementOfPurpose = {
+  title: "Statement of Purpose",
+  sections: [],
+};
+
+export const coverLetter = {
+  title: "Cover Letter",
+  sections: [],
+};
+
+export const interviewQuestions = {
+  title: "Interview Questions",
+  sections: [],
+};
 
 export const contact = {
   title: "Contact",

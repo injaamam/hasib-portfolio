@@ -17,30 +17,89 @@ const navStructure = [
     ],
   },
   { href: "/professional-experience", label: "Professional Experience" },
-  { href: "/my-skills", label: "My Skills" },
+  {
+    label: "My Skills",
+    children: [
+      {
+        href: "/semiconductor-device-fabrication",
+        label: "Semiconductor Device Fabrication",
+      },
+      {
+        href: "/semiconductor-device-simulation",
+        label: "Semiconductor Device Simulation",
+      },
+      {
+        href: "/semiconductor-device-modelling",
+        label: "Semiconductor Device Modelling",
+      },
+      {
+        href: "/programming-languages",
+        label: "Programming Languages",
+      },
+      {
+        href: "/miscellaneous-skills",
+        label: "Miscellaneous Skills",
+      },
+    ],
+  },
   {
     label: "Research & Publications",
     children: [
       { href: "/research-interest", label: "Research Interest" },
       { href: "/publicationsprojects", label: "Publications/Projects" },
-    ],
-  },
-  {
-    label: "Research Group & Opportunities",
-    children: [
-      { href: "/research-areas", label: "Research Areas" },
       {
         href: "/current-research-projects",
         label: "Current Research Projects",
       },
-      { href: "/my-supervised-works", label: "My Supervised Works" },
+      {
+        href: "/my-supervised-works",
+        label: "My Supervised Students & Works",
+      },
       {
         href: "/future-student-opportunities",
         label: "Future Student Opportunities",
       },
     ],
   },
-  { href: "/higher-study-guidelines", label: "Higher Study Guidelines" },
+  {
+    label: "Higher Study Guidelines",
+    children: [
+      { href: "/higher-study-usa", label: "Higher Study in USA" },
+      {
+        href: "/higher-study-other-countries",
+        label: "Higher Study in Other Countries",
+      },
+    ],
+  },
+  {
+    label: "Miscellaneous",
+    children: [
+      {
+        href: "/academic-cv-guide",
+        label: "Academic CV Guide",
+      },
+      { href: "/linkedin-guide", label: "LinkedIn Guide" },
+      { href: "/gre-prep-guide", label: "GRE Prep Guide" },
+      { href: "/ielts-prep-guide", label: "IELTS Prep Guide" },
+      {
+        href: "/email-templates",
+        label: "Email Templates",
+      },
+      {
+        href: "/letter-of-recommendations",
+        label: "Letter of Recommendations",
+      },
+      {
+        href: "/statement-of-purpose",
+        label: "Statement of Purpose",
+      },
+      { href: "/cover-letter", label: "Cover Letter" },
+      {
+        href: "/interview-questions",
+        label: "Interview Questions",
+      },
+    ],
+  },
   { href: "/contact", label: "Contact" },
 ];
 
