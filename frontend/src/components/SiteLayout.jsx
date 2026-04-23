@@ -21,23 +21,23 @@ const navStructure = [
     label: "My Skills",
     children: [
       {
-        href: "/my-skills/semiconductor-device-fabrication",
+        href: "/semiconductor-device-fabrication",
         label: "Semiconductor Device Fabrication",
       },
       {
-        href: "/my-skills/semiconductor-device-simulation",
+        href: "/semiconductor-device-simulation",
         label: "Semiconductor Device Simulation",
       },
       {
-        href: "/my-skills/semiconductor-device-modelling",
+        href: "/semiconductor-device-modelling",
         label: "Semiconductor Device Modelling",
       },
       {
-        href: "/my-skills/programming-languages",
+        href: "/programming-languages",
         label: "Programming Languages",
       },
       {
-        href: "/my-skills/miscellaneous-skills",
+        href: "/miscellaneous-skills",
         label: "Miscellaneous Skills",
       },
     ],
