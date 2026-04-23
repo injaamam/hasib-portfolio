@@ -64,9 +64,9 @@ const navStructure = [
   {
     label: "Higher Study Guidelines",
     children: [
-      { href: "/higher-study-guidelines/usa", label: "Higher Study in USA" },
+      { href: "/higher-study-usa", label: "Higher Study in USA" },
       {
-        href: "/higher-study-guidelines/other-countries",
+        href: "/higher-study-other-countries",
         label: "Higher Study in Other Countries",
       },
     ],
@@ -75,27 +75,27 @@ const navStructure = [
     label: "Miscellaneous",
     children: [
       {
-        href: "/miscellaneous/academic-cv-guide",
+        href: "/academic-cv-guide",
         label: "Academic CV Guide",
       },
-      { href: "/miscellaneous/linkedin-guide", label: "LinkedIn Guide" },
-      { href: "/miscellaneous/gre-prep-guide", label: "GRE Prep Guide" },
-      { href: "/miscellaneous/ielts-prep-guide", label: "IELTS Prep Guide" },
+      { href: "/linkedin-guide", label: "LinkedIn Guide" },
+      { href: "/gre-prep-guide", label: "GRE Prep Guide" },
+      { href: "/ielts-prep-guide", label: "IELTS Prep Guide" },
       {
-        href: "/miscellaneous/email-templates",
+        href: "/email-templates",
         label: "Email Templates",
       },
       {
-        href: "/miscellaneous/letter-of-recommendations",
+        href: "/letter-of-recommendations",
         label: "Letter of Recommendations",
       },
       {
-        href: "/miscellaneous/statement-of-purpose",
+        href: "/statement-of-purpose",
         label: "Statement of Purpose",
       },
-      { href: "/miscellaneous/cover-letter", label: "Cover Letter" },
+      { href: "/cover-letter", label: "Cover Letter" },
       {
-        href: "/miscellaneous/interview-questions",
+        href: "/interview-questions",
         label: "Interview Questions",
       },
     ],
