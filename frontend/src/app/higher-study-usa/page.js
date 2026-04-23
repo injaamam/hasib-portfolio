@@ -449,8 +449,6 @@ export default function HigherStudyUSAPage() {
   const { title, subtitle, sections } = higherStudyUSA;
   const [activeSection, setActiveSection] = useState(sections[0].id);
 
-  const sectionIcons = SECTION_ICONS;
-
   return (
     <div className="bg-[#f5f5f2] text-[#262626]">
       {/* Hero */}
@@ -481,7 +479,7 @@ export default function HigherStudyUSAPage() {
         <div className="mx-auto max-w-[1080px] px-6">
           <div className="flex gap-1 overflow-x-auto py-2 scrollbar-none">
             {sections.map((sec) => {
-              const Icon = sectionIcons[sec.id] ?? HiAcademicCap;
+              const Icon = SECTION_ICONS[sec.id] ?? HiAcademicCap;
               return (
                 <button
                   key={sec.id}
