@@ -214,7 +214,9 @@ Start purchasing necessary items in July.
 
 Spend quality time with your friends and family as much as possible.
 
-Here I will discuss everything in detail.
+
+4. Detailed discussion and Roadmap.
+
 
 I. Before Graduation
 Keep in mind: "If anyone chases two hares together, they will not be able to catch any Of them." So don't try to do everything. Five things you should mainly focus on during undergrad. Just 5.
@@ -413,17 +415,18 @@ You can find prospective questions here.
 
 d. Managing LoRs
 
+Coming soon
+
 e. Writing SoP
+
+Coming soon
 
 f. Writing Cover letters
 
-## These three (d. Managing LoRs, e. Writing SoP, f. Writing Cover letters) will be hiperlinked to these links 
-/miscellaneous/letter-of-recommendations,
-/miscellaneous/statement-of-purpose,
-/miscellaneous/cover-letter
-
+Coming soon
 
 g. Finalizing Universities
+
 Factors to Consider When Finalizing Your University Application List:
 
 Got Interviewed and Professor was super enthusiastic.
@@ -453,24 +456,23 @@ To ensure your test scores reach the admission committee in a timely manner, sen
 In addition, it is highly recommended not to wait until the application deadline. The earlier you submit your applications, the better it is for your chances of admission. Submitting your materials ahead of time demonstrates your proactive and organized approach. It also allows you to address any unforeseen issues or delays that may arise during the submission process. So, make it a priority to complete and submit your applications as early as possible to maximize your chances of success.
 
 
-Department/Interest Switch
+a. Department/Interest Switch
 The question of whether you can change your department/field of interest is not straightforward. I'll provide two PoVs. Firstly, unless it is absolutely necessary for your journey, I advise against experimenting with a department switch. I've witnessed the top student from BUET fail to receive any offers simply because they wanted to switch departments. Secondly, it is not impossible to switch if you can persuade a professor who can advocate for you with the admission committee. I've also seen a friend receive an offer because the professor was genuinely interested.
 
 So what should you do? My suggestion is this: If a professor assures you, you can apply to a different department. However, if you want to experiment, play it safe. Don't limit your applications to just one department; keep some safe options open in your own field as well. I hope this clarifies things.
 
-** My View on Central Application
-I will keep it short.
+b. My View on Central Application
 
 Firstly, What is a central application? It involves applying to a university without prior contact or positive feedback from any professor.
 
 Secondly, Should you go for it? If you have a mid or below-average profile, I do not recommend it (unless you have a fee waiver, nothing to lose right?). However, if you have an outstanding profile, you can apply, but there's no guarantee of acceptance if you can't secure recommendations from professors before decisions are made.
 
-a. Waiting for Results
+c. Waiting for Results
 As you patiently wait for the results of your university applications, it's important to resist the urge to compare your progress to others. Remember that each person's journey is unique, and admissions decisions are based on various factors that go beyond your control. Instead of panicking or becoming discouraged, focus on maintaining a positive mindset and continue to pursue other opportunities and goals. Use this waiting period as a time for self-reflection and personal growth. Stay engaged in activities that bring you joy and fulfillment, and trust that the right opportunity will come your way. Keep in mind that success is not defined solely by acceptance into a particular institution, but by the determination and effort you put into your academic and personal development. Embrace the uncertainty and have faith in your abilities. Stay optimistic, stay motivated, and believe in your own journey.
 
 I highly recommend staying clear of Grad Cafe when seeking information about decisions from specific universities. Trust me, it's nothing more than a brain-draining pressure cooker that can leave you feeling overwhelmed and discouraged. Focus on your own journey and trust that the right decisions will come your way in due time. Stay positive and stay away from the Grad Cafe chaos!
 
-b. The Results be Rollin' In & Time to Make the Big Decision
+d. The Results be Rollin' In & Time to Make the Big Decision
 Take a moment to breathe deeply. I understand that you have experienced numerous challenges, breakdowns, reality checks, and sleepless nights. However, now you have arrived at this point where your results are coming in. But let's confront the reality first: it is possible that some of the universities you had aspired to may have rejected your application. Dealing with rejections can be tough, but it's important to remember that they are a natural part of the application process. Here are some suggestions for handling rejections:
 
 Allow Yourself to Feel: It's okay to feel disappointed, frustrated, or even sad about a rejection. Give yourself permission to acknowledge and process these emotions. It's a normal reaction to something you invested time and effort into.
@@ -517,7 +519,7 @@ Approaching this journey can vary greatly from person to person. While some may 
 
 
 
-c. Get the I-20 Fast
+e. Get the I-20 Fast
 Once you have accepted the offer, signed the necessary documents, and sent them to your accepted university, it is time to wait for the I-20 form. The processing time for the I-20 can vary from 2 to 3 days up to a month or longer. If it is delayed, make sure to communicate with your graduate coordinator and supervisor, urging them to expedite the process. You need the I-20 to apply for a visa, and the longer it takes to arrive, the more difficulties you may encounter in securing a visa interview slot.
 
 Understand Your I-20
@@ -526,7 +528,7 @@ Here's a tip: When the first university sends you their acceptance letter, obtai
 
 In short, Get the I-20 quickly, preferably from the first university, and book your visa interview slot early.
 
-d. Collecting & Sending Physical Copies of Necessary Documents
+f. Collecting & Sending Physical Copies of Necessary Documents
 After selecting your preferred university, it's crucial to promptly accept the offer and submit the required documents mentioned in the offer letter. Reach out to the university's graduate coordinator to discuss the urgency of physical copies and whether immediate submission is necessary. Some universities may require early submission of your BSc transcripts. Here's a step-by-step process to send your BSc transcripts from BUET:
 
 Obtain Sealed Certificates and Transcripts: Visit the Comptroller's office at BUET before 4 PM and bring the required number of photocopies of your certificates and transcripts. Pay the necessary fee of 200 tk per copy (50 tk + 150 tk). The regular processing time is 4 to 5 working days, but you can expedite the process on the same day by paying an extra 500 taka.
@@ -535,12 +537,12 @@ Process for Main Certificate.
 
 Choose a Reliable Courier Service: Select a reputable courier service such as DHL, FedEx, or UPS. All of them have branches at Katabon, making it convenient for you to send your documents. Visit the courier service branch from Saturday to Thursday before 7 PM. Prepare the package with BUET as the sender and your destination university as the receiver. The courier service typically takes 3 to 5 days for delivery.
 
-e. Necessary Health Reports & Vaccination
+g. Necessary Health Reports & Vaccination
 Before your arrival at any school, it is important to fulfill certain vaccination and testing requirements. While some universities may allow completion of these requirements after arrival, it is advisable to confirm this with your specific university. All tests and immunizations can be acquired at the least price from Bangabandhu Sheikh Mujib Medical University: BSMMU (PG Hospital), but it will be a lot a bit more challenging. Furthermore, Ibn Sina Diagnostic and Imaging Center, Japan Bangladesh Friendship Hospital, and icddr,b provide those vaccines and diagnostics. The typical tests and vaccinations include:
 
 Footnote: https://docs.google.com/document/d/1iueuQMkViusw3rIFwd7Z4rotir97SDMfu3cTSKEo2F8/edit
 
-f. Necessary Health Checkups
+h. Necessary Health Checkups
 It is strongly advised to undergo a comprehensive full-body checkup and necessary medical procedures before departing for the USA. Some medical expenses may not be covered by your health insurance, and healthcare costs in the USA can be prohibitively expensive. Taking these precautions can help you avoid unexpected financial burdens during your stay.
 
 
@@ -735,12 +737,12 @@ Miscellaneous Expenses: 50,000৳.
 
 So, the total estimated cost for this journey is approximately 600,000৳ to 800,000৳ (considering you are fully funded). If you reside in Dhaka, which is essential throughout this process, you will need around 1,000,000৳ to 1,200,000৳. I understand that it may seem like a substantial amount of money in total. However, it's essential to consider two things: Firstly, you are not alone in this journey as your friends and parents are there to support you, and secondly, think of it as an investment for the greater rewards that await you in the near future, as per the plans that fate has in store for you.
 
-Buying Dollars
+VIII. Buying Dollars
 Acquiring US dollars has become quite challenging in recent times. It can be difficult to find reliable sources that offer favorable exchange rates, trustworthy transactions, and proper endorsements, whether you opt for cash or card payments. To navigate through these complexities, it is advisable to seek advice from your friends and seniors who have experience in this matter. They can guide you in determining the best available options for purchasing US dollars, ensuring a smooth and secure process.
 
 Foot Note: "It is legal to transport any amount of currency or other monetary instruments into or out of the United States. However, if you transport, attempt to transport, or cause to be transported (including by mail or other means) currency or other monetary instruments in a combined amount exceeding $10,000 (or its foreign equivalent) at one time from the United States to any foreign country or into the United States from any foreign country, you must file a FinCEN Form 105 (“Report of International Transportation of Currency or Monetary Instruments”) with U.S. Customs and Border Protection"
 
-
+IX. Conclusion
 As you navigate the path of higher education in the United States, remember to prioritize your mental health. This journey is unique to you, and it's natural to feel uncertain and overwhelmed at times. Take comfort in knowing that you have the strength and resilience to overcome any challenges that come your way. One crucial piece of advice I would like to share is to avoid procrastination throughout this process. Procrastination can hinder progress and potentially lead to missed opportunities. Embrace the uncertainty with a positive mindset, and remember to take breaks and care for your well-being.
 
 Additionally, don't hesitate to reach out for help and support from your friends. Lean on them during moments of doubt or stress. Having a trusted support system can provide comfort and encouragement throughout your journey. Share your experiences, seek advice, and offer support to your friends as well. Together, you can navigate the ups and downs of this exciting chapter in your lives.
@@ -749,7 +751,7 @@ Remember, you are not alone in this journey, and there are resources available t
 
 
 
-Useful Links
+X. Useful Links
 FAQ From US Ambassy: https://www.ustraveldocs.com/bd/bd-gen-faq.asp#qlistfandm 
 
 https://rangon.notion.site/Dream-USA-2ac6e5835eca402383675b6ee6839700 
