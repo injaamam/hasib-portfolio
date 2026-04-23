@@ -1,5 +1,9 @@
 import { higherStudyUSA } from "@/lib/higherStudyUSA";
 
+function slugify(title) {
+  return title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
 function renderText(text) {
   const urlRegex = /(https?:\/\/[^\s,]+)/g;
   const parts = text.split(urlRegex);
@@ -33,13 +37,21 @@ function ContentList({ content }) {
 }
 
 function Subsection({ sub, level = 2 }) {
+  const id = slugify(sub.title);
   const titleClass =
     level === 2
       ? "mb-2 text-[1rem] font-semibold text-[#1a3a6c]"
       : "mb-1 text-[0.9rem] font-semibold text-[#2058a0]";
 
   return (
-    <div className={level === 3 ? "mt-4 pl-4 border-l-2 border-[#dde5f0]" : "mt-5"}>
+    <div
+      id={id}
+      className={
+        level === 3
+          ? "mt-4 pl-4 border-l-2 border-[#dde5f0] scroll-mt-[80px]"
+          : "mt-5 scroll-mt-[80px]"
+      }
+    >
       <h3 className={titleClass}>{sub.title}</h3>
       {sub.content && <ContentList content={sub.content} />}
       {sub.subsections &&
@@ -51,8 +63,9 @@ function Subsection({ sub, level = 2 }) {
 }
 
 function Section({ section }) {
+  const id = slugify(section.title);
   return (
-    <div className="rounded-xl bg-white p-6 shadow-sm">
+    <div id={id} className="rounded-xl bg-white p-6 shadow-sm scroll-mt-[80px]">
       <h2 className="text-[1.15rem] font-bold text-[#0f2744] border-b border-[#e5eaf3] pb-3 mb-4">
         {section.title}
       </h2>
@@ -65,11 +78,46 @@ function Section({ section }) {
   );
 }
 
+function TocItems({ items, depth = 0 }) {
+  const linkClass =
+    depth === 0
+      ? "block rounded px-2 py-1.5 text-[0.82rem] font-semibold leading-snug text-[#1a3a6c] transition hover:bg-[#eef2ff] hover:text-[#0f2744]"
+      : "block rounded px-2 py-1 text-[0.78rem] leading-snug text-[#556080] transition hover:bg-[#eef2ff] hover:text-[#1a3a6c]";
+
+  return (
+    <ul className={depth > 0 ? "ml-3 mt-0.5 space-y-0.5 border-l border-[#dde5f0] pl-2" : "space-y-0.5"}>
+      {items.map((item, i) => (
+        <li key={i}>
+          <a href={`#${slugify(item.title)}`} className={linkClass}>
+            {item.title}
+          </a>
+          {item.subsections && (
+            <TocItems items={item.subsections} depth={depth + 1} />
+          )}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function TableOfContents() {
+  return (
+    <aside className="hidden lg:block w-[220px] shrink-0">
+      <div className="sticky top-[80px] max-h-[calc(100vh-96px)] overflow-y-auto pr-2">
+        <p className="mb-3 text-[0.68rem] font-bold uppercase tracking-[0.15em] text-[#9ca3af]">
+          Contents
+        </p>
+        <TocItems items={higherStudyUSA.sections} />
+      </div>
+    </aside>
+  );
+}
+
 export default function HigherStudyUSAPage() {
   return (
     <div className="bg-[#f5f6fb] min-h-screen">
       <section className="bg-gradient-to-br from-[#0f2744] to-[#1f4570] px-6 py-12">
-        <div className="mx-auto max-w-[860px]">
+        <div className="mx-auto max-w-[1400px]">
           <h1 className="text-[2rem] font-bold text-white sm:text-[2.8rem]">
             Higher Study in USA
           </h1>
@@ -79,10 +127,15 @@ export default function HigherStudyUSAPage() {
         </div>
       </section>
 
-      <div className="mx-auto max-w-[860px] px-6 py-10 space-y-6">
-        {higherStudyUSA.sections.map((section, i) => (
-          <Section key={i} section={section} />
-        ))}
+      <div className="mx-auto max-w-[1400px] px-6 py-10">
+        <div className="flex gap-10">
+          <TableOfContents />
+          <div className="min-w-0 flex-1 space-y-6">
+            {higherStudyUSA.sections.map((section, i) => (
+              <Section key={i} section={section} />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
