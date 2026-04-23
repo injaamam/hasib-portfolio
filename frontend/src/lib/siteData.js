@@ -379,7 +379,172 @@ export const mySupervisedWorks = {};
 
 export const futureStudentOpportunities = {};
 
-export const higherStudyGuidelines = {};
+export const higherStudyGuidelines = {
+  title: "Higher Study Guidelines",
+  subtitle: "Advice and resources for students aspiring to pursue graduate studies abroad",
+  subsections: [
+    {
+      id: "usa",
+      label: "Higher Study in USA",
+      flag: "🇺🇸",
+      intro:
+        "The United States hosts some of the world's top research universities and offers excellent opportunities for funded graduate study, especially for students from Bangladesh pursuing MS or PhD programs in engineering and science. Below is a comprehensive guide covering everything you need to know before and during the application process.",
+      sections: [
+        {
+          heading: "Why Study in the USA?",
+          items: [
+            "Home to world-class research universities (MIT, Caltech, Stanford, Carnegie Mellon, etc.) consistently ranked among the global top.",
+            "Strong culture of graduate funding — most PhD programs and many MS programs (thesis-based) are fully funded with tuition waiver + stipend.",
+            "Cutting-edge research labs with state-of-the-art facilities and equipment.",
+            "Diverse academic environment with faculty and students from all over the world.",
+            "Optional Practical Training (OPT) allows up to 3 years of post-graduation work experience in STEM fields.",
+            "High quality of life, accessible public services, and a strong alumni network worldwide.",
+          ],
+        },
+        {
+          heading: "Types of Graduate Programs",
+          items: [
+            "PhD (Doctor of Philosophy): 4–6 years; typically fully funded (tuition waiver + monthly stipend via Research Assistantship or Teaching Assistantship); requires a dissertation based on original research.",
+            "MS (Master of Science) — Thesis-based: 2–3 years; often partially or fully funded; requires a research thesis.",
+            "MS — Non-thesis / Course-based: 1.5–2 years; usually self-funded; focused on coursework; good for industry-oriented careers.",
+            "Meng / MEng (Master of Engineering): Professional degree, typically 1–2 years; usually self-funded.",
+            "Most Bangladeshi students target funded PhD or thesis-MS programs, especially in EEE, CSE, and related fields.",
+          ],
+        },
+        {
+          heading: "Academic Requirements & Eligibility",
+          items: [
+            "A strong undergraduate GPA is the most important factor. Aim for 3.5/4.0 or above (equivalent to a first-class or near-first-class result).",
+            "A relevant bachelor's degree (BSc in EEE, CSE, Physics, etc.) or master's degree is required.",
+            "Research experience (publications, conference papers, thesis work) significantly strengthens your profile for PhD admissions.",
+            "Letters of Recommendation (LOR) from professors who know your academic ability and research potential are critical.",
+            "A compelling Statement of Purpose (SOP) that articulates your research interest and fit with the program.",
+          ],
+        },
+        {
+          heading: "English Proficiency Tests",
+          items: [
+            "TOEFL iBT (Test of English as a Foreign Language — Internet-based Test): The most widely accepted English test at US universities. Aim for 100+ overall. Section minimums vary by university (typically R: 22, L: 22, W: 22, S: 20).",
+            "IELTS Academic: Accepted by most universities as an alternative to TOEFL. Aim for 7.0 or above overall.",
+            "Duolingo English Test: Now accepted by many universities as a convenient, affordable option. Aim for 120+.",
+            "Some universities may waive English requirements if your undergraduate/graduate medium of instruction was English.",
+            "Register early — TOEFL/IELTS scores are valid for 2 years and can take 2–4 weeks to be sent to universities.",
+          ],
+        },
+        {
+          heading: "GRE (Graduate Record Examination)",
+          items: [
+            "The GRE General Test has three sections: Verbal Reasoning (130–170), Quantitative Reasoning (130–170), and Analytical Writing (0–6).",
+            "Many top universities have made GRE optional or no longer require it (post-COVID trend). Always verify each program's current requirements.",
+            "If required, aim for Q: 163+ (especially for engineering programs), V: 153+, AW: 3.5+.",
+            "GRE Subject Test (e.g., Physics, Math) may be beneficial for specific programs but is rarely required.",
+            "Scores are valid for 5 years. Register via ETS website (ets.org).",
+          ],
+        },
+        {
+          heading: "Contacting Professors (Emailing Professors)",
+          items: [
+            "For PhD admissions, directly emailing potential research supervisors is one of the most effective strategies — especially in EE, ECE, and related fields.",
+            "Research the professor's recent publications (Google Scholar, ResearchGate) and identify a specific paper or project that aligns with your interests.",
+            "Write a concise, personalized email (not a template). Mention their specific work, your background, and why you want to work with them.",
+            "Attach your CV and (optionally) a brief research statement. Avoid attaching a full SOP or long documents.",
+            "Keep the email short (4–6 paragraphs max). Subject line: 'Prospective PhD Student — [Your Research Area] — [Your Name]'.",
+            "Follow up once after 2–3 weeks if no reply. Avoid sending mass emails to many professors with the same text.",
+            "A positive response from a professor greatly increases your chance of admission and funding.",
+          ],
+        },
+        {
+          heading: "Statement of Purpose (SOP)",
+          items: [
+            "The SOP is a 1–2 page essay explaining why you want to pursue graduate study, your research background, and your future goals.",
+            "Structure: (1) Opening hook / motivation, (2) Research experience and accomplishments, (3) Why this specific university and program, (4) Future career goals.",
+            "Customize each SOP for each university — mention specific faculty, labs, or research themes that match your interests.",
+            "Avoid generic statements. Be specific about your research contributions, skills, and what you can bring to the lab.",
+            "Proofread carefully — grammatical errors and vague writing can hurt your application.",
+          ],
+        },
+        {
+          heading: "Letters of Recommendation (LOR)",
+          items: [
+            "Most programs require 3 letters of recommendation from academic or research supervisors.",
+            "Choose professors who know your work well — ideally those who supervised your thesis, research, or major projects.",
+            "Request letters at least 4–6 weeks before the deadline. Provide your recommender with your CV, SOP draft, and the list of universities.",
+            "Strong letters discuss specific research contributions, intellectual ability, and potential for graduate-level independent research.",
+            "Letters from industry supervisors are acceptable but academic letters carry more weight for research-focused programs.",
+          ],
+        },
+        {
+          heading: "Choosing Universities",
+          items: [
+            "Build a balanced list of 8–15 universities: 3–4 reach schools (top-20), 5–6 match schools (top 50–100), and 2–3 safe schools.",
+            "Research the specific department and faculty, not just overall university rankings. Focus on faculty whose research matches yours.",
+            "Consider program size, location, cost of living, funding availability, and career outcomes of recent graduates.",
+            "Useful resources: US News & World Report rankings, CSRankings (for CS), NRC rankings, and program websites.",
+            "Shortlist universities where at least one faculty member is actively working in your research area and appears to be taking students.",
+          ],
+        },
+        {
+          heading: "Application Timeline",
+          items: [
+            "September–October: Finalize university list; request LORs; start drafting SOP.",
+            "October–November: Appear for TOEFL/IELTS and GRE if required; finalize SOP.",
+            "November–December: Submit applications. Most fall semester (August intake) deadlines are December 1 – January 15.",
+            "January–February: Email professors of interest if you have not already done so.",
+            "February–April: Receive decisions (interview invitations, offers, or rejections).",
+            "April 15: Traditional deadline for US graduate schools to hold offers open (Council of Graduate Schools agreement).",
+            "May–June: Accept your offer, apply for visa (F-1 student visa).",
+          ],
+        },
+        {
+          heading: "Funding and Scholarships",
+          items: [
+            "Research Assistantship (RA): Funded by a faculty member's research grant. You work on their project and receive tuition waiver + stipend (~$18,000–$35,000/year depending on university and field).",
+            "Teaching Assistantship (TA): Funded by the department for teaching duties. Includes tuition waiver + stipend.",
+            "Fellowship: Competitive awards (e.g., NSF GRFP, Fulbright) that provide stipend without obligatory teaching/research duties.",
+            "Most PhD programs in STEM at US universities are fully funded through RA or TA. Always ask about funding in your application.",
+            "External scholarships for Bangladeshi students: Fulbright (US Government), Commonwealth scholarships, USAID-funded programs.",
+          ],
+        },
+        {
+          heading: "F-1 Student Visa Process",
+          items: [
+            "After accepting an admission offer, you will receive Form I-20 from your university (issued by the Designated School Official — DSO).",
+            "Pay the SEVIS fee (I-901 fee) at fmjfee.com before your visa interview.",
+            "Apply for F-1 student visa at the nearest US Embassy (Dhaka, Bangladesh). Required documents: I-20, DS-160 form, financial documents, admission letter, SEVIS fee receipt, passport, photos.",
+            "Schedule your visa interview as early as possible — slots fill up quickly, especially in summer.",
+            "Financial proof: You may need to show you can cover 1 year of tuition + living expenses (even if fully funded, having some bank balance is advisable).",
+            "Visa processing typically takes 2–5 business days after the interview if approved.",
+          ],
+        },
+        {
+          heading: "Preparing to Leave for the USA",
+          items: [
+            "Book your flight 4–6 weeks in advance. Arrive at least 1–2 weeks before your program begins.",
+            "Arrange temporary housing (on-campus dormitory, university-arranged housing, or off-campus apartment) before departure.",
+            "Carry essential documents: passport, I-20, admission letter, health records, vaccination certificates (many universities require specific vaccines).",
+            "Open a US bank account as soon as possible after arrival. Most universities partner with local banks for student accounts.",
+            "Get a Social Security Number (SSN) or Individual Taxpayer Identification Number (ITIN) once you begin work (RA/TA).",
+            "Join Bangladeshi student associations at your university or city for community support and networking.",
+          ],
+        },
+        {
+          heading: "Cost of Living in the USA",
+          items: [
+            "Cost of living varies significantly by location: very high in NYC, San Francisco, Boston; moderate in Newark (Delaware), College Park (Maryland); lower in cities like Tuscaloosa (Alabama) or Lafayette (Louisiana).",
+            "Typical monthly expenses (graduate student): Rent $700–$1,800; Groceries $200–$400; Transportation $50–$150; Utilities (included in many rentals or $50–$100); Health insurance (often covered by funding).",
+            "On a standard graduate stipend ($18,000–$30,000/year), most students can live comfortably in mid-cost-of-living cities.",
+            "Cook at home to significantly reduce food expenses. Many universities have South Asian grocery stores nearby.",
+          ],
+        },
+      ],
+    },
+    {
+      id: "other-countries",
+      label: "Higher Study in Other Countries",
+      comingSoon: true,
+    },
+  ],
+};
 
 export const miscellaneous = {};
 
