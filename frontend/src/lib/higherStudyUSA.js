@@ -166,7 +166,7 @@ export const higherStudyUSA = {
         {
           title: "I. Before Graduation",
           content: [
-            "Keep in mind: "If anyone chases two hares together, they will not be able to catch any of them." So don't try to do everything. Five things you should mainly focus on during undergrad. Just 5.",
+            "Keep in mind: If anyone chases two hares together, they will not be able to catch any of them. So don't try to do everything. Five things you should mainly focus on during undergrad. Just 5.",
             "Getting your CGPA up as much as possible. I cannot stress enough how crucial CGPA is in the entire process. Your university and professors will prioritize and assess this among the first things. However, if your current CGPA is not up to the mark, don't underestimate yourself. It may seem challenging at first, but with enough effort and dedication, you can also achieve your goals, by the grace of God.",
             "Try to do fruitful Research & and at least 1 or 2 Publications. Having a compelling research topic and a few publications under your belt will significantly elevate your standing among the pool of applicants.",
             "Do something Extracurricular. Including a few extracurricular activities in your CV can also make a positive impact.",
@@ -228,7 +228,7 @@ export const higherStudyUSA = {
                 "Start emailing a professor from every university daily. Keep a gap of at least two days between contacting different professors from the same university. However, keep in mind that crafting a good, convincing email requires time and effort. To maximize the impact of your emails, focus on the following key aspects:",
                 "Personalization: Tailor each email to the specific professor and university. Mention their research work that interests you, demonstrating your genuine interest.",
                 "Conciseness: Keep your email concise and to the point. Professors receive numerous emails, so a clear and succinct message is more likely to be read.",
-                "Politeness and Respect: Address the professor respectfully and professionally. Use appropriate salutations like, "Dr. X/ Professor X" and avoid overly casual language.",
+                "Politeness and Respect: Address the professor respectfully and professionally. Use appropriate salutations like, Dr. X/ Professor X and avoid overly casual language.",
                 "Introduce Yourself: Briefly introduce yourself, mentioning your academic background, major achievements, and research interests.",
                 "Explain Your Interest: Clearly articulate why you are interested in joining their research group or program. Show that you have done your research about their work.",
                 "Highlight Your Skills: Emphasize your relevant skills, experiences, and publications (if any). Demonstrate how your background aligns with their research goals.",
@@ -318,7 +318,8 @@ export const higherStudyUSA = {
               ],
             },
             {
-              title: "d. The Results be Rollin' In & Time to Make the Big Decision",
+              title:
+                "d. The Results be Rollin' In & Time to Make the Big Decision",
               content: [
                 "Take a moment to breathe deeply. I understand that you have experienced numerous challenges, breakdowns, reality checks, and sleepless nights. However, now you have arrived at this point where your results are coming in. But let's confront the reality first: it is possible that some of the universities you had aspired to may have rejected your application. Dealing with rejections can be tough, but it's important to remember that they are a natural part of the application process.",
                 "Allow Yourself to Feel: It's okay to feel disappointed, frustrated, or even sad about a rejection. Give yourself permission to acknowledge and process these emotions.",
@@ -337,7 +338,7 @@ export const higherStudyUSA = {
                 "Location and Campus Life: Think about the location and campus environment that best suits your preferences. Consider factors such as climate, proximity to urban areas or industry hubs, and the availability of extracurricular activities or student organizations that align with your interests.",
                 "Alumni Network and Career Support: Research the university's alumni network and the career support services they provide. A strong network and support system can open doors to internships, job opportunities, and professional growth.",
                 "Personal Fit: Trust your instincts and consider your personal preferences and needs. Think about factors like if any one of your friends got in there, diversity and community, and the overall atmosphere of the university. It's essential to choose a university where you feel comfortable and supported.",
-                "Supporting a friend in need: Approaching this journey can vary greatly from person to person. While some may find it relatively easy, for others, it can be a nightmarish experience. You may have multiple acceptance offers in hand, but the truth is, you can only accept one of them. Meanwhile, your friend may not have received any offers at all. In such a situation, it's important to be compassionate and considerate. Instead of discarding those offers, reach out to the professors and recommend your friend. In this journey, it's crucial to remember that unity is strength, and by supporting each other, we can all thrive. "The lone wolf dies but the pack survives."",
+                "Supporting a friend in need: Approaching this journey can vary greatly from person to person. While some may find it relatively easy, for others, it can be a nightmarish experience. You may have multiple acceptance offers in hand, but the truth is, you can only accept one of them. Meanwhile, your friend may not have received any offers at all. In such a situation, it's important to be compassionate and considerate. Instead of discarding those offers, reach out to the professors and recommend your friend. In this journey, it's crucial to remember that unity is strength, and by supporting each other, we can all thrive. The lone wolf dies but the pack survives.",
               ],
             },
             {
@@ -349,7 +350,8 @@ export const higherStudyUSA = {
               ],
             },
             {
-              title: "f. Collecting & Sending Physical Copies of Necessary Documents",
+              title:
+                "f. Collecting & Sending Physical Copies of Necessary Documents",
               content: [
                 "After selecting your preferred university, it's crucial to promptly accept the offer and submit the required documents mentioned in the offer letter. Reach out to the university's graduate coordinator to discuss the urgency of physical copies and whether immediate submission is necessary. Some universities may require early submission of your BSc transcripts. Here's a step-by-step process to send your BSc transcripts from BUET:",
                 "Obtain Sealed Certificates and Transcripts: Visit the Comptroller's office at BUET before 4 PM and bring the required number of photocopies of your certificates and transcripts. Pay the necessary fee of 200 tk per copy (50 tk + 150 tk). The regular processing time is 4 to 5 working days, but you can expedite the process on the same day by paying an extra 500 taka.",
@@ -397,7 +399,7 @@ export const higherStudyUSA = {
                 "You are required to make two types of dollar payments: the visa interview booking fee ($185) and the SEVIS fee ($350). It is important to pay the visa slot booking fee as soon as possible to secure your interview slot. The update process may take 2 to 3 days before the available slots are displayed. Only EBL (Eastern Bank Limited) accepts this payment. Although it is not necessary for later processes, it is recommended to keep the payment slip safe. You can also make the payment online through various sources.",
                 "For the SEVIS fee, it should be paid at least a week before your visa interview. However, due to the barrier set by Bangladesh Bank limiting the maximum amount to $300, you may encounter some difficulties. If you have a bank account with dual currency enabled, you can apply for the window to be opened or seek assistance from someone who has a bank account or resides outside Bangladesh. It is advisable to wait for the perfect university before paying the SEVIS fee. Even without paying it, you can proceed with booking your interview without any hassle.",
                 "Pay SEVIS Fee: https://www.fmjfee.com/i901fee/index.html",
-                "To pay the SEVIS fee using your EBL credit/debit card: Endorse your card for dollars by visiting your bank (bring your passport). Visit the EBL website at https://www.ebl.com.bd/. Navigate to the "Forms and Downloads" section and download the "Online Declaration Form". Print the form and fill it out completely and make a scanned copy. Proceed to the EBL Query and Complain Management Cell on the website. Enter your email address registered with EBL and follow the provided steps. An OTP will be sent to your email. Enter the required information and write a note within 250 words, clearly stating the reasons or purpose for your transaction. Attach the necessary files: the I-901(SEVIS) review form and the filled-up online declaration form. Submit the form and wait for a response. It may take a couple of days for the bank to review your submission. If your transaction is approved, you will receive an SMS notification.",
+                "To pay the SEVIS fee using your EBL credit/debit card: Endorse your card for dollars by visiting your bank (bring your passport). Visit the EBL website at https://www.ebl.com.bd/. Navigate to the Forms and Downloads section and download the Online Declaration Form. Print the form and fill it out completely and make a scanned copy. Proceed to the EBL Query and Complain Management Cell on the website. Enter your email address registered with EBL and follow the provided steps. An OTP will be sent to your email. Enter the required information and write a note within 250 words, clearly stating the reasons or purpose for your transaction. Attach the necessary files: the I-901(SEVIS) review form and the filled-up online declaration form. Submit the form and wait for a response. It may take a couple of days for the bank to review your submission. If your transaction is approved, you will receive an SMS notification.",
               ],
             },
             {
@@ -411,7 +413,7 @@ export const higherStudyUSA = {
                 "HSD For USA: https://t.me/+hKTnz5q8IRZjYTJl",
                 "Refused slot update: https://t.me/+DoBVbJHY6-tiNzE9",
                 "Emergency Slot update: https://t.me/+1xljzi1jOVA5OTQ1",
-                "As soon as you receive notification that your desired slots are open, act swiftly to secure them. However, keep in mind that winning this "rat race" is unlikely. Nevertheless, there are instances when a bulk of slots are released, increasing your chances.",
+                "As soon as you receive notification that your desired slots are open, act swiftly to secure them. However, keep in mind that winning this rat race is unlikely. Nevertheless, there are instances when a bulk of slots are released, increasing your chances.",
                 "You are allowed to reschedule twice for regular interview dates. But suppose you couldn't manage a regular slot and see no ray of hope. In that case, there is an option for an Emergency Request (ER). Write a well-explained reason behind the request and send an email. If your request is accepted, you will be given the opportunity to book an emergency slot. Note that you can reschedule the ER slot once.",
                 "Remember, stay proactive, keep an eye on the slot updates, and explore all available options.",
                 "Emergency Request for Interview Slot Email Template can be found in resources.",
@@ -502,7 +504,7 @@ export const higherStudyUSA = {
           title: "VIII. Buying Dollars",
           content: [
             "Acquiring US dollars has become quite challenging in recent times. It can be difficult to find reliable sources that offer favorable exchange rates, trustworthy transactions, and proper endorsements, whether you opt for cash or card payments. To navigate through these complexities, it is advisable to seek advice from your friends and seniors who have experience in this matter. They can guide you in determining the best available options for purchasing US dollars, ensuring a smooth and secure process.",
-            "Foot Note: "It is legal to transport any amount of currency or other monetary instruments into or out of the United States. However, if you transport, attempt to transport, or cause to be transported (including by mail or other means) currency or other monetary instruments in a combined amount exceeding $10,000 (or its foreign equivalent) at one time from the United States to any foreign country or into the United States from any foreign country, you must file a FinCEN Form 105 ("Report of International Transportation of Currency or Monetary Instruments") with U.S. Customs and Border Protection"",
+            "Foot Note: It is legal to transport any amount of currency or other monetary instruments into or out of the United States. However, if you transport, attempt to transport, or cause to be transported (including by mail or other means) currency or other monetary instruments in a combined amount exceeding $10,000 (or its foreign equivalent) at one time from the United States to any foreign country or into the United States from any foreign country, you must file a FinCEN Form 105 (Report of International Transportation of Currency or Monetary Instruments) with U.S. Customs and Border Protection",
           ],
         },
         {
