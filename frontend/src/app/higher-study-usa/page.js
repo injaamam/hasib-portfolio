@@ -44,15 +44,15 @@ function Subsection({ sub, level = 2 }) {
   const titleClass =
     level === 2
       ? "mb-2 text-[1rem] font-semibold text-[#1a3a6c]"
-      : "mb-1 text-[0.9rem] font-semibold text-[#2058a0]";
+      : "mb-1 text-[0.85rem] font-semibold text-[#2058a0]";
 
   return (
     <div
       id={id}
       className={
         level === 3
-          ? "mt-4 pl-4 border-l-2 border-[#dde5f0] scroll-mt-[80px]"
-          : "mt-5 scroll-mt-[80px]"
+          ? "mt-3 ml-6 pl-4 border-l-2 border-[#dde5f0] scroll-mt-[80px]"
+          : "mt-7 ml-2 pl-4 border-l-2 border-[#b8c9e4] scroll-mt-[80px]"
       }
     >
       <h3 className={titleClass}>{sub.title}</h3>
