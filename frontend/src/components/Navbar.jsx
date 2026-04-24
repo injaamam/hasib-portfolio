@@ -109,12 +109,7 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 right-0 left-0 z-30">
       <div
-        className="border-b border-white/10 bg-[#0d2240]/90 text-white shadow-[0_10px_30px_rgba(0,0,0,0.28)] backdrop-blur-sm"
-        style={{
-          backgroundImage: `linear-gradient(rgba(10, 28, 56, 0.82), rgba(10, 28, 56, 0.82))`,
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-        }}
+        className="border-b-2 border-[#c4a547]/70 bg-[#040f1e] text-white shadow-[0_4px_24px_rgba(0,0,0,0.55)]"
       >
         <div className="mx-auto flex min-h-[62px] max-w-none items-center justify-between gap-4 px-4 sm:px-6">
           <Link
