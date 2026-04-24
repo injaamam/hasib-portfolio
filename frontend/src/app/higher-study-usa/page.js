@@ -1,7 +1,10 @@
 import { higherStudyUSA } from "@/lib/higherStudyUSA";
 
 function slugify(title) {
-  return title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
 }
 
 function renderText(text) {
@@ -20,7 +23,7 @@ function renderText(text) {
       </a>
     ) : (
       part
-    )
+    ),
   );
 }
 
@@ -85,7 +88,13 @@ function TocItems({ items, depth = 0 }) {
       : "block rounded px-2 py-1 text-[0.78rem] leading-snug text-[#556080] transition hover:bg-[#eef2ff] hover:text-[#1a3a6c]";
 
   return (
-    <ul className={depth > 0 ? "ml-3 mt-0.5 space-y-0.5 border-l border-[#dde5f0] pl-2" : "space-y-0.5"}>
+    <ul
+      className={
+        depth > 0
+          ? "ml-3 mt-0.5 space-y-0.5 border-l border-[#dde5f0] pl-2"
+          : "space-y-0.5"
+      }
+    >
       {items.map((item, i) => (
         <li key={i}>
           <a href={`#${slugify(item.title)}`} className={linkClass}>
@@ -116,8 +125,16 @@ function TableOfContents() {
 export default function HigherStudyUSAPage() {
   return (
     <div className="bg-[#f5f6fb] min-h-screen">
-      <section className="bg-gradient-to-br from-[#0f2744] to-[#1f4570] px-6 py-12">
-        <div className="mx-auto max-w-[1400px]">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0f2744] to-[#1f4570] px-6 py-12">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.07]"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, #ffffff 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+          }}
+        />
+        <div className="relative z-10 mx-auto max-w-[1400px]">
           <h1 className="text-[2rem] font-bold text-white sm:text-[2.8rem]">
             Higher Study in USA
           </h1>
