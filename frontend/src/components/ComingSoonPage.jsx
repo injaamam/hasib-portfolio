@@ -36,8 +36,10 @@ export default function ComingSoonPage({
   description = "We're actively working on this feature and it will be available soon. Thank you for your patience!",
 }) {
   return (
-    <section className="min-h-[105vh] bg-[#f5f6fb] px-6 py-16">
-      <div className="mx-auto w-full max-w-[760px] text-center">
+    <section className="min-h-[105vh] bg-[#f5f6fb] px-6">
+      {/* Main card — vertically centred in the first viewport height */}
+      <div className="flex min-h-screen items-center justify-center py-16">
+        <div className="mx-auto w-full max-w-[760px] text-center">
         <div className="animate-pulse-glow mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-[#eef2ff]">
           <HiOutlineSparkles className="text-[1.9rem] text-[#4154bf]" />
         </div>
@@ -74,10 +76,11 @@ export default function ComingSoonPage({
             Browse Home
           </Link>
         </div>
+        </div>
       </div>
 
       {/* While you wait section */}
-      <div className="mx-auto mt-20 max-w-[760px]">
+      <div className="mx-auto max-w-[760px] pb-16">
         <p className="text-center text-[0.72rem] font-bold uppercase tracking-[0.18em] text-[#9ca3af]">
           While you wait…
         </p>
