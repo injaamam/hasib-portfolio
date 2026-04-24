@@ -1,5 +1,5 @@
 import { honorsAwards } from "@/lib/siteData";
-import { HiTrophy, HiStar } from "react-icons/hi2";
+import { HiSparkles, HiTrophy } from "react-icons/hi2";
 
 const narrowFont = {
   fontFamily:
@@ -42,7 +42,7 @@ export default function HonorsAwardsPage() {
           <div key={section.heading}>
             <div className="mb-8 flex items-center gap-3">
               <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-[#0f2744] to-[#2f67a6] text-white">
-                <HiTrophy size={18} />
+                <HiSparkles size={18} />
               </div>
               <h2
                 className="text-[1.4rem] font-bold text-[#262626]"
@@ -54,55 +54,24 @@ export default function HonorsAwardsPage() {
 
             {section.list && (
               <div className="space-y-4">
-                {section.list.map((item, i) => {
-                  const isFeatured = i < 2;
-                  return (
-                    <div
-                      key={i}
-                      className={`flex gap-4 rounded-2xl p-5 transition-shadow ${
-                        isFeatured
-                          ? "border border-[#a3bed8]/40 bg-gradient-to-r from-[#eef4ff] to-[#dce8f8] shadow-[0_4px_20px_rgba(47,103,166,0.12)]"
-                          : "bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)] hover:shadow-[0_4px_18px_rgba(0,0,0,0.1)]"
-                      }`}
-                    >
-                      <div
-                        className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${
-                          isFeatured
-                            ? "bg-gradient-to-br from-[#0f2744] to-[#2f67a6] shadow-[0_2px_8px_rgba(47,103,166,0.35)]"
-                            : "bg-[#eef4ff]"
-                        }`}
-                      >
-                        {isFeatured ? (
-                          <HiTrophy
-                            size={20}
-                            className="text-white"
-                          />
-                        ) : (
-                          <HiStar
-                            size={18}
-                            className="text-[#2f67a6]"
-                          />
-                        )}
-                      </div>
-                      <div>
-                        {isFeatured && (
-                          <span className="mb-1.5 inline-block rounded-full bg-[#2f67a6]/15 px-2.5 py-0.5 text-[0.68rem] font-bold uppercase tracking-[0.1em] text-[#0f2744]">
-                            Featured Award
-                          </span>
-                        )}
-                        <p
-                          className={`text-[0.97rem] leading-[1.6] ${
-                            isFeatured
-                              ? "font-semibold text-[#0f2744]"
-                              : "font-medium text-[#374151]"
-                          }`}
-                        >
-                          {item}
-                        </p>
-                      </div>
+                {section.list.map((item, i) => (
+                  <div
+                    key={i}
+                    className="flex gap-4 rounded-2xl border border-[#a3bed8]/0 bg-gradient-to-r from-[#eef4ff] to-[#dce8f8] p-5 shadow-[0_4px_20px_rgba(47,103,166,0.12)] transition-shadow"
+                  >
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#0f2744] to-[#2f67a6] shadow-[0_2px_8px_rgba(47,103,166,0.35)]">
+                      <HiTrophy size={20} className="text-white" />
                     </div>
-                  );
-                })}
+                    <div>
+                      <span className="mb-1.5 inline-block rounded-full bg-[#2f67a6]/10 px-2.5 py-0.5 text-[0.68rem] font-semibold uppercase tracking-[0.1em] text-[#1b3b61]">
+                        Featured Award
+                      </span>
+                      <p className="text-[0.97rem] font-medium leading-[1.6] text-[#1b3b61]">
+                        {item}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
             )}
           </div>
