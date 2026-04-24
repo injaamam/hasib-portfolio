@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { higherStudyUSA } from "@/lib/higherStudyUSA";
 
+// Converts a section/subsection title into a URL-safe anchor ID (e.g. "My Title" → "my-title")
 function slugify(title) {
   return title
     .toLowerCase()
@@ -8,6 +9,8 @@ function slugify(title) {
     .replace(/^-|-$/g, "");
 }
 
+// Scans a plain text string for URLs and wraps each one in a styled external link.
+// Non-URL fragments are returned as plain text nodes.
 function renderText(text) {
   const urlRegex = /(https?:\/\/[^\s,]+)/g;
   const parts = text.split(urlRegex);
@@ -28,6 +31,7 @@ function renderText(text) {
   );
 }
 
+// Renders an array of content strings as a bulleted list, with URLs auto-linked via renderText.
 function ContentList({ content }) {
   return (
     <ul className="mt-2 space-y-2">
@@ -40,8 +44,14 @@ function ContentList({ content }) {
   );
 }
 
+// Renders a single subsection block. Supports two nesting levels:
+//   level 2 — direct child of a Section (larger indent, darker border)
+//   level 3 — nested child of a level-2 subsection (deeper indent, lighter border)
+// If the subsection has a `link` field, the title becomes a clickable internal link
+// and a "→ Click to view" hint is shown below it.
 function Subsection({ sub, level = 2 }) {
   const id = slugify(sub.title);
+  // Different typography for level-2 vs level-3 titles to reinforce visual hierarchy
   const titleClass =
     level === 2
       ? "mb-2 text-[1rem] font-semibold text-[#1a3a6c]"
@@ -82,6 +92,7 @@ function Subsection({ sub, level = 2 }) {
   );
 }
 
+// Renders a top-level section as a white card with an h2 heading and its subsections below.
 function Section({ section }) {
   const id = slugify(section.title);
   return (
@@ -98,6 +109,8 @@ function Section({ section }) {
   );
 }
 
+// Recursively renders table-of-contents items as anchor links.
+// depth=0 → top-level sections; depth>0 → indented subsection links.
 function TocItems({ items, depth = 0 }) {
   const linkClass =
     depth === 0
@@ -126,6 +139,7 @@ function TocItems({ items, depth = 0 }) {
   );
 }
 
+// Sticky sidebar shown on large screens listing all sections and subsections as anchor links.
 function TableOfContents() {
   return (
     <aside className="hidden lg:block w-[220px] shrink-0">
@@ -139,6 +153,7 @@ function TableOfContents() {
   );
 }
 
+// Main page: hero banner at the top, then a two-column layout of TOC sidebar + section cards.
 export default function HigherStudyUSAPage() {
   return (
     <div className="bg-[#f5f6fb] min-h-screen">
