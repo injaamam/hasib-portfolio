@@ -261,15 +261,15 @@ export const higherStudyUSA = {
             },
             {
               title: "d. Managing LoRs",
-              content: ["Coming soon"],
+              link: "/letter-of-recommendations",
             },
             {
               title: "e. Writing SoP",
-              content: ["Coming soon"],
+              link: "/statement-of-purpose",
             },
             {
               title: "f. Writing Cover Letters",
-              content: ["Coming soon"],
+              link: "/cover-letter",
             },
             {
               title: "g. Finalizing Universities",
