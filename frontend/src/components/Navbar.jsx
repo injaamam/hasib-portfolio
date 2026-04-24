@@ -109,7 +109,7 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 right-0 left-0 z-30">
       <div
-        className="border-b-2 border-[#c4a547]/70 bg-[#040f1e] text-white shadow-[0_4px_24px_rgba(0,0,0,0.55)]"
+        className="border-b border-white/[0.07] bg-[#111111] text-white shadow-[0_2px_18px_rgba(0,0,0,0.45)]"
       >
         <div className="mx-auto flex min-h-[62px] max-w-none items-center justify-between gap-4 px-4 sm:px-6">
           <Link
@@ -141,7 +141,7 @@ export default function Navbar() {
                     >
                       {item.label}
                     </button>
-                    <div className="absolute top-full left-0 z-50 hidden min-w-[210px] rounded border border-white/10 bg-[#071828]/95 py-1 shadow-[0_8px_24px_rgba(0,0,0,0.40)] backdrop-blur-sm group-hover:block">
+                    <div className="absolute top-full left-0 z-50 hidden min-w-[210px] rounded border border-white/10 bg-[#1c1c1c]/98 py-1 shadow-[0_8px_24px_rgba(0,0,0,0.50)] backdrop-blur-sm group-hover:block">
                       {item.children.map((child) => (
                         <Link
                           key={child.href}
