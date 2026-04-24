@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export default function SiteLayout({ children }) {
   const pathname = usePathname();
@@ -11,13 +12,9 @@ export default function SiteLayout({ children }) {
     <div className="min-h-screen bg-[#f5f5f2] text-[#262626]">
       <Navbar />
 
-      <main className={isHomePage ? "" : "pt-[72px]"}>{children}</main>
+      <main className={isHomePage ? "" : "pt-18"}>{children}</main>
 
-      <footer className="border-t border-black/10 bg-white/80 px-6 py-4">
-        <div className="mx-auto max-w-6xl text-sm text-gray-500">
-          © 2026 Hasib Cheragee. All rights reserved.
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
