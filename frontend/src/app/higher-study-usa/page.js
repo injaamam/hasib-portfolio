@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { higherStudyUSA } from "@/lib/higherStudyUSA";
 
 function slugify(title) {
@@ -55,7 +56,23 @@ function Subsection({ sub, level = 2 }) {
           : "mt-7 ml-2 pl-4 border-l-2 border-[#b8c9e4] scroll-mt-[80px]"
       }
     >
-      <h3 className={titleClass}>{sub.title}</h3>
+      <h3 className={titleClass}>
+        {sub.link ? (
+          <Link href={sub.link} className="hover:underline">
+            {sub.title}
+          </Link>
+        ) : (
+          sub.title
+        )}
+      </h3>
+      {sub.link && (
+        <Link
+          href={sub.link}
+          className="mt-1 inline-block text-[0.82rem] text-[#2058a0] hover:underline"
+        >
+          → Click to view
+        </Link>
+      )}
       {sub.content && <ContentList content={sub.content} />}
       {sub.subsections &&
         sub.subsections.map((child, i) => (
