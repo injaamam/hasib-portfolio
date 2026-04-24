@@ -94,7 +94,7 @@ export default function HomePage() {
                 {home.hello.heading}
               </h2>
 
-              <div className="mt-6 space-y-5 text-[1.04rem] leading-[1.7] text-[#4d4d4d] sm:text-[1.12rem]">
+              <div className="mt-6 space-y-5 text-[1.04rem] tracking-[-0.01em] leading-[1.6] text-[#4d4d4d] sm:text-[1.12rem]">
                 {home.hello.paragraphs.map((paragraph) => {
                   return <p key={paragraph}>{paragraph}</p>;
                 })}

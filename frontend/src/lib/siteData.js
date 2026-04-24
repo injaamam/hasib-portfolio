@@ -498,7 +498,7 @@ export const contact = {
     },
     links: [
       {
-        label: "CV PDF",
+        label: "View CV",
         href: "/hasib-cheragee-cv.pdf",
       },
     ],
