@@ -109,12 +109,12 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 right-0 left-0 z-30">
       <div
-        className="border-b border-white/[0.07] bg-[#111111] text-white shadow-[0_2px_18px_rgba(0,0,0,0.45)]"
+        className="border-b border-[#d8dde3] bg-white text-[#1a1a1a] shadow-[0_1px_10px_rgba(0,0,0,0.09)]"
       >
         <div className="mx-auto flex min-h-[62px] max-w-none items-center justify-between gap-4 px-4 sm:px-6">
           <Link
             href="/home"
-            className="shrink-0 text-[1.15rem] font-semibold tracking-[0.01em] text-white transition hover:text-[#f0e6bf] sm:text-[1.3rem]"
+            className="shrink-0 text-[1.15rem] font-semibold tracking-[0.01em] text-[#0f2744] transition hover:text-[#1f3a5c] sm:text-[1.3rem]"
             onClick={() => setIsMenuOpen(false)}
           >
             Hasib Cheragee
@@ -122,7 +122,7 @@ export default function Navbar() {
 
           <button
             type="button"
-            className="inline-flex h-10 items-center justify-center rounded border border-white/20 px-3 text-sm font-medium text-white transition hover:bg-white/10 lg:hidden"
+            className="inline-flex h-10 items-center justify-center rounded border border-[#c8cdd3] px-3 text-sm font-medium text-[#1a1a1a] transition hover:bg-[#f0f4f8] lg:hidden"
             aria-expanded={isMenuOpen}
             aria-label="Toggle navigation menu"
             onClick={() => setIsMenuOpen((o) => !o)}
@@ -137,16 +137,16 @@ export default function Navbar() {
                   <div key={item.label} className="group relative">
                     <button
                       type="button"
-                      className={`rounded px-2 py-1.5 text-[0.875rem] font-medium transition ${item.children.some((c) => pathname === c.href) ? "bg-white/12 text-[#f3e8b0]" : "text-white/95 hover:bg-white/10 hover:text-[#f3e8b0]"}`}
+                      className={`rounded px-2 py-1.5 text-[0.875rem] font-medium transition ${item.children.some((c) => pathname === c.href) ? "bg-[#eef2f7] text-[#0f2744]" : "text-[#2a2a2a] hover:bg-[#eef2f7] hover:text-[#0f2744]"}`}
                     >
                       {item.label}
                     </button>
-                    <div className="absolute top-full left-0 z-50 hidden min-w-[210px] rounded border border-white/10 bg-[#1c1c1c]/98 py-1 shadow-[0_8px_24px_rgba(0,0,0,0.50)] backdrop-blur-sm group-hover:block">
+                    <div className="absolute top-full left-0 z-50 hidden min-w-[210px] rounded border border-[#d8dde3] bg-white py-1 shadow-[0_8px_24px_rgba(0,0,0,0.12)] group-hover:block">
                       {item.children.map((child) => (
                         <Link
                           key={child.href}
                           href={child.href}
-                          className={`block px-4 py-2 text-[0.93rem] font-medium transition ${pathname === child.href ? "bg-white/12 text-[#f3e8b0]" : "text-white/90 hover:bg-white/10 hover:text-[#f3e8b0]"}`}
+                          className={`block px-4 py-2 text-[0.93rem] font-medium transition ${pathname === child.href ? "bg-[#eef2f7] text-[#0f2744]" : "text-[#2a2a2a] hover:bg-[#f5f8fb] hover:text-[#0f2744]"}`}
                         >
                           {child.label}
                         </Link>
@@ -157,7 +157,7 @@ export default function Navbar() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`rounded px-2 py-1.5 text-[0.875rem] font-medium transition ${pathname === item.href ? "bg-white/12 text-[#f3e8b0]" : "text-white/95 hover:bg-white/10 hover:text-[#f3e8b0]"}`}
+                    className={`rounded px-2 py-1.5 text-[0.875rem] font-medium transition ${pathname === item.href ? "bg-[#eef2f7] text-[#0f2744]" : "text-[#2a2a2a] hover:bg-[#eef2f7] hover:text-[#0f2744]"}`}
                   >
                     {item.label}
                   </Link>
@@ -168,7 +168,7 @@ export default function Navbar() {
         </div>
 
         {isMenuOpen && (
-          <nav className="border-t border-white/10 px-4 py-3 lg:hidden">
+          <nav className="border-t border-[#d8dde3] px-4 py-3 lg:hidden">
             <div className="flex flex-col gap-1">
               {navStructure.map((item) =>
                 item.children ? (
@@ -177,16 +177,16 @@ export default function Navbar() {
                     open={item.children.some((c) => pathname === c.href)}
                   >
                     <summary
-                      className={`cursor-pointer rounded px-3 py-2 text-base font-medium transition ${item.children.some((c) => pathname === c.href) ? "bg-white/12 text-[#f3e8b0]" : "text-white/95 hover:bg-white/10 hover:text-[#f3e8b0]"}`}
+                      className={`cursor-pointer rounded px-3 py-2 text-base font-medium transition ${item.children.some((c) => pathname === c.href) ? "bg-[#eef2f7] text-[#0f2744]" : "text-[#2a2a2a] hover:bg-[#eef2f7] hover:text-[#0f2744]"}`}
                     >
                       {item.label}
                     </summary>
-                    <div className="ml-4 mt-0.5 flex flex-col gap-0.5 border-l border-white/15 pl-3">
+                    <div className="ml-4 mt-0.5 flex flex-col gap-0.5 border-l border-[#d0d8e2] pl-3">
                       {item.children.map((child) => (
                         <Link
                           key={child.href}
                           href={child.href}
-                          className={`rounded px-3 py-2 text-[0.93rem] font-medium transition ${pathname === child.href ? "bg-white/12 text-[#f3e8b0]" : "text-white/90 hover:bg-white/10 hover:text-[#f3e8b0]"}`}
+                          className={`rounded px-3 py-2 text-[0.93rem] font-medium transition ${pathname === child.href ? "bg-[#eef2f7] text-[#0f2744]" : "text-[#2a2a2a] hover:bg-[#f5f8fb] hover:text-[#0f2744]"}`}
                           onClick={() => setIsMenuOpen(false)}
                         >
                           {child.label}
@@ -198,7 +198,7 @@ export default function Navbar() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`rounded px-3 py-2 text-base font-medium transition ${pathname === item.href ? "bg-white/12 text-[#f3e8b0]" : "text-white/95 hover:bg-white/10 hover:text-[#f3e8b0]"}`}
+                    className={`rounded px-3 py-2 text-base font-medium transition ${pathname === item.href ? "bg-[#eef2f7] text-[#0f2744]" : "text-[#2a2a2a] hover:bg-[#eef2f7] hover:text-[#0f2744]"}`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}
