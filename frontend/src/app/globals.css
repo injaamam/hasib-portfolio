@@ -31,3 +31,18 @@ a {
   border-radius: 9999px;
   background: #8a8a8a;
 }
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(163, 190, 216, 0.35);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 20px rgba(163, 190, 216, 0);
+    transform: scale(1.06);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2.6s ease-in-out infinite;
+}
