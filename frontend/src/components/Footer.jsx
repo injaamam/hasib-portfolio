@@ -51,7 +51,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-[#4a4337] bg-[#332f27] text-[#f4efdc]">
+    <footer className="border-t border-[#1a3050] bg-[#0a1c36] text-[#f4efdc]">
       <div
         className="w-full"
         style={{

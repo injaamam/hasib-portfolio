@@ -109,17 +109,12 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 right-0 left-0 z-30">
       <div
-        className="border-b border-white/10 bg-[#3f3c35]/82 text-white shadow-[0_10px_30px_rgba(0,0,0,0.24)] backdrop-blur-sm"
-        style={{
-          backgroundImage: `linear-gradient(rgba(47, 42, 34, 0.72), rgba(47, 42, 34, 0.72))`,
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-        }}
+        className="border-b border-white/10 bg-[#0d1117] text-white shadow-[0_2px_16px_rgba(0,0,0,0.5)]"
       >
         <div className="mx-auto flex min-h-[62px] max-w-none items-center justify-between gap-4 px-4 sm:px-6">
           <Link
             href="/home"
-            className="shrink-0 text-[1.15rem] font-semibold tracking-[0.01em] text-white transition hover:text-[#f0e6bf] sm:text-[1.3rem]"
+            className="shrink-0 text-[1.15rem] font-semibold tracking-[0.01em] text-white transition hover:text-white/80 sm:text-[1.3rem]"
             onClick={() => setIsMenuOpen(false)}
           >
             Hasib Cheragee
@@ -127,7 +122,7 @@ export default function Navbar() {
 
           <button
             type="button"
-            className="inline-flex h-10 items-center justify-center rounded border border-white/20 px-3 text-sm font-medium text-white transition hover:bg-white/10 lg:hidden"
+            className="inline-flex h-10 items-center justify-center rounded border border-white/20 px-3 text-sm font-medium text-white/90 transition hover:bg-white/10 lg:hidden"
             aria-expanded={isMenuOpen}
             aria-label="Toggle navigation menu"
             onClick={() => setIsMenuOpen((o) => !o)}
@@ -142,16 +137,16 @@ export default function Navbar() {
                   <div key={item.label} className="group relative">
                     <button
                       type="button"
-                      className={`rounded px-2 py-1.5 text-[0.875rem] font-medium transition ${item.children.some((c) => pathname === c.href) ? "bg-white/12 text-[#f3e8b0]" : "text-white/95 hover:bg-white/10 hover:text-[#f3e8b0]"}`}
+                      className={`rounded px-2 py-1.5 text-[0.875rem] font-medium transition ${item.children.some((c) => pathname === c.href) ? "bg-white/15 text-white" : "text-white/80 hover:bg-white/10 hover:text-white"}`}
                     >
                       {item.label}
                     </button>
-                    <div className="absolute top-full left-0 z-50 hidden min-w-[210px] rounded border border-white/10 bg-[#2a2620]/95 py-1 shadow-[0_8px_24px_rgba(0,0,0,0.35)] backdrop-blur-sm group-hover:block">
+                    <div className="absolute top-full left-0 z-50 hidden min-w-[210px] rounded border border-white/10 bg-[#161b22] py-1 shadow-[0_8px_24px_rgba(0,0,0,0.4)] group-hover:block">
                       {item.children.map((child) => (
                         <Link
                           key={child.href}
                           href={child.href}
-                          className={`block px-4 py-2 text-[0.93rem] font-medium transition ${pathname === child.href ? "bg-white/12 text-[#f3e8b0]" : "text-white/90 hover:bg-white/10 hover:text-[#f3e8b0]"}`}
+                          className={`block px-4 py-2 text-[0.93rem] font-medium transition ${pathname === child.href ? "bg-white/12 text-white" : "text-white/75 hover:bg-white/10 hover:text-white"}`}
                         >
                           {child.label}
                         </Link>
@@ -162,7 +157,7 @@ export default function Navbar() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`rounded px-2 py-1.5 text-[0.875rem] font-medium transition ${pathname === item.href ? "bg-white/12 text-[#f3e8b0]" : "text-white/95 hover:bg-white/10 hover:text-[#f3e8b0]"}`}
+                    className={`rounded px-2 py-1.5 text-[0.875rem] font-medium transition ${pathname === item.href ? "bg-white/15 text-white" : "text-white/80 hover:bg-white/10 hover:text-white"}`}
                   >
                     {item.label}
                   </Link>
@@ -182,7 +177,7 @@ export default function Navbar() {
                     open={item.children.some((c) => pathname === c.href)}
                   >
                     <summary
-                      className={`cursor-pointer rounded px-3 py-2 text-base font-medium transition ${item.children.some((c) => pathname === c.href) ? "bg-white/12 text-[#f3e8b0]" : "text-white/95 hover:bg-white/10 hover:text-[#f3e8b0]"}`}
+                      className={`cursor-pointer rounded px-3 py-2 text-base font-medium transition ${item.children.some((c) => pathname === c.href) ? "bg-white/15 text-white" : "text-white/80 hover:bg-white/10 hover:text-white"}`}
                     >
                       {item.label}
                     </summary>
@@ -191,7 +186,7 @@ export default function Navbar() {
                         <Link
                           key={child.href}
                           href={child.href}
-                          className={`rounded px-3 py-2 text-[0.93rem] font-medium transition ${pathname === child.href ? "bg-white/12 text-[#f3e8b0]" : "text-white/90 hover:bg-white/10 hover:text-[#f3e8b0]"}`}
+                          className={`rounded px-3 py-2 text-[0.93rem] font-medium transition ${pathname === child.href ? "bg-white/12 text-white" : "text-white/75 hover:bg-white/10 hover:text-white"}`}
                           onClick={() => setIsMenuOpen(false)}
                         >
                           {child.label}
@@ -203,7 +198,7 @@ export default function Navbar() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`rounded px-3 py-2 text-base font-medium transition ${pathname === item.href ? "bg-white/12 text-[#f3e8b0]" : "text-white/95 hover:bg-white/10 hover:text-[#f3e8b0]"}`}
+                    className={`rounded px-3 py-2 text-base font-medium transition ${pathname === item.href ? "bg-white/15 text-white" : "text-white/80 hover:bg-white/10 hover:text-white"}`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}
