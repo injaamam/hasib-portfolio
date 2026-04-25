@@ -109,9 +109,9 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 right-0 left-0 z-30">
       <div
-        className="border-b border-white/10 bg-[#3f3c35]/82 text-white shadow-[0_10px_30px_rgba(0,0,0,0.24)] backdrop-blur-sm"
+        className="border-b border-white/10 bg-[#363126]/88 text-white shadow-[0_10px_30px_rgba(0,0,0,0.24)] backdrop-blur-sm"
         style={{
-          backgroundImage: `linear-gradient(rgba(47, 42, 34, 0.72), rgba(47, 42, 34, 0.72))`,
+          backgroundImage: `linear-gradient(180deg, rgba(58, 50, 38, 0.8), rgba(44, 37, 28, 0.8))`,
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
@@ -146,7 +146,7 @@ export default function Navbar() {
                     >
                       {item.label}
                     </button>
-                    <div className="absolute top-full left-0 z-50 hidden min-w-[210px] rounded border border-white/10 bg-[#2a2620]/95 py-1 shadow-[0_8px_24px_rgba(0,0,0,0.35)] backdrop-blur-sm group-hover:block">
+                    <div className="absolute top-full left-0 z-50 hidden min-w-[210px] rounded border border-white/10 bg-[#241f18]/95 py-1 shadow-[0_8px_24px_rgba(0,0,0,0.35)] backdrop-blur-sm group-hover:block">
                       {item.children.map((child) => (
                         <Link
                           key={child.href}
